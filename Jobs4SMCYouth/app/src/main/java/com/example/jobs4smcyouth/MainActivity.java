@@ -36,6 +36,9 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         drawerLayout = (DrawerLayout)findViewById(R.id.drawerlayout_id);
         navigationView = (NavigationView)findViewById(R.id.nvView_id);
+        initializeFragments();
+        initFragmentManager();
+        openScreen();
         setUpDrawerContent(navigationView);
         initializeFragments();
 
@@ -44,6 +47,11 @@ public class MainActivity extends AppCompatActivity {
     private void initFragmentManager(){
         fragmentManager = getSupportFragmentManager();
         fragmentTransaction = fragmentManager.beginTransaction();
+    }
+
+    private void openScreen(){
+        fragmentTransaction.replace(R.id.fragment_container_id,jobPostFragment);
+        fragmentTransaction.commit();
     }
 
     private void setUpDrawerContent(NavigationView navigationView){

@@ -14,9 +14,9 @@ import java.util.ArrayList;
  */
 public class SuccessStoryAdapter extends RecyclerView.Adapter<SuccessStoryAdapter.ViewHolder>{
 
-    ArrayList<String> successStories;
+    ArrayList<SuccessStory> successStories;
 
-    public SuccessStoryAdapter(ArrayList<String> successStories) {
+    public SuccessStoryAdapter(ArrayList<SuccessStory> successStories) {
         this.successStories = successStories;
     }
 
@@ -31,9 +31,11 @@ public class SuccessStoryAdapter extends RecyclerView.Adapter<SuccessStoryAdapte
 
     @Override
     public void onBindViewHolder(SuccessStoryAdapter.ViewHolder holder, int position) {
-        String successStory = successStories.get(position);
-        TextView successTV = holder.successTV;
-        successTV.setText(successStory);
+        SuccessStory successStory = successStories.get(position);
+        TextView successNameTV = holder.successNameTV;
+        TextView successStoryTV = holder.successStoryTV;
+        successNameTV.setText(successStory.getName());
+        successStoryTV.setText(successStory.getStory());
 
     }
 
@@ -43,10 +45,12 @@ public class SuccessStoryAdapter extends RecyclerView.Adapter<SuccessStoryAdapte
     }
 
     public static class ViewHolder extends RecyclerView.ViewHolder{
-        public TextView successTV;
+        public TextView successNameTV;
+        public TextView successStoryTV;
         public ViewHolder(View itemView) {
             super(itemView);
-            successTV = (TextView)itemView.findViewById(R.id.rv_item_success_text);
+            successNameTV = (TextView)itemView.findViewById(R.id.rv_item_success_name);
+            successStoryTV = (TextView)itemView.findViewById(R.id.rv_item_success_story);
         }
     }
 }

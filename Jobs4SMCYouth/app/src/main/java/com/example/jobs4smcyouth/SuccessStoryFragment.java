@@ -10,6 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
 
 /**
@@ -35,12 +36,17 @@ public class SuccessStoryFragment extends Fragment {
     @Override
     public void onViewCreated(View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        SuccessStoryAdapter successStoryAdapter = new SuccessStoryAdapter(initStories());
+        SuccessStoryAdapter successStoryAdapter = new SuccessStoryAdapter(getStories());
         successRV.setAdapter(successStoryAdapter);
         successRV.setLayoutManager(new LinearLayoutManager(getContext()));
     }
 
-    private ArrayList<String> initStories(){
-        return null;
+    private ArrayList<SuccessStory> getStories(){
+        ArrayList<SuccessStory> successStories =  new ArrayList<>();
+        for (int i = 0; i < getResources().getStringArray(R.array.success_name).length;i++){
+            SuccessStory successStory = new SuccessStory(getResources().getStringArray(R.array.success_name)[i],getResources().getStringArray(R.array.success_story)[i]);
+            successStories.add(successStory);
+        }
+        return successStories;
     }
 }
