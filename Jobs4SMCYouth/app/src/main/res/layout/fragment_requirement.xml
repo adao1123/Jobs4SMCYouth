@@ -4,90 +4,98 @@
     android:layout_height="match_parent"
     tools:context="com.example.jobs4smcyouth.RequirementFragment">
 
-    <android.support.v7.widget.CardView
-        android:id="@+id/requirements_workPermitCard_id"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
-        <LinearLayout
+        <android.support.v7.widget.CardView
+            android:id="@+id/requirements_workPermitCard_id"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:padding="16dp">
+            android:layout_height="wrap_content">
 
-            <TextView
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Youth Work Permits"
-                android:textStyle="bold"
-                android:textColor="@color/primary"
-                android:textSize="30sp"
-                android:textAlignment="center"
-                android:layout_marginTop="20dp"
-                android:layout_marginBottom="10dp"
-                android:textAllCaps="true"/>
+                android:orientation="vertical"
+                android:padding="16dp">
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Students under the age of 18 must provide the employer a work permit.
-                Odd-jobs such as yard work and babysitting do not require work permits. \n\n
-                In order to receive your work permit, please follow the instructions below:\n
-                1.) Obtain a work permit form from school (i.e. Counselor's Office, Career Center, Main Office).
-                During spring, summer, and winter breaks, obtain a work permit from a school district office. \n
-                2.) At the time of hire, have the employer complete the \'Employer Section\' on the Work Permit Form.
-                3.) A parent or guardian must also sign the Work Permit Form. \n
-                4.) Once the form is completed with the proper signatures, return the form back to the school or the school district office (during breaks).
-                5.) A work permit from the school will be issued to the student."
-                android:textAlignment="center"
-                />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Youth Work Permits"
+                    android:textStyle="bold"
+                    android:textColor="@color/primary"
+                    android:textSize="30sp"
+                    android:textAlignment="center"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginBottom="10dp"
+                    android:textAllCaps="true"/>
 
-        </LinearLayout>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Students under the age of 18 must provide the employer a work permit.Odd-jobs such as yard work and babysitting do not require work permits.\n"
+                    android:textAlignment="center"
+                    />
 
-    </android.support.v7.widget.CardView>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="In order to receive your work permit, please follow the instructions below:\n"/>
 
-    <android.support.v7.widget.CardView
-        android:id="@+id/requirements_laborLawsCard_id"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="30dp"
+                    android:text="1.) Obtain a work permit form from school (i.e. Counselor's Office, Career Center, Main Office). During spring, summer, and winter breaks, obtain a work permit from a school district office.\n\n2.) At the time of hire, have the employer complete the \'Employer Section\' on the Work Permit Form.\n\n3.) A parent or guardian must also sign the Work Permit Form.\n\n4.) Once the form is completed with the proper signatures, return the form back to the school or the school district office (during breaks).\n\n5.) A work permit from the school will be issued to the student."/>
+            </LinearLayout>
 
-        <LinearLayout
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/requirements_laborLawsCard_id"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:padding="16dp">
+            android:layout_height="wrap_content">
 
-            <TextView
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Youth Labor Laws"
-                android:textStyle="bold"
-                android:textColor="@color/primary"
-                android:textSize="30sp"
-                android:textAlignment="center"
-                android:layout_marginTop="20dp"
-                android:layout_marginBottom="10dp"
-                android:textAllCaps="true"/>
+                android:orientation="vertical"
+                android:padding="16dp">
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Detailed information on laws that affect working youth in California can be accessed by clicking the button below. "
-                android:textAlignment="center"
-                />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Youth Labor Laws"
+                    android:textStyle="bold"
+                    android:textColor="@color/primary"
+                    android:textSize="30sp"
+                    android:textAlignment="center"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginBottom="10dp"
+                    android:textAllCaps="true"/>
 
-            <Button
-                android:id="@+id/requirements_lawButton_id"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical"
-                android:text="Youth Labor Laws"
-                android:background="@color/accent"
-                android:textColor="@color/primary_light"
-                />
-        </LinearLayout>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Detailed information on laws that affect working youth in California can be accessed by clicking the button below. "
+                    android:textAlignment="center"
+                    />
 
-    </android.support.v7.widget.CardView>
-
-
+                <Button
+                    android:id="@+id/requirements_lawButton_id"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:gravity="center"
+                    android:text="Youth Labor Laws"
+                    android:background="@color/accent"
+                    android:textColor="@color/primary_light"
+                    android:padding="10dp"
+                    android:layout_margin="20dp"
+                    />
+            </LinearLayout>
+        </android.support.v7.widget.CardView>
+    </LinearLayout>
 </ScrollView>
