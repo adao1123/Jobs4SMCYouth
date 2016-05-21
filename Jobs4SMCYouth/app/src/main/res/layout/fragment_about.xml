@@ -132,7 +132,7 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="271 92nd Street \nDaly City, CA 94015 \nFax: (650)757-3224"
+                    android:text="271 92nd Street\nDaly City, CA 94015\nFax: (650)757-3224"
                     android:textAlignment="center"
                     />
 
@@ -155,9 +155,7 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="*No representative on-site \n
-                789 E. Poplar Ave \n
-                San Mateo, CA 94401 \n"
+                    android:text="*No representative on-site\n789 E. Poplar Ave\nSan Mateo, CA 94401 \n"
                     android:textAlignment="center"
                     />
 
@@ -180,11 +178,7 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="*No representative on-site \n
-                400 Harbor Blvd \n
-                Building B \n
-                Belmont, CA 94002 \n
-                Fax: (650)508-0782"
+                    android:text="*No representative on-site\n400 Harbor Blvd\nBuilding B\nBelmont, CA 94002\nFax: (650)508-0782"
                     android:textAlignment="center"
                     />
 
@@ -207,9 +201,7 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="*No representative on-site \n
-                2500 Midlefield Road \n
-                Redwood City, CA 94063 \n"
+                    android:text="*No representative on-site\n2500 Midlefield Road\nRedwood City, CA 94063\n"
                     android:textAlignment="center"
                     />
 
