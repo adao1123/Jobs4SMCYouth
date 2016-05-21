@@ -13,6 +13,6 @@ private LinearLayout drawerLinearLayout;
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         drawerLinearLayout = (LinearLayout)findViewById(R.id.drawer_linear_layout_id);
-        
+
     }
 }
