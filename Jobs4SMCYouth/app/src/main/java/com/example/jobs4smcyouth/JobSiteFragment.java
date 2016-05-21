@@ -3,9 +3,14 @@ package com.example.jobs4smcyouth;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v7.widget.GridLayoutManager;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import java.util.ArrayList;
 
 
 /**
@@ -23,7 +28,41 @@ public class JobSiteFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_job_site, container, false);
+        View view =  inflater.inflate(R.layout.fragment_job_site, container, false);
+
+        RecyclerView jobListRecyclerView = (RecyclerView)view.findViewById(R.id.jobListFrag_recyclerView);
+
+        ArrayList<String> links = new ArrayList<String>();
+        links.add("Acinet.org");
+        links.add("Ajb.dni.us");
+        links.add("Bajobs.com");
+        links.add("Careers.org");
+        links.add("Craigslist.org");
+        links.add("Bayareacareers.com");
+        links.add("Caljobs.ca.gov");
+        links.add("Careerbuilder.com");
+        links.add("Experience.com");
+        links.add("Glassdoor.com");
+        links.add("Idealist.org");
+        links.add("Indeed.com");
+        links.add("Jobhuntersbible.com");
+        links.add("Jobstar.org");
+        links.add("Monster.com");
+        links.add("Simplyhired.com");
+        links.add("Opportunitynocs.org");
+        links.add("Snagajob.com");
+        links.add("Startuphire.com");
+        links.add("Calopps.org");
+
+
+        JobSiteFragmentRVAdapter jobSiteRVAdapter = new JobSiteFragmentRVAdapter(links);
+
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getActivity(), LinearLayoutManager.VERTICAL, false);
+        GridLayoutManager gridLayoutManager = new GridLayoutManager(getActivity(), 2);
+        jobListRecyclerView.setLayoutManager(gridLayoutManager);
+        jobListRecyclerView.setAdapter(jobSiteRVAdapter);
+
+        return view;
     }
 
 }

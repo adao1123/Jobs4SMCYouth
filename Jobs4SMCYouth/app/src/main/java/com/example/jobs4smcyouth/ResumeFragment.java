@@ -21,7 +21,6 @@ import java.util.List;
  */
 public class ResumeFragment extends Fragment {
 
-    ImageView resumeReference;
 
     public ResumeFragment() {
         // Required empty public constructor
