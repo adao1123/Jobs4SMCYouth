@@ -1,8 +1,10 @@
 package com.example.jobs4smcyouth;
 
 
+import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -32,10 +34,13 @@ public class LaborLawsWebviewFragment extends Fragment {
         // Inflate the layout for this fragment
         View v = inflater.inflate(R.layout.fragment_labor_laws_webview, container, false);
         webView = (WebView) v.findViewById(R.id.laborLaws_webView_id);
-        webView.loadUrl(URL);
+
         customWebViewClient = new CustomWebViewClient();
-        webView.getSettings().setJavaScriptEnabled(true);
         webView.setWebViewClient(customWebViewClient);
+        webView.getSettings().setJavaScriptEnabled(true);
+        webView.loadUrl(URL);
+        customWebViewClient.onLoadResource(webView, URL);
+
         return v;
     }
 
@@ -44,6 +49,12 @@ public class LaborLawsWebviewFragment extends Fragment {
         @Override
         public boolean shouldOverrideUrlLoading(WebView view, String url) {
             return super.shouldOverrideUrlLoading(view, url); //try return false;
+        }
+
+        @Override
+        public void onLoadResource(WebView view, String url) {
+            super.onLoadResource(view, url);
+            Log.i("laborLaws", "onLoadResource: web page is loading");
         }
     }
 
