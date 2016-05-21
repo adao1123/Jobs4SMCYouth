@@ -10,6 +10,9 @@ public class JobListing {
     private String jobPayrate;
     private String jobAge;
 
+    public JobListing() {
+    }
+
     public JobListing(String jobTitle, String jobCity, String jobDuty, String jobPayrate, String jobAge) {
         this.jobTitle = jobTitle;
         this.jobCity = jobCity;
