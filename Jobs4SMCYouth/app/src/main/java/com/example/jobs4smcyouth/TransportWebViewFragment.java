@@ -31,7 +31,7 @@ public class TransportWebViewFragment extends Fragment {
         // Inflate the layout for this fragment
         View v = inflater.inflate(R.layout.fragment_transport_web_view, container, false);
 
-        webView = (WebView) v.findViewById(R.id.laborLaws_webView_id);
+        webView = (WebView) v.findViewById(R.id.transportation_webView_id);
         customWebViewClient = new CustomWebViewClient();
         webView.setWebViewClient(customWebViewClient);
         webView.getSettings().setJavaScriptEnabled(true);
