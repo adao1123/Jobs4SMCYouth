@@ -10,6 +10,7 @@ import android.os.Bundle;
 import android.support.v7.widget.RecyclerView;
 import android.view.MenuItem;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -28,6 +29,7 @@ public class MainActivity extends AppCompatActivity {
     TipFragment tipFragment;
     TransportationFragment transportationFragment;
     DrawerLayout drawerLayout;
+    TextView titleTV;
 
 
     @Override
@@ -35,6 +37,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         drawerLayout = (DrawerLayout)findViewById(R.id.drawerlayout_id);
+        titleTV = (TextView)findViewById(R.id.title_text_id);
         navigationView = (NavigationView)findViewById(R.id.nvView_id);
         initializeFragments();
         initFragmentManager();
@@ -51,6 +54,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void openScreen(){
         fragmentTransaction.replace(R.id.fragment_container_id,jobPostFragment);
+        titleTV.setText("Jobs and Interview Listings");
         fragmentTransaction.commit();
     }
 
@@ -70,36 +74,47 @@ public class MainActivity extends AppCompatActivity {
         switch (menuItem.getItemId()){
             case R.id.drawer_job_post_id:
                 fragmentTransaction.replace(R.id.fragment_container_id, jobPostFragment);
+                titleTV.setText("Jobs and Interview Listings");
                 break;
             case R.id.drawer_scholarship_id:
                 fragmentTransaction.replace(R.id.fragment_container_id, scholarshipFragment);
+                titleTV.setText("Scholarships");
                 break;
             case R.id.drawer_transportation_id:
                 fragmentTransaction.replace(R.id.fragment_container_id, transportationFragment);
+                titleTV.setText("Transportation Vouchers");
                 break;
             case R.id.drawer_requirements_id:
                 fragmentTransaction.replace(R.id.fragment_container_id, requirementFragment);
+                titleTV.setText("Requirements");
                 break;
             case R.id.drawer_success_stories_id:
                 fragmentTransaction.replace(R.id.fragment_container_id, successStoryFragment);
+                titleTV.setText("Success Stories");
                 break;
             case R.id.drawer_about_id:
                 fragmentTransaction.replace(R.id.fragment_container_id, aboutFragment);
+                titleTV.setText("About Jobs4Youth");
                 break;
             case R.id.drawer_applications_id:
                 fragmentTransaction.replace(R.id.fragment_container_id, applicationFragment);
+                titleTV.setText("Applications");
                 break;
             case R.id.drawer_interview_id:
                 fragmentTransaction.replace(R.id.fragment_container_id, interviewFragment);
+                titleTV.setText("Interview Tips");
                 break;
             case R.id.drawer_resume_id:
                 fragmentTransaction.replace(R.id.fragment_container_id, resumeFragment);
+                titleTV.setText("How To Build A Resume");
                 break;
             case R.id.drawer_job_site_id:
                 fragmentTransaction.replace(R.id.fragment_container_id, jobSiteFragment);
+                titleTV.setText("Useful Websites for the Job Search");
                 break;
             case R.id.drawer_tips_id:
                 fragmentTransaction.replace(R.id.fragment_container_id, tipFragment);
+                titleTV.setText("User Tips");
                 break;
             default: break;
         }

@@ -10,11 +10,26 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     android:id="@+id/drawerlayout_id"
     tools:context="com.example.jobs4smcyouth.MainActivity">
-
-    <FrameLayout
-        android:id="@+id/fragment_container_id"
+    <LinearLayout
+        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:layout_height="match_parent">
+        <TextView
+            android:id="@+id/title_text_id"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:layout_margin="12dp"
+            android:textAllCaps="true"
+            android:textColor="@color/primary_dark"
+            android:textSize="25sp" />
+        <FrameLayout
+            android:id="@+id/fragment_container_id"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
+    </LinearLayout>
 
 
     <android.support.design.widget.NavigationView
