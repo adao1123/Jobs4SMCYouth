@@ -2,11 +2,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".LaborLawsWebviewFragment">
+    tools:context="com.example.jobs4smcyouth.TransportWebViewFragment">
 
     <WebView
-        android:id="@+id/laborLaws_webView_id"
+        android:id="@+id/transportation_webView_id"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
     </WebView>
+
 </FrameLayout>
