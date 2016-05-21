@@ -3,6 +3,7 @@ package com.example.jobs4smcyouth;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,6 +15,8 @@ import com.firebase.client.Firebase;
  * A simple {@link Fragment} subclass.
  */
 public class JobPostFragment extends Fragment {
+
+    private static final String TAG = "JOB POST FRAGMENT";
     private Firebase firebaseListings;
 
     public JobPostFragment() {
@@ -32,6 +35,7 @@ public class JobPostFragment extends Fragment {
     public void onViewCreated(View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         handleFirebase();
+        Log.i(TAG, "onViewCreated: ");
     }
 
     private void handleFirebase(){
@@ -40,6 +44,6 @@ public class JobPostFragment extends Fragment {
     }
 
     private void addListingsToFb(){
-        
+
     }
 }
