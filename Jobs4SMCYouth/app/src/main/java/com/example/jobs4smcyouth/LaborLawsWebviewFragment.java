@@ -1,4 +1,4 @@
-package layout;
+package com.example.jobs4smcyouth;
 
 
 import android.os.Bundle;
