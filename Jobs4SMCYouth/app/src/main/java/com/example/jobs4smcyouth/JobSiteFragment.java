@@ -3,9 +3,12 @@ package com.example.jobs4smcyouth;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,7 +19,7 @@ import java.util.ArrayList;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class JobSiteFragment extends Fragment {
+public class JobSiteFragment extends Fragment implements JobSiteFragmentRVAdapter.OnCardViewClickListener {
 
 
     public JobSiteFragment() {
@@ -55,7 +58,7 @@ public class JobSiteFragment extends Fragment {
         links.add("Calopps.org");
 
 
-        JobSiteFragmentRVAdapter jobSiteRVAdapter = new JobSiteFragmentRVAdapter(links);
+        JobSiteFragmentRVAdapter jobSiteRVAdapter = new JobSiteFragmentRVAdapter(links, this);
 
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getActivity(), LinearLayoutManager.VERTICAL, false);
         GridLayoutManager gridLayoutManager = new GridLayoutManager(getActivity(), 2);
@@ -65,4 +68,21 @@ public class JobSiteFragment extends Fragment {
         return view;
     }
 
+    @Override
+    public void onCardViewClick(String link) {
+        Log.d("JobSiteFragment", "Link returned from Adapter: " + link);
+
+        Bundle bundle = new Bundle();
+        bundle.putString("url",link);
+
+        JobSiteWebViewFragment jobSiteWebViewFragment = new JobSiteWebViewFragment();
+        jobSiteWebViewFragment.setArguments(bundle);
+
+        FragmentManager fragmentManager;
+        fragmentManager = getFragmentManager();
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+        fragmentTransaction.replace(R.id.fragment_container_id, jobSiteWebViewFragment);
+        fragmentTransaction.commit();
+
+    }
 }

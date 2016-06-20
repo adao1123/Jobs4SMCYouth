@@ -1,0 +1,13 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.jobs4smcyouth.TransportWebViewFragment">
+
+    <WebView
+        android:id="@+id/jobSite_webView_id"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    </WebView>
+
+</FrameLayout>
