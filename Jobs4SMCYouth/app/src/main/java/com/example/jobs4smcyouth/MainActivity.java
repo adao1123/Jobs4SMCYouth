@@ -40,7 +40,7 @@ public class MainActivity extends AppCompatActivity {
         titleTV = (TextView)findViewById(R.id.title_text_id);
         navigationView = (NavigationView)findViewById(R.id.nvView_id);
         toolbar = (Toolbar) findViewById(R.id.toolbar);
-        toolbar.setTitle(" ");
+        toolbar.setTitle("Job Posting");
         setSupportActionBar(toolbar);
         setActionBarDrawer();
         initializeFragments();
