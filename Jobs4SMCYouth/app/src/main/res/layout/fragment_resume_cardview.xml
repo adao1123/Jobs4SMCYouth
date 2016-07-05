@@ -20,7 +20,7 @@
             android:layout_gravity="center_horizontal"
             android:text="Sample Template"/>
 
-        <ImageView
+        <com.example.jobs4smcyouth.Utilities.TouchImageView
             android:id="@+id/resumeFrag_template_imageView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />

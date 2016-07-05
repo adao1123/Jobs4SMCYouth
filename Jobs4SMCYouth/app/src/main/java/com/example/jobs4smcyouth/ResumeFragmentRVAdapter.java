@@ -6,6 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 
+import com.example.jobs4smcyouth.Utilities.TouchImageView;
 import com.squareup.picasso.Picasso;
 
 import java.util.List;
@@ -20,11 +21,11 @@ public class ResumeFragmentRVAdapter extends RecyclerView.Adapter<ResumeFragment
 
     public static class ResumeViewHolder extends RecyclerView.ViewHolder{
 
-        ImageView templateImageView;
+        TouchImageView templateImageView;
 
         ResumeViewHolder(View itemView){
             super(itemView);
-            templateImageView = (ImageView)itemView.findViewById(R.id.resumeFrag_template_imageView);
+            templateImageView = (TouchImageView)itemView.findViewById(R.id.resumeFrag_template_imageView);
         }
     }
 
