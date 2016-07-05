@@ -7,6 +7,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.example.jobs4smcyouth.Utilities.ExpandableTextView;
+
 import java.util.ArrayList;
 
 /**
@@ -46,11 +48,11 @@ public class SuccessStoryAdapter extends RecyclerView.Adapter<SuccessStoryAdapte
 
     public static class ViewHolder extends RecyclerView.ViewHolder{
         public TextView successNameTV;
-        public TextView successStoryTV;
+        public ExpandableTextView successStoryTV;
         public ViewHolder(View itemView) {
             super(itemView);
             successNameTV = (TextView)itemView.findViewById(R.id.rv_item_success_name);
-            successStoryTV = (TextView)itemView.findViewById(R.id.rv_item_success_story);
+            successStoryTV = (ExpandableTextView) itemView.findViewById(R.id.rv_item_success_story);
         }
     }
 }
