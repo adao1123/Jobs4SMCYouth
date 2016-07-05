@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 
+import com.example.jobs4smcyouth.Utilities.TouchImageView;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
@@ -31,14 +32,14 @@ public class ApplicationFragment extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_application, container, false);
 
-        ImageView masterForm1ImageView = (ImageView)view.findViewById(R.id.application_masterForm1_imageView);
-        ImageView masterForm2ImageView = (ImageView)view.findViewById(R.id.application_masterForm2_imageView);
-        ImageView volunteerForm1ImageView = (ImageView)view.findViewById(R.id.application_sampleVolunteerForm1_imageView);
-        ImageView volunteerForm2ImageView = (ImageView)view.findViewById(R.id.application_sampleVolunteerForm2_imageView);
-        ImageView noExperienceForm1ImageView = (ImageView)view.findViewById(R.id.application_noExperienceForm1_imageView);
-        ImageView noExperienceForm2ImageView = (ImageView)view.findViewById(R.id.application_noExperienceForm2_imageView);
-        ImageView jobExperienceForm1ImageView = (ImageView)view.findViewById(R.id.application_jobExperienceForm1_imageView);
-        ImageView jobExperienceForm2ImageView = (ImageView)view.findViewById(R.id.application_jobExperienceForm2_imageView);
+        TouchImageView masterForm1ImageView = (TouchImageView)view.findViewById(R.id.application_masterForm1_imageView);
+        TouchImageView masterForm2ImageView = (TouchImageView)view.findViewById(R.id.application_masterForm2_imageView);
+        TouchImageView volunteerForm1ImageView = (TouchImageView)view.findViewById(R.id.application_sampleVolunteerForm1_imageView);
+        TouchImageView volunteerForm2ImageView = (TouchImageView)view.findViewById(R.id.application_sampleVolunteerForm2_imageView);
+        TouchImageView noExperienceForm1ImageView = (TouchImageView)view.findViewById(R.id.application_noExperienceForm1_imageView);
+        TouchImageView noExperienceForm2ImageView = (TouchImageView)view.findViewById(R.id.application_noExperienceForm2_imageView);
+        TouchImageView jobExperienceForm1ImageView = (TouchImageView)view.findViewById(R.id.application_jobExperienceForm1_imageView);
+        TouchImageView jobExperienceForm2ImageView = (TouchImageView)view.findViewById(R.id.application_jobExperienceForm2_imageView);
 
         List<String> links = new ArrayList<String>();
         links.add("http://i.imgur.com/OlLu3bc.png"); // MasterApplication Page 1
@@ -51,6 +52,7 @@ public class ApplicationFragment extends Fragment {
         links.add("http://i.imgur.com/oKi8Mk4.png"); // SampleJobExperience2
 
         List<ImageView> imageViews = new ArrayList<ImageView>();
+        imageViews.add(masterForm1ImageView);
         imageViews.add(masterForm2ImageView);
         imageViews.add(volunteerForm1ImageView);
         imageViews.add(volunteerForm2ImageView);
@@ -65,6 +67,7 @@ public class ApplicationFragment extends Fragment {
                     .resize(1000, 1700)
                     .into(imageViews.get(i));
         }
+
 
         return view;
     }
