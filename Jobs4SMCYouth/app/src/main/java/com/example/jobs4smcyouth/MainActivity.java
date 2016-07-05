@@ -1,15 +1,15 @@
 package com.example.jobs4smcyouth;
 
-import android.app.Application;
 import android.support.design.widget.NavigationView;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
+import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
+import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
@@ -30,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
     TransportationFragment transportationFragment;
     DrawerLayout drawerLayout;
     TextView titleTV;
-
+    Toolbar toolbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,6 +39,10 @@ public class MainActivity extends AppCompatActivity {
         drawerLayout = (DrawerLayout)findViewById(R.id.drawerlayout_id);
         titleTV = (TextView)findViewById(R.id.title_text_id);
         navigationView = (NavigationView)findViewById(R.id.nvView_id);
+        toolbar = (Toolbar) findViewById(R.id.toolbar);
+        toolbar.setTitle(" ");
+        setSupportActionBar(toolbar);
+        setActionBarDrawer();
         initializeFragments();
         initFragmentManager();
         openScreen();
@@ -120,7 +124,7 @@ public class MainActivity extends AppCompatActivity {
         }
         fragmentTransaction.commit();
         menuItem.setChecked(true);
-        //setTitle(menuItem.getTitle());
+        toolbar.setTitle(menuItem.getTitle());
         drawerLayout.closeDrawers();
     }
 
@@ -138,4 +142,24 @@ public class MainActivity extends AppCompatActivity {
         transportationFragment = new TransportationFragment();
     }
 
+
+    private void setActionBarDrawer() {
+        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
+                this, drawerLayout, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
+        drawerLayout.setDrawerListener(toggle);
+        toggle.syncState();
+    }
+
+    @Override
+    public void onBackPressed() {
+        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawerlayout_id);
+        if (drawer.isDrawerOpen(GravityCompat.START)) {
+            drawer.closeDrawer(GravityCompat.START);
+        } else {
+            super.onBackPressed();
+        }
+    }
+
 }
+
+
