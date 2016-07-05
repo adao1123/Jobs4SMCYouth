@@ -81,7 +81,7 @@ public class JobPostFragment extends Fragment {
         jobListingRV.setLayoutManager(new LinearLayoutManager(getContext()));
     }
 
-    private static class JobsViewHolder extends RecyclerView.ViewHolder{
+    protected static class JobsViewHolder extends RecyclerView.ViewHolder{
         public TextView jobsTitleTV;
         public TextView jobsCityTV;
         public TextView jobsDutiesTV;
