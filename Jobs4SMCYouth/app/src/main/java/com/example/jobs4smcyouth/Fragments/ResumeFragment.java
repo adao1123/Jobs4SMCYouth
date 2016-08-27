@@ -1,4 +1,4 @@
-package com.example.jobs4smcyouth;
+package com.example.jobs4smcyouth.Fragments;
 
 
 import android.os.Bundle;
@@ -10,6 +10,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 
+import com.example.jobs4smcyouth.R;
+import com.example.jobs4smcyouth.ResumeFragmentRVAdapter;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;

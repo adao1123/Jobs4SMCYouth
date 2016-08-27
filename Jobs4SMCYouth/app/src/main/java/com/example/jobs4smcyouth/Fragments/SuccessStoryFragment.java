@@ -1,4 +1,4 @@
-package com.example.jobs4smcyouth;
+package com.example.jobs4smcyouth.Fragments;
 
 
 import android.os.Bundle;
@@ -10,6 +10,8 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.jobs4smcyouth.Models.SuccessStory;
+import com.example.jobs4smcyouth.R;
+import com.example.jobs4smcyouth.SuccessStoryAdapter;
 
 import java.util.ArrayList;
 

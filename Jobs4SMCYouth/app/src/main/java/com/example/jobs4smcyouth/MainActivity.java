@@ -12,6 +12,18 @@ import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.widget.TextView;
 
+import com.example.jobs4smcyouth.Fragments.AboutFragment;
+import com.example.jobs4smcyouth.Fragments.ApplicationFragment;
+import com.example.jobs4smcyouth.Fragments.InterviewFragment;
+import com.example.jobs4smcyouth.Fragments.JobPostFragment;
+import com.example.jobs4smcyouth.Fragments.JobSiteFragment;
+import com.example.jobs4smcyouth.Fragments.RequirementFragment;
+import com.example.jobs4smcyouth.Fragments.ResumeFragment;
+import com.example.jobs4smcyouth.Fragments.ScholarshipFragment;
+import com.example.jobs4smcyouth.Fragments.SuccessStoryFragment;
+import com.example.jobs4smcyouth.Fragments.TipFragment;
+import com.example.jobs4smcyouth.Fragments.TransportationFragment;
+
 public class MainActivity extends AppCompatActivity {
 
     FragmentManager fragmentManager;
