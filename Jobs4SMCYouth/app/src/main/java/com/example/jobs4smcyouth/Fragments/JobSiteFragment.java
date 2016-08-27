@@ -13,7 +13,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.example.jobs4smcyouth.JobSiteFragmentRVAdapter;
+import com.example.jobs4smcyouth.Adapters.JobSiteFragmentRVAdapter;
 import com.example.jobs4smcyouth.R;
 
 import java.util.ArrayList;

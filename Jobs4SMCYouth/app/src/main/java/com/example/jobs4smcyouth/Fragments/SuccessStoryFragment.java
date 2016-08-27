@@ -11,7 +11,7 @@ import android.view.ViewGroup;
 
 import com.example.jobs4smcyouth.Models.SuccessStory;
 import com.example.jobs4smcyouth.R;
-import com.example.jobs4smcyouth.SuccessStoryAdapter;
+import com.example.jobs4smcyouth.Adapters.SuccessStoryAdapter;
 
 import java.util.ArrayList;
 
