@@ -1,4 +1,4 @@
-package com.example.jobs4smcyouth;
+package com.example.jobs4smcyouth.Fragments;
 
 
 import android.os.Bundle;
@@ -12,6 +12,9 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import com.example.jobs4smcyouth.Adapters.JobSiteFragmentRVAdapter;
+import com.example.jobs4smcyouth.R;
 
 import java.util.ArrayList;
 

@@ -2,7 +2,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.jobs4smcyouth.TransportWebViewFragment">
+    tools:context=".Fragments.TransportWebViewFragment">
 
     <WebView
         android:id="@+id/jobSite_webView_id"

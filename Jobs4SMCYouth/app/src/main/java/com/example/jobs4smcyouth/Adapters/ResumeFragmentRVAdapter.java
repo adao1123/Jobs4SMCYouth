@@ -1,11 +1,11 @@
-package com.example.jobs4smcyouth;
+package com.example.jobs4smcyouth.Adapters;
 
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 
+import com.example.jobs4smcyouth.R;
 import com.example.jobs4smcyouth.Utilities.TouchImageView;
 import com.squareup.picasso.Picasso;
 

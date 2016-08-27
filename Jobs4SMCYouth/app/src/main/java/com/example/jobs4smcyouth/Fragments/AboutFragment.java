@@ -1,4 +1,4 @@
-package com.example.jobs4smcyouth;
+package com.example.jobs4smcyouth.Fragments;
 
 
 import android.content.Intent;
@@ -9,6 +9,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+
+import com.example.jobs4smcyouth.R;
 
 import org.w3c.dom.Text;
 

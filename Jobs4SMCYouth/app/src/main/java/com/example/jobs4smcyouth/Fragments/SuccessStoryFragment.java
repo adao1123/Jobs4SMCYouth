@@ -1,4 +1,4 @@
-package com.example.jobs4smcyouth;
+package com.example.jobs4smcyouth.Fragments;
 
 
 import android.os.Bundle;
@@ -9,8 +9,11 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.example.jobs4smcyouth.Models.SuccessStory;
+import com.example.jobs4smcyouth.R;
+import com.example.jobs4smcyouth.Adapters.SuccessStoryAdapter;
+
 import java.util.ArrayList;
-import java.util.Arrays;
 
 
 /**
@@ -38,7 +41,10 @@ public class SuccessStoryFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
         SuccessStoryAdapter successStoryAdapter = new SuccessStoryAdapter(getStories());
         successRV.setAdapter(successStoryAdapter);
-        successRV.setLayoutManager(new LinearLayoutManager(getContext()));
+
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext());
+        //GridLayoutManager gridLayoutManager = new GridLayoutManager(getContext(), 2);
+        successRV.setLayoutManager(linearLayoutManager);
     }
 
     private ArrayList<SuccessStory> getStories(){
