@@ -10,6 +10,7 @@ import android.widget.TextView;
 import com.example.jobs4smcyouth.Models.SuccessStory;
 import com.example.jobs4smcyouth.R;
 import com.example.jobs4smcyouth.Utilities.ExpandableTextView;
+import com.github.ivbaranov.mli.MaterialLetterIcon;
 
 import java.util.ArrayList;
 
@@ -30,6 +31,13 @@ public class SuccessStoryAdapter extends RecyclerView.Adapter<SuccessStoryAdapte
         LayoutInflater layoutInflater = LayoutInflater.from(context);
         View view = layoutInflater.inflate(R.layout.rv_item_success, parent, false);
         ViewHolder viewHolder = new ViewHolder(view);
+
+        MaterialLetterIcon icon = new MaterialLetterIcon.Builder(context)
+                .letter("S")
+                .letterSize(26)
+                .lettersNumber(1)
+                .create();
+
         return viewHolder;
     }
 
