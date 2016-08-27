@@ -1,4 +1,4 @@
-package com.example.jobs4smcyouth;
+package com.example.jobs4smcyouth.Fragments;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -9,6 +9,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
+
+import com.example.jobs4smcyouth.R;
 
 /**
  * Created by samsiu on 6/20/16.
