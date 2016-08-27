@@ -3,6 +3,7 @@ package com.example.jobs4smcyouth;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -38,7 +39,10 @@ public class SuccessStoryFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
         SuccessStoryAdapter successStoryAdapter = new SuccessStoryAdapter(getStories());
         successRV.setAdapter(successStoryAdapter);
-        successRV.setLayoutManager(new LinearLayoutManager(getContext()));
+
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext());
+        //GridLayoutManager gridLayoutManager = new GridLayoutManager(getContext(), 2);
+        successRV.setLayoutManager(linearLayoutManager);
     }
 
     private ArrayList<SuccessStory> getStories(){
