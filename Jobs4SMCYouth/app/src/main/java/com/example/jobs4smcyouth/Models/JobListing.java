@@ -1,4 +1,4 @@
-package com.example.jobs4smcyouth;
+package com.example.jobs4smcyouth.Models;
 
 /**
  * Created by adao1 on 5/21/2016.
