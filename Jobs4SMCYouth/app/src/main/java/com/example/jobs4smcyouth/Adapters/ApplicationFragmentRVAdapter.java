@@ -14,13 +14,20 @@ import java.util.List;
 /**
  * Created by samsiu on 7/5/16.
  */
-public class ApplicationFragmentRVAdapter extends RecyclerView.Adapter<ApplicationFragmentRVAdapter.ApplicationViewHolder>{
+public class ApplicationFragmentRVAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>{
 
 
     private final List<String> imageLinks;
     Picasso picasso;
 
-    public static class ApplicationViewHolder extends RecyclerView.ViewHolder{
+    class ApplicationRulesViewHolder extends RecyclerView.ViewHolder{
+
+        ApplicationRulesViewHolder(View itemView){
+            super(itemView);
+        }
+    }
+
+    class ApplicationViewHolder extends RecyclerView.ViewHolder{
         TouchImageView touchImageView;
 
         ApplicationViewHolder(View itemView){
@@ -39,21 +46,40 @@ public class ApplicationFragmentRVAdapter extends RecyclerView.Adapter<Applicati
     }
 
     @Override
-    public ApplicationViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.rv_item_application, parent, false);
-        ApplicationViewHolder applicationViewHolder = new ApplicationViewHolder(view);
-
-        picasso = Picasso.with(parent.getContext());
-
-        return applicationViewHolder;
+    public int getItemViewType(int position) {
+        if(position == 0){
+            return 0;
+        }else if(position == 1){
+            return 1;
+        }else{
+            return position;
+        }
     }
 
     @Override
-    public void onBindViewHolder(ApplicationViewHolder holder, int position) {
-        picasso.load(imageLinks.get(position))
-                .resize(1000, 1700)
-                .into(holder.touchImageView);
+    public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
 
+        switch(viewType){
+            case 0:
+                View viewRule = LayoutInflater.from(parent.getContext()).inflate(R.layout.rv_item_application, parent, false);
+                return new ApplicationRulesViewHolder(viewRule);
+            default:
+                picasso = Picasso.with(parent.getContext());
+                View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.rv_item_application_one, parent, false);
+                return new ApplicationViewHolder(view);
+        }
+    }
+
+    @Override
+    public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
+        final int itemType = getItemViewType(position);
+        if(itemType == 0){
+        }
+        else{
+            picasso.load(imageLinks.get(position))
+                    .resize(1000, 1700)
+                    .into(((ApplicationViewHolder)holder).touchImageView);
+        }
     }
 
     @Override
