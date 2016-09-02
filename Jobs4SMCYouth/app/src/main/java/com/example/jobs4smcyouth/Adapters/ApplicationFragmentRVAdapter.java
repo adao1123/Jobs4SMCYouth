@@ -40,7 +40,7 @@ public class ApplicationFragmentRVAdapter extends RecyclerView.Adapter<Applicati
 
     @Override
     public ApplicationViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.rv_item_application, parent, false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.rv_item_application_one, parent, false);
         ApplicationViewHolder applicationViewHolder = new ApplicationViewHolder(view);
 
         picasso = Picasso.with(parent.getContext());
