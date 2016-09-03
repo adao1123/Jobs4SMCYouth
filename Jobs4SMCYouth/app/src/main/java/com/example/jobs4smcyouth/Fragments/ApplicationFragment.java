@@ -3,6 +3,7 @@ package com.example.jobs4smcyouth.Fragments;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -36,6 +37,7 @@ public class ApplicationFragment extends Fragment {
         RecyclerView applicationRecyclerView = (RecyclerView)view.findViewById(R.id.applicationFrag_recyclerView);
 
         List<String> links = new ArrayList<String>();
+        links.add("");
         links.add("http://i.imgur.com/OlLu3bc.png"); // MasterApplication Page 1
         links.add("http://i.imgur.com/SSd9mo2.png"); // MasterApplication Page 2
         links.add("http://i.imgur.com/oNepSHq.png"); // SampleVolunteerExperience1
@@ -46,9 +48,16 @@ public class ApplicationFragment extends Fragment {
         links.add("http://i.imgur.com/oKi8Mk4.png"); // SampleJobExperience2
 
         ApplicationFragmentRVAdapter applicationFragmentRVAdapter = new ApplicationFragmentRVAdapter(links);
+        applicationFragmentRVAdapter.notifyItemRangeChanged(0, applicationFragmentRVAdapter.getItemCount());
+        applicationRecyclerView.setHasFixedSize(true);
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getActivity(),LinearLayoutManager.VERTICAL, false);
         applicationRecyclerView.setLayoutManager(linearLayoutManager);
         applicationRecyclerView.setAdapter(applicationFragmentRVAdapter);
+
+        RecyclerView.ItemAnimator itemAnimator = new DefaultItemAnimator();
+        itemAnimator.setAddDuration(1000);
+        itemAnimator.setRemoveDuration(1000);
+        applicationRecyclerView.setItemAnimator(itemAnimator);
 
         return view;
     }
