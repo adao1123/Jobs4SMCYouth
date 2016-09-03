@@ -1,6 +1,7 @@
 package com.example.jobs4smcyouth.Adapters;
 
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -34,6 +35,13 @@ public class ApplicationFragmentRVAdapter extends RecyclerView.Adapter<RecyclerV
             super(itemView);
             touchImageView = (TouchImageView)itemView.findViewById(R.id.application_touchImageView);
         }
+
+        public void bindView(int position){
+            picasso.load(imageLinks.get(position))
+                    .resize(1000, 1700)
+                    .into(touchImageView);
+        }
+
     }
 
     public ApplicationFragmentRVAdapter(List<String> imageLinks){
@@ -73,12 +81,11 @@ public class ApplicationFragmentRVAdapter extends RecyclerView.Adapter<RecyclerV
     @Override
     public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
         final int itemType = getItemViewType(position);
+        Log.d("RecyclerView", "Position: "+position);
         if(itemType == 0){
         }
         else{
-            picasso.load(imageLinks.get(position))
-                    .resize(1000, 1700)
-                    .into(((ApplicationViewHolder)holder).touchImageView);
+            ((ApplicationViewHolder)holder).bindView(position);
         }
     }
 
