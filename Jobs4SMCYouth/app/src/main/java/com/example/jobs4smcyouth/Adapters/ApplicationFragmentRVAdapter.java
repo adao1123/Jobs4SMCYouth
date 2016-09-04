@@ -7,6 +7,8 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.jobs4smcyouth.R;
+import com.example.jobs4smcyouth.Utilities.EventBus.ApplicationRulesClickEvent;
+import com.example.jobs4smcyouth.Utilities.EventBus.MainBus;
 import com.example.jobs4smcyouth.Utilities.TouchImageView;
 import com.squareup.picasso.Picasso;
 
@@ -27,9 +29,10 @@ public class ApplicationFragmentRVAdapter extends RecyclerView.Adapter<RecyclerV
         public void bind(){
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
-                public void onClick(View v) {
+                public void onClick(View view) {
                     Log.d("RE", "CLICKED");
                     //applicationOneClickListener.onApplicationOneClick();
+                    MainBus.getInstance().post(new ApplicationRulesClickEvent(view));
                 }
             });
         }
