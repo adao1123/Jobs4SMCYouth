@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+
+    <TextView
+        android:id="@+id/application_rule1_tv_id"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="1.) Read the question first." />
+
+    <TextView
+        android:id="@+id/application_rule2_tv_id"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="2.) Print neatly in blue or black ink." />
+
+    <TextView
+        android:id="@+id/application_rule3_tv_id"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="3.) Make sure your application is neat and everyone can read your writing; no cross outs." />
+
+    <TextView
+        android:id="@+id/application_rule4_tv_id"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="4.) Complete all information, write N/A if it doesn’t apply to you." />
+
+    <TextView
+        android:id="@+id/application_rule5_tv_id"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="5.) Write three specific duties in phrases under duties section." />
+
+    <TextView
+        android:id="@+id/application_rule6_tv_id"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="6.) Write open for desired salary." />
+
+    <TextView
+        android:id="@+id/application_rule7_tv_id"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="7.) Write in only month and year under date started/ended." />
+
+    <TextView
+        android:id="@+id/application_rule8_tv_id"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="8.) Turn in job application without any creases." />
+
+    <TextView
+        android:id="@+id/application_rule9_tv_id"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="9.) Most recent job is always first in employment history." />
+
+    <TextView
+        android:id="@+id/application_rule10_tv_id"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="10.) Sign and date the job application." />
+
+</LinearLayout>

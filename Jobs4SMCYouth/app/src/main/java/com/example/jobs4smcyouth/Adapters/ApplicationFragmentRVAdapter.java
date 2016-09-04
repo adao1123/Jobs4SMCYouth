@@ -22,10 +22,10 @@ public class ApplicationFragmentRVAdapter extends RecyclerView.Adapter<RecyclerV
     Picasso picasso;
 
     class ApplicationRulesViewHolder extends RecyclerView.ViewHolder{
-
         ApplicationRulesViewHolder(View itemView){
             super(itemView);
         }
+
     }
 
     class ApplicationViewHolder extends RecyclerView.ViewHolder{
@@ -73,7 +73,7 @@ public class ApplicationFragmentRVAdapter extends RecyclerView.Adapter<RecyclerV
                 return new ApplicationRulesViewHolder(viewRule);
             default:
                 picasso = Picasso.with(parent.getContext());
-                View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.rv_item_application_one, parent, false);
+                View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.rv_item_application_two, parent, false);
                 return new ApplicationViewHolder(view);
         }
     }
@@ -83,6 +83,12 @@ public class ApplicationFragmentRVAdapter extends RecyclerView.Adapter<RecyclerV
         final int itemType = getItemViewType(position);
         Log.d("RecyclerView", "Position: "+position);
         if(itemType == 0){
+            holder.itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+
+                }
+            });
         }
         else{
             ((ApplicationViewHolder)holder).bindView(position);
