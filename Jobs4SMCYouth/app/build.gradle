@@ -39,4 +39,8 @@ dependencies {
     compile 'com.squareup.picasso:picasso:2.3.3'
 
     compile 'com.github.ivbaranov:materiallettericon:0.2.2'
+
+    compile 'io.reactivex:rxandroid:1.2.1'
+    compile 'io.reactivex:rxjava:1.1.6'
+
 }

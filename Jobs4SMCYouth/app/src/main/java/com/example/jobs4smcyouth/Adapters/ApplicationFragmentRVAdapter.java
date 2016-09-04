@@ -7,6 +7,8 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.jobs4smcyouth.R;
+import com.example.jobs4smcyouth.Utilities.EventBus.ApplicationRulesClickEvent;
+import com.example.jobs4smcyouth.Utilities.EventBus.MainBus;
 import com.example.jobs4smcyouth.Utilities.TouchImageView;
 import com.squareup.picasso.Picasso;
 
@@ -17,15 +19,24 @@ import java.util.List;
  */
 public class ApplicationFragmentRVAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>{
 
-
     private final List<String> imageLinks;
     Picasso picasso;
 
     class ApplicationRulesViewHolder extends RecyclerView.ViewHolder{
-
         ApplicationRulesViewHolder(View itemView){
             super(itemView);
         }
+        public void bind(){
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Log.d("RE", "CLICKED");
+                    //applicationOneClickListener.onApplicationOneClick();
+                    MainBus.getInstance().post(new ApplicationRulesClickEvent(view));
+                }
+            });
+        }
+
     }
 
     class ApplicationViewHolder extends RecyclerView.ViewHolder{
@@ -73,16 +84,22 @@ public class ApplicationFragmentRVAdapter extends RecyclerView.Adapter<RecyclerV
                 return new ApplicationRulesViewHolder(viewRule);
             default:
                 picasso = Picasso.with(parent.getContext());
-                View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.rv_item_application_one, parent, false);
+                View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.rv_item_application_two, parent, false);
                 return new ApplicationViewHolder(view);
         }
     }
 
     @Override
-    public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
+    public void onBindViewHolder(final RecyclerView.ViewHolder holder, int position) {
         final int itemType = getItemViewType(position);
         Log.d("RecyclerView", "Position: "+position);
         if(itemType == 0){
+            holder.itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    ((ApplicationRulesViewHolder)holder).bind();
+                }
+            });
         }
         else{
             ((ApplicationViewHolder)holder).bindView(position);
