@@ -12,9 +12,9 @@ import com.example.jobs4smcyouth.R;
 /**
  * Created by samsiu on 9/3/16.
  */
-public class ApplicationDetailFragment extends Fragment {
+public class ApplicationRulesFragment extends Fragment {
 
-    public ApplicationDetailFragment() {
+    public ApplicationRulesFragment() {
 
     }
 
