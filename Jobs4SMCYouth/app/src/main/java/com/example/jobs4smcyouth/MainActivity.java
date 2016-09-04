@@ -197,8 +197,9 @@ public class MainActivity extends AppCompatActivity {
         @Override
         public void onNext(Object o) {
             if (o instanceof ApplicationRulesClickEvent){
-                ApplicationRulesClickEvent event = (ApplicationRulesClickEvent) o;
-                Log.d("HELLO", "LSKDFJLSDJF");
+                initFragmentManager();
+                fragmentTransaction.replace(R.id.fragment_container_id, applicationDetailFragment);
+                fragmentTransaction.commit();
             }
         }
     };
