@@ -13,6 +13,7 @@ import android.view.MenuItem;
 import android.widget.TextView;
 
 import com.example.jobs4smcyouth.Fragments.AboutFragment;
+import com.example.jobs4smcyouth.Fragments.ApplicationDetailFragment;
 import com.example.jobs4smcyouth.Fragments.ApplicationFragment;
 import com.example.jobs4smcyouth.Fragments.InterviewFragment;
 import com.example.jobs4smcyouth.Fragments.JobPostFragment;
@@ -31,6 +32,7 @@ public class MainActivity extends AppCompatActivity {
     NavigationView navigationView;
     AboutFragment aboutFragment;
     ApplicationFragment applicationFragment;
+    ApplicationDetailFragment applicationDetailFragment;
     InterviewFragment interviewFragment;
     JobPostFragment jobPostFragment;
     JobSiteFragment jobSiteFragment;
@@ -143,6 +145,7 @@ public class MainActivity extends AppCompatActivity {
     private void initializeFragments(){
         aboutFragment = new AboutFragment();
         applicationFragment = new ApplicationFragment();
+        applicationDetailFragment = new ApplicationDetailFragment();
         interviewFragment = new InterviewFragment();
         jobPostFragment = new JobPostFragment();
         jobSiteFragment = new JobSiteFragment();

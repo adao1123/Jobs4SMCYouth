@@ -7,6 +7,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.example.jobs4smcyouth.R;
+
 /**
  * Created by samsiu on 9/3/16.
  */
@@ -19,7 +21,8 @@ public class ApplicationDetailFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        return super.onCreateView(inflater, container, savedInstanceState);
+        View view = inflater.inflate(R.layout.fragment_application_detail, container, false);
+        return view;
     }
 }
 

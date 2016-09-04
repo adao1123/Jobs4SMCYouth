@@ -17,13 +17,21 @@ import java.util.List;
  */
 public class ApplicationFragmentRVAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>{
 
-
     private final List<String> imageLinks;
     Picasso picasso;
 
     class ApplicationRulesViewHolder extends RecyclerView.ViewHolder{
         ApplicationRulesViewHolder(View itemView){
             super(itemView);
+        }
+        public void bind(){
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Log.d("RE", "CLICKED");
+                    //applicationOneClickListener.onApplicationOneClick();
+                }
+            });
         }
 
     }
@@ -79,14 +87,14 @@ public class ApplicationFragmentRVAdapter extends RecyclerView.Adapter<RecyclerV
     }
 
     @Override
-    public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
+    public void onBindViewHolder(final RecyclerView.ViewHolder holder, int position) {
         final int itemType = getItemViewType(position);
         Log.d("RecyclerView", "Position: "+position);
         if(itemType == 0){
             holder.itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-
+                    ((ApplicationRulesViewHolder)holder).bind();
                 }
             });
         }
