@@ -84,6 +84,7 @@ public class JobSiteFragment extends Fragment implements JobSiteFragmentRVAdapte
         FragmentManager fragmentManager;
         fragmentManager = getFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+        fragmentTransaction.addToBackStack("Jobs");
         fragmentTransaction.replace(R.id.fragment_container_id, jobSiteWebViewFragment);
         fragmentTransaction.commit();
 
