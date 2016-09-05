@@ -40,7 +40,7 @@ public class ResumeFragmentRVAdapter extends RecyclerView.Adapter<ResumeFragment
 
     @Override
     public ResumeViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.fragment_resume_cardview, parent, false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.rv_item_resume_two, parent, false);
         ResumeViewHolder resumeViewHolder = new ResumeViewHolder(view);
 
         picasso = Picasso.with(parent.getContext());
