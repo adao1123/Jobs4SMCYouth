@@ -1,4 +1,4 @@
-package com.example.jobs4smcyouth.Adapters;
+package com.example.jobs4smcyouth.Fragments.Resume;
 
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -39,7 +39,6 @@ public class ResumeFragmentRVAdapter extends RecyclerView.Adapter<RecyclerView.V
                     resumeClickListener.ClickListener();
                 }
             });
-
         }
     }
 

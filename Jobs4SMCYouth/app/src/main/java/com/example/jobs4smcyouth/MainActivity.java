@@ -19,7 +19,7 @@ import com.example.jobs4smcyouth.Fragments.InterviewFragment;
 import com.example.jobs4smcyouth.Fragments.JobPostFragment;
 import com.example.jobs4smcyouth.Fragments.JobSiteFragment;
 import com.example.jobs4smcyouth.Fragments.RequirementFragment;
-import com.example.jobs4smcyouth.Fragments.ResumeFragment;
+import com.example.jobs4smcyouth.Fragments.Resume.ResumeFragment;
 import com.example.jobs4smcyouth.Fragments.ScholarshipFragment;
 import com.example.jobs4smcyouth.Fragments.SuccessStoryFragment;
 import com.example.jobs4smcyouth.Fragments.TipFragment;

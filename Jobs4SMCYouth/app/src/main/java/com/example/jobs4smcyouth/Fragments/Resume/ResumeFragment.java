@@ -1,4 +1,4 @@
-package com.example.jobs4smcyouth.Fragments;
+package com.example.jobs4smcyouth.Fragments.Resume;
 
 
 import android.os.Bundle;
@@ -13,7 +13,6 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.jobs4smcyouth.R;
-import com.example.jobs4smcyouth.Adapters.ResumeFragmentRVAdapter;
 
 import java.util.ArrayList;
 
@@ -58,13 +57,13 @@ public class ResumeFragment extends Fragment implements ResumeFragmentRVAdapter.
     public void ClickListener() {
         Log.d("RESUME", "WEBSITES WAS CLICKED");
 
+        ResumeWebsitesFragment resumeWebsitesFragment = new ResumeWebsitesFragment();
 
-//
-//        FragmentManager fragmentManager;
-//        fragmentManager = getFragmentManager();
-//        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-//        fragmentTransaction.addToBackStack("ResumeSites");
-//        fragmentTransaction.replace(R.id.fragment_container_id, );
-//        fragmentTransaction.commit();
+        FragmentManager fragmentManager;
+        fragmentManager = getFragmentManager();
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+        fragmentTransaction.addToBackStack("ResumeSites");
+        fragmentTransaction.replace(R.id.fragment_container_id, resumeWebsitesFragment);
+        fragmentTransaction.commit();
     }
 }
