@@ -14,12 +14,21 @@ import java.util.List;
 /**
  * Created by samsiu on 5/21/16.
  */
-public class ResumeFragmentRVAdapter extends RecyclerView.Adapter<ResumeFragmentRVAdapter.ResumeViewHolder> {
+public class ResumeFragmentRVAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
     private final List<String> links;
     Picasso picasso;
 
-    public static class ResumeViewHolder extends RecyclerView.ViewHolder{
+
+    class ResumeWebsitesViewHolder extends RecyclerView.ViewHolder{
+
+        ResumeWebsitesViewHolder(View itemView){
+            super(itemView);
+        }
+    }
+
+
+    class ResumeViewHolder extends RecyclerView.ViewHolder{
 
         TouchImageView templateImageView;
 
@@ -39,20 +48,47 @@ public class ResumeFragmentRVAdapter extends RecyclerView.Adapter<ResumeFragment
     }
 
     @Override
-    public ResumeViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.rv_item_resume_two, parent, false);
-        ResumeViewHolder resumeViewHolder = new ResumeViewHolder(view);
-
-        picasso = Picasso.with(parent.getContext());
-
-        return resumeViewHolder;
+    public int getItemViewType(int position) {
+        if(position == 0){
+            return 0;
+        } else if(position == 1){
+            return 1;
+        }else{
+            return position;
+        }
     }
 
     @Override
-    public void onBindViewHolder(ResumeViewHolder holder, int position) {
-        picasso.load(links.get(position))  // Load image from URL
-                .resize(1000, 1400)                        // Resize Image
-                .into(holder.templateImageView);      // Load image to view
+    public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+
+        if(viewType == 0){
+            View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.rv_item_resume, parent, false);
+            ResumeWebsitesViewHolder resumeWebsitesViewHolder = new ResumeWebsitesViewHolder(view);
+            return resumeWebsitesViewHolder;
+
+        }else{
+            View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.rv_item_resume_two, parent, false);
+            ResumeViewHolder resumeViewHolder = new ResumeViewHolder(view);
+
+            picasso = Picasso.with(parent.getContext());
+
+            return resumeViewHolder;
+        }
+
+    }
+
+    @Override
+    public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
+        final int itemType = getItemViewType(position);
+
+        if(itemType == 0){
+
+        }else{
+            picasso.load(links.get(position))  // Load image from URL
+                    .resize(1000, 1400)                        // Resize Image
+                    .into(((ResumeViewHolder)holder).templateImageView);      // Load image to view
+        }
+
     }
 
     @Override
