@@ -66,7 +66,6 @@ public class JobSiteFragmentRVAdapter extends RecyclerView.Adapter<JobSiteFragme
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.fragment_job_site_cardview, parent, false);
         JobSiteViewHolder jobSiteViewHolder = new JobSiteViewHolder(view);
 
-
         picasso = Picasso.with(parent.getContext());
 
         return jobSiteViewHolder;

@@ -1,4 +1,4 @@
-package com.example.jobs4smcyouth.Adapters;
+package com.example.jobs4smcyouth.Fragments.Resume;
 
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -16,14 +16,29 @@ import java.util.List;
  */
 public class ResumeFragmentRVAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
+    private static final int RESUMEWEBSITES = 0;
     private final List<String> links;
     Picasso picasso;
 
+    ResumeClickListener resumeClickListener;
+
+    public interface ResumeClickListener{
+        void ClickListener();
+    }
 
     class ResumeWebsitesViewHolder extends RecyclerView.ViewHolder{
 
         ResumeWebsitesViewHolder(View itemView){
             super(itemView);
+        }
+
+        public void bind(final ResumeClickListener resumeClickListener){
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    resumeClickListener.ClickListener();
+                }
+            });
         }
     }
 
@@ -38,8 +53,9 @@ public class ResumeFragmentRVAdapter extends RecyclerView.Adapter<RecyclerView.V
         }
     }
 
-    public ResumeFragmentRVAdapter(List<String> links){
+    public ResumeFragmentRVAdapter(List<String> links, ResumeClickListener resumeClickListener){
         this.links = links;
+        this.resumeClickListener = resumeClickListener;
     }
 
     @Override
@@ -49,10 +65,8 @@ public class ResumeFragmentRVAdapter extends RecyclerView.Adapter<RecyclerView.V
 
     @Override
     public int getItemViewType(int position) {
-        if(position == 0){
-            return 0;
-        } else if(position == 1){
-            return 1;
+        if(position == RESUMEWEBSITES){
+            return RESUMEWEBSITES;
         }else{
             return position;
         }
@@ -61,7 +75,7 @@ public class ResumeFragmentRVAdapter extends RecyclerView.Adapter<RecyclerView.V
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
 
-        if(viewType == 0){
+        if(viewType == RESUMEWEBSITES){
             View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.rv_item_resume, parent, false);
             ResumeWebsitesViewHolder resumeWebsitesViewHolder = new ResumeWebsitesViewHolder(view);
             return resumeWebsitesViewHolder;
@@ -81,8 +95,8 @@ public class ResumeFragmentRVAdapter extends RecyclerView.Adapter<RecyclerView.V
     public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
         final int itemType = getItemViewType(position);
 
-        if(itemType == 0){
-
+        if(itemType == RESUMEWEBSITES){
+            ((ResumeWebsitesViewHolder)holder).bind(resumeClickListener);
         }else{
             picasso.load(links.get(position))  // Load image from URL
                     .resize(1000, 1400)                        // Resize Image

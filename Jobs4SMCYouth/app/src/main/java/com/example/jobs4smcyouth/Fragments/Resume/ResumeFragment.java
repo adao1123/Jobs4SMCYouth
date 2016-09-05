@@ -1,16 +1,18 @@
-package com.example.jobs4smcyouth.Fragments;
+package com.example.jobs4smcyouth.Fragments.Resume;
 
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.jobs4smcyouth.R;
-import com.example.jobs4smcyouth.Adapters.ResumeFragmentRVAdapter;
 
 import java.util.ArrayList;
 
@@ -18,7 +20,7 @@ import java.util.ArrayList;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class ResumeFragment extends Fragment {
+public class ResumeFragment extends Fragment implements ResumeFragmentRVAdapter.ResumeClickListener {
 
 
     public ResumeFragment() {
@@ -42,7 +44,7 @@ public class ResumeFragment extends Fragment {
         links.add("http://i.imgur.com/5amKaFS.png"); // ResumeSample3
         links.add("http://i.imgur.com/IFApJZX.png"); // SampleReferenceList
 
-        ResumeFragmentRVAdapter resumeRVAdapter = new ResumeFragmentRVAdapter(links);
+        ResumeFragmentRVAdapter resumeRVAdapter = new ResumeFragmentRVAdapter(links, this);
 
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getActivity(), LinearLayoutManager.VERTICAL, false);
         resumeRecyclerView.setLayoutManager(linearLayoutManager);
@@ -51,6 +53,17 @@ public class ResumeFragment extends Fragment {
         return view;
     }
 
+    @Override
+    public void ClickListener() {
+        Log.d("RESUME", "WEBSITES WAS CLICKED");
 
+        ResumeWebsitesFragment resumeWebsitesFragment = new ResumeWebsitesFragment();
 
+        FragmentManager fragmentManager;
+        fragmentManager = getFragmentManager();
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+        fragmentTransaction.addToBackStack("ResumeSites");
+        fragmentTransaction.replace(R.id.fragment_container_id, resumeWebsitesFragment);
+        fragmentTransaction.commit();
+    }
 }

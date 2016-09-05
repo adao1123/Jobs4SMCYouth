@@ -9,43 +9,10 @@
     card_view:cardUseCompatPadding="false"
     android:layout_height="wrap_content">
 
-    <LinearLayout
+    <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:orientation="vertical">
-
-        <TextView
-            android:id="@+id/resumeFrag_websites_TextView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:text="Websites: "/>
-
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Careeronestop.org Damngood.com    Eresumes.com"/>
-
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Resume-help.org   Resumehelp.com  Myfuture.com"/>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Susanireland.com  Truecareers.com Monster.com"/>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Quintcareers.com/resres.html"/>
-
-
-    </LinearLayout>
+        android:text="Helpful Websites"/>
 
 </android.support.v7.widget.CardView>
 
