@@ -14,6 +14,19 @@
         android:layout_marginLeft="10dp"
         android:orientation="vertical">
 
+        <FrameLayout
+            android:id="@+id/about_maps_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <fragment
+                android:name="com.google.android.gms.maps.SupportMapFragment"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:id="@+id/about_fragment_map" />
+
+        </FrameLayout>
+
         <android.support.v7.widget.CardView
             android:id="@+id/about_aboutCard_id"
             android:layout_width="match_parent"
