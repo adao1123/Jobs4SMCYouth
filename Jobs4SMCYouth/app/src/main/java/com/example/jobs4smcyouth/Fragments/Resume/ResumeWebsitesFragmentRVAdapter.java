@@ -1,6 +1,8 @@
 package com.example.jobs4smcyouth.Fragments.Resume;
 
+import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,40 +16,43 @@ import java.util.List;
 /**
  * Created by samsiu on 9/5/16.
  */
-public class ResumeWebsitesFragmentRVAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
+public class ResumeWebsitesFragmentRVAdapter extends
+        RecyclerView.Adapter<ResumeWebsitesFragmentRVAdapter.ResumeSitesViewHolder> {
 
     private final List<String> urls;
-    private CardViewClickListener cardViewClickListener;
+    private ResumeCardViewClickListener resumeCardViewClickListener;
 
+    public interface ResumeCardViewClickListener {
+        void onResumeCardViewClick(String url);
+    }
 
     class ResumeSitesViewHolder extends RecyclerView.ViewHolder{
 
         ImageView resumeListImageView;
         TextView resumeListTextView;
+        CardView resumeSiteCardView;
 
         ResumeSitesViewHolder(View itemView){
             super(itemView);
             resumeListImageView = (ImageView)itemView.findViewById(R.id.resumeListFrag_job_imageView);
             resumeListTextView = (TextView)itemView.findViewById(R.id.resumeListFrag_site_textView);
+            resumeSiteCardView = (CardView)itemView.findViewById(R.id.resumeSite_cardView);
         }
 
-        private void bind(final CardViewClickListener cardViewClickListener, final String url){
+        private void bind(final ResumeCardViewClickListener resumeCardViewClickListener, final String url){
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    cardViewClickListener.onCardViewClick(url);
+                    resumeCardViewClickListener.onResumeCardViewClick(url);
                 }
             });
         }
     }
 
-    public interface CardViewClickListener{
-        void onCardViewClick(String url);
-    }
 
-    public ResumeWebsitesFragmentRVAdapter(List<String> urls, CardViewClickListener cardViewClickListener){
+    public ResumeWebsitesFragmentRVAdapter(List<String> urls, ResumeCardViewClickListener resumeCardViewClickListener){
         this.urls = urls;
-        this.cardViewClickListener = cardViewClickListener;
+        this.resumeCardViewClickListener = resumeCardViewClickListener;
     }
 
     @Override
@@ -56,17 +61,19 @@ public class ResumeWebsitesFragmentRVAdapter extends RecyclerView.Adapter<Recycl
     }
 
     @Override
-    public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public ResumeSitesViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.rv_item_resume_site, parent, false);
         ResumeSitesViewHolder resumeSitesViewHolder = new ResumeSitesViewHolder(view);
+
         return resumeSitesViewHolder;
     }
 
     @Override
-    public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
+    public void onBindViewHolder(ResumeSitesViewHolder holder, int position) {
 
-        ((ResumeSitesViewHolder)holder).resumeListTextView.setText(urls.get(position));
-        ((ResumeSitesViewHolder)holder).bind(cardViewClickListener, urls.get(position));
+        holder.resumeListTextView.setText(urls.get(position));
+        holder.bind(resumeCardViewClickListener, urls.get(position));
     }
 
     @Override
