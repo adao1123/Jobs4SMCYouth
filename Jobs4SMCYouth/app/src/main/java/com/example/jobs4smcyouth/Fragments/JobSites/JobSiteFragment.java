@@ -1,4 +1,4 @@
-package com.example.jobs4smcyouth.Fragments;
+package com.example.jobs4smcyouth.Fragments.JobSites;
 
 
 import android.os.Bundle;
@@ -13,7 +13,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.example.jobs4smcyouth.Adapters.JobSiteFragmentRVAdapter;
+import com.example.jobs4smcyouth.Fragments.JobSites.JobSiteFragmentRVAdapter;
 import com.example.jobs4smcyouth.R;
 import com.example.jobs4smcyouth.Utilities.WebViewFragment.WebViewFragment;
 

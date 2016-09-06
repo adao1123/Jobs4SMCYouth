@@ -2,7 +2,6 @@ package com.example.jobs4smcyouth.Fragments.Resume;
 
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -63,7 +62,7 @@ public class ResumeWebsitesFragmentRVAdapter extends
     @Override
     public ResumeSitesViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
 
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.rv_item_resume_site, parent, false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.rv_item_resume_website, parent, false);
         ResumeSitesViewHolder resumeSitesViewHolder = new ResumeSitesViewHolder(view);
 
         return resumeSitesViewHolder;
