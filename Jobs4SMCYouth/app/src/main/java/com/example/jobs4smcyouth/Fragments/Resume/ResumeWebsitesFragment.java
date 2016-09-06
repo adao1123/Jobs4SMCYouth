@@ -7,12 +7,11 @@ import android.support.v4.app.FragmentTransaction;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.example.jobs4smcyouth.Fragments.JobSiteWebViewFragment;
+import com.example.jobs4smcyouth.Utilities.WebViewFragment.WebViewFragment;
 import com.example.jobs4smcyouth.R;
 
 import java.util.ArrayList;
@@ -61,14 +60,14 @@ public class ResumeWebsitesFragment extends Fragment
         Bundle bundle = new Bundle();
         bundle.putString("url", url);
 
-        JobSiteWebViewFragment jobSiteWebViewFragment = new JobSiteWebViewFragment();
-        jobSiteWebViewFragment.setArguments(bundle);
+        WebViewFragment webViewFragment = new WebViewFragment();
+        webViewFragment.setArguments(bundle);
 
         FragmentManager fragmentManager;
         fragmentManager = getFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
         fragmentTransaction.addToBackStack("ResumeSites");
-        fragmentTransaction.replace(R.id.fragment_container_id, jobSiteWebViewFragment);
+        fragmentTransaction.replace(R.id.fragment_container_id, webViewFragment);
         fragmentTransaction.commit();
 
 
