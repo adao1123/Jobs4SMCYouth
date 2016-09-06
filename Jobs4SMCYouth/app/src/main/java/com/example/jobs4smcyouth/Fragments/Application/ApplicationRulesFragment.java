@@ -1,4 +1,4 @@
-package com.example.jobs4smcyouth.Fragments;
+package com.example.jobs4smcyouth.Fragments.Application;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;

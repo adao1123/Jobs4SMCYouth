@@ -1,4 +1,4 @@
-package com.example.jobs4smcyouth.Fragments;
+package com.example.jobs4smcyouth.Utilities.WebViewFragment;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -15,12 +15,12 @@ import com.example.jobs4smcyouth.R;
 /**
  * Created by samsiu on 6/20/16.
  */
-public class JobSiteWebViewFragment extends Fragment {
+public class WebViewFragment extends Fragment {
     private String url;
     WebView webView;
     CustomWebViewClient customWebViewClient;
 
-    public JobSiteWebViewFragment(){
+    public WebViewFragment(){
         // Required empty public constructor
     }
 
@@ -28,7 +28,7 @@ public class JobSiteWebViewFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View v = inflater.inflate(R.layout.fragment_job_site_web_view, container, false);
+        View v = inflater.inflate(R.layout.fragment_web_view, container, false);
         webView = (WebView)v.findViewById(R.id.jobSite_webView_id);
         customWebViewClient = new CustomWebViewClient();
 

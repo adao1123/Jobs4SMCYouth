@@ -1,4 +1,4 @@
-package com.example.jobs4smcyouth.Adapters;
+package com.example.jobs4smcyouth.Fragments.Application;
 
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;

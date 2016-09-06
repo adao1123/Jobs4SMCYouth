@@ -1,4 +1,4 @@
-package com.example.jobs4smcyouth.Fragments;
+package com.example.jobs4smcyouth.Fragments.Application;
 
 
 import android.os.Bundle;
@@ -10,7 +10,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.example.jobs4smcyouth.Adapters.ApplicationFragmentRVAdapter;
 import com.example.jobs4smcyouth.R;
 
 import java.util.ArrayList;
