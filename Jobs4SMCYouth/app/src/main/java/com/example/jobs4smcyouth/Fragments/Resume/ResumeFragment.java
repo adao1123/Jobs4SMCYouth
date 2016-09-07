@@ -49,7 +49,7 @@ public class ResumeFragment extends Fragment implements ResumeFragmentRVAdapter.
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getActivity(), LinearLayoutManager.VERTICAL, false);
         resumeRecyclerView.setLayoutManager(linearLayoutManager);
         resumeRecyclerView.setAdapter(resumeRVAdapter);
-        
+
         return view;
     }
 
