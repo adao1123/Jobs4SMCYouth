@@ -25,9 +25,9 @@ Through our research we learned a ton about all the services and programs offere
 <html>
 <body>
   <img name="print1" src="http://i.imgur.com/TNzY4ZQ.png" width="300" height="500">
-  <img name="print2" src="http://i.imgur.com/Fb2Jzwb.png" width="300" height="500">
-  <img name="print3" src="http://i.imgur.com/uDJIIBc.png" width="300" height="500">
-  <img name="print4" src="http://i.imgur.com/o1w6xNN.png" width="300" height="500">
+  <img name="print2" src="http://i.imgur.com/cYwiSlM.png" width="300" height="500">
+  <img name="print3" src="http://i.imgur.com/RJbuh4u.png" width="300" height="500">
+  <img name="print4" src="http://i.imgur.com/9kvmufE.png" width="300" height="500">
 
   <img name="jobList" src="http://i.imgur.com/JTCB3VG.png" width="300" height="500">
   <img name="successStories" src="http://i.imgur.com/qiQHP7d.png" width="300" height="500">
