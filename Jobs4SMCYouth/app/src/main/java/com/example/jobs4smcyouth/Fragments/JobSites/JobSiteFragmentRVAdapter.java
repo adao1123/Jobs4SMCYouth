@@ -1,4 +1,4 @@
-package com.example.jobs4smcyouth.Adapters;
+package com.example.jobs4smcyouth.Fragments.JobSites;
 
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
@@ -65,7 +65,6 @@ public class JobSiteFragmentRVAdapter extends RecyclerView.Adapter<JobSiteFragme
     public JobSiteViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.fragment_job_site_cardview, parent, false);
         JobSiteViewHolder jobSiteViewHolder = new JobSiteViewHolder(view);
-
 
         picasso = Picasso.with(parent.getContext());
 

@@ -1,4 +1,4 @@
-package com.example.jobs4smcyouth.Fragments;
+package com.example.jobs4smcyouth.Fragments.JobSites;
 
 
 import android.os.Bundle;
@@ -13,8 +13,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.example.jobs4smcyouth.Adapters.JobSiteFragmentRVAdapter;
+import com.example.jobs4smcyouth.Fragments.JobSites.JobSiteFragmentRVAdapter;
 import com.example.jobs4smcyouth.R;
+import com.example.jobs4smcyouth.Utilities.WebViewFragment.WebViewFragment;
 
 import java.util.ArrayList;
 
@@ -78,13 +79,14 @@ public class JobSiteFragment extends Fragment implements JobSiteFragmentRVAdapte
         Bundle bundle = new Bundle();
         bundle.putString("url",link);
 
-        JobSiteWebViewFragment jobSiteWebViewFragment = new JobSiteWebViewFragment();
-        jobSiteWebViewFragment.setArguments(bundle);
+        WebViewFragment webViewFragment = new WebViewFragment();
+        webViewFragment.setArguments(bundle);
 
         FragmentManager fragmentManager;
         fragmentManager = getFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-        fragmentTransaction.replace(R.id.fragment_container_id, jobSiteWebViewFragment);
+        fragmentTransaction.addToBackStack("Jobs");
+        fragmentTransaction.replace(R.id.fragment_container_id, webViewFragment);
         fragmentTransaction.commit();
 
     }

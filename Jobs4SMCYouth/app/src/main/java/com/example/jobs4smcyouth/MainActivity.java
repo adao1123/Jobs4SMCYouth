@@ -13,16 +13,23 @@ import android.view.MenuItem;
 import android.widget.TextView;
 
 import com.example.jobs4smcyouth.Fragments.AboutFragment;
-import com.example.jobs4smcyouth.Fragments.ApplicationFragment;
+import com.example.jobs4smcyouth.Fragments.Application.ApplicationRulesFragment;
+import com.example.jobs4smcyouth.Fragments.Application.ApplicationFragment;
 import com.example.jobs4smcyouth.Fragments.InterviewFragment;
 import com.example.jobs4smcyouth.Fragments.JobPostFragment;
-import com.example.jobs4smcyouth.Fragments.JobSiteFragment;
+import com.example.jobs4smcyouth.Fragments.JobSites.JobSiteFragment;
 import com.example.jobs4smcyouth.Fragments.RequirementFragment;
-import com.example.jobs4smcyouth.Fragments.ResumeFragment;
+import com.example.jobs4smcyouth.Fragments.Resume.ResumeFragment;
 import com.example.jobs4smcyouth.Fragments.ScholarshipFragment;
 import com.example.jobs4smcyouth.Fragments.SuccessStoryFragment;
 import com.example.jobs4smcyouth.Fragments.TipFragment;
 import com.example.jobs4smcyouth.Fragments.TransportationFragment;
+import com.example.jobs4smcyouth.Utilities.EventBus.ApplicationRulesClickEvent;
+import com.example.jobs4smcyouth.Utilities.EventBus.MainBus;
+
+import rx.Subscriber;
+import rx.android.schedulers.AndroidSchedulers;
+import rx.schedulers.Schedulers;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -31,6 +38,7 @@ public class MainActivity extends AppCompatActivity {
     NavigationView navigationView;
     AboutFragment aboutFragment;
     ApplicationFragment applicationFragment;
+    ApplicationRulesFragment applicationRulesFragment;
     InterviewFragment interviewFragment;
     JobPostFragment jobPostFragment;
     JobSiteFragment jobSiteFragment;
@@ -143,6 +151,7 @@ public class MainActivity extends AppCompatActivity {
     private void initializeFragments(){
         aboutFragment = new AboutFragment();
         applicationFragment = new ApplicationFragment();
+        applicationRulesFragment = new ApplicationRulesFragment();
         interviewFragment = new InterviewFragment();
         jobPostFragment = new JobPostFragment();
         jobSiteFragment = new JobSiteFragment();
@@ -172,6 +181,43 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+
+    private Subscriber<? super Object> mainBusSubscriber = new Subscriber<Object>() {
+        @Override
+        public void onCompleted() {
+
+        }
+
+        @Override
+        public void onError(Throwable e) {
+
+        }
+
+        @Override
+        public void onNext(Object o) {
+            if (o instanceof ApplicationRulesClickEvent){
+                initFragmentManager();
+                fragmentTransaction.addToBackStack("Application");
+                fragmentTransaction.replace(R.id.fragment_container_id, applicationRulesFragment);
+                fragmentTransaction.commit();
+            }
+        }
+    };
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        MainBus.getInstance().getBusObservable()
+                .subscribeOn(Schedulers.newThread())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(mainBusSubscriber);
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        mainBusSubscriber.unsubscribe();
+    }
 }
 
 
