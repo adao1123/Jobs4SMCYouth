@@ -9,6 +9,15 @@
     android:orientation="vertical"
     tools:context=".Fragments.Resume.ResumeFragment">
 
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
+        android:textStyle="italic"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:text="Long click on any image to print or save it as a pdf."/>
+
     <android.support.v7.widget.RecyclerView
         android:id="@+id/resumeFrag_recyclerView"
         android:layout_width="match_parent"
