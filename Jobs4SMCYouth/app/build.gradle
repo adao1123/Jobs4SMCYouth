@@ -43,4 +43,6 @@ dependencies {
     compile 'io.reactivex:rxandroid:1.2.1'
     compile 'io.reactivex:rxjava:1.1.6'
 
+
+    compile 'com.hp.mss:mobileprintsdk:v2.02.418'
 }

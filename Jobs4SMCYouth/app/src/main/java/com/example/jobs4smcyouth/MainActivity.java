@@ -18,6 +18,7 @@ import com.example.jobs4smcyouth.Fragments.Application.ApplicationFragment;
 import com.example.jobs4smcyouth.Fragments.InterviewFragment;
 import com.example.jobs4smcyouth.Fragments.JobPostFragment;
 import com.example.jobs4smcyouth.Fragments.JobSites.JobSiteFragment;
+import com.example.jobs4smcyouth.Fragments.Print.PrintLayoutFragment;
 import com.example.jobs4smcyouth.Fragments.RequirementFragment;
 import com.example.jobs4smcyouth.Fragments.Resume.ResumeFragment;
 import com.example.jobs4smcyouth.Fragments.ScholarshipFragment;
@@ -48,6 +49,7 @@ public class MainActivity extends AppCompatActivity {
     SuccessStoryFragment successStoryFragment;
     TipFragment tipFragment;
     TransportationFragment transportationFragment;
+    PrintLayoutFragment printLayoutFragment;
     DrawerLayout drawerLayout;
     TextView titleTV;
     Toolbar toolbar;
@@ -140,6 +142,10 @@ public class MainActivity extends AppCompatActivity {
                 fragmentTransaction.replace(R.id.fragment_container_id, tipFragment);
                 titleTV.setText("User Tips");
                 break;
+            case R.id.drawer_print_id:
+                fragmentTransaction.replace(R.id.fragment_container_id, printLayoutFragment);
+                titleTV.setText("Print");
+                break;
             default: break;
         }
         fragmentTransaction.commit();
@@ -161,6 +167,7 @@ public class MainActivity extends AppCompatActivity {
         successStoryFragment = new SuccessStoryFragment();
         tipFragment = new TipFragment();
         transportationFragment = new TransportationFragment();
+        printLayoutFragment = new PrintLayoutFragment();
     }
 
 
