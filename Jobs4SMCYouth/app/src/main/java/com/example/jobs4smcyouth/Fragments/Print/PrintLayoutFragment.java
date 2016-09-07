@@ -253,9 +253,9 @@ public class PrintLayoutFragment extends Fragment implements RadioGroup.OnChecke
 
         if(contentType.equals("Image")) {
             //Create image assets from the saved files.
-            ImageAsset imageAsset4x5 = new ImageAsset(getActivity(), R.drawable.icon_about, ImageAsset.MeasurementUnits.INCHES, 4, 5);
-            ImageAsset imageAsset4x6 = new ImageAsset(getActivity(), R.drawable.icon_about, ImageAsset.MeasurementUnits.INCHES, 4, 6);
-            ImageAsset imageAsset5x7 = new ImageAsset(getActivity(), R.drawable.icon_about, ImageAsset.MeasurementUnits.INCHES, 5, 7);
+            ImageAsset imageAsset4x5 = new ImageAsset(getActivity(), R.drawable.t4x5, ImageAsset.MeasurementUnits.INCHES, 4, 5);
+            ImageAsset imageAsset4x6 = new ImageAsset(getActivity(), R.drawable.t4x6, ImageAsset.MeasurementUnits.INCHES, 4, 6);
+            ImageAsset imageAsset5x7 = new ImageAsset(getActivity(), R.drawable.t5x7, ImageAsset.MeasurementUnits.INCHES, 5, 7);
             ImageAsset assetdirectory = new ImageAsset(getActivity(), "t8.5x11.png", ImageAsset.MeasurementUnits.INCHES, 8.5f, 11f);
 
 
@@ -422,5 +422,6 @@ public class PrintLayoutFragment extends Fragment implements RadioGroup.OnChecke
         Toast.makeText(getActivity(),
                 "File " + returnCursor.getString(nameIndex) + "(" + Long.toString(returnCursor.getLong(sizeIndex)) + "0",
                 Toast.LENGTH_LONG).show();
+
     }
 }
