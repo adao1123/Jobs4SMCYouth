@@ -25,6 +25,10 @@
             android:id="@+id/drawer_about_id"
             android:icon="@drawable/icon_about"
             android:title="About"/>
+        <item
+            android:id="@+id/drawer_print_id"
+            android:icon="@drawable/ic_print_black_24dp"
+            android:title="Print"/>
         <item android:title="Job Prep">
             <menu>
                 <group android:checkableBehavior="single">
