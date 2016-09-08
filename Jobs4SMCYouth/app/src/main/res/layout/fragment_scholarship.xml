@@ -4,7 +4,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="15dp"
-    tools:context=".Fragments.ScholarshipFragment">
+    tools:context="com.smc.jobs4smcyouth.Fragments.ScholarshipFragment">
 
     <LinearLayout
         android:layout_width="match_parent"
