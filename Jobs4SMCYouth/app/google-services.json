@@ -1,0 +1,38 @@
+{
+  "project_info": {
+    "project_number": "975804109683",
+    "project_id": "jobs4smcyouth"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:975804109683:android:e25264077d7ad6a1",
+        "android_client_info": {
+          "package_name": "com.smc.jobs4smcyouth"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDSVoY0PVUwSwSu1RgzikqfNOkAOQVs_Y0"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 2,
+          "analytics_property": {
+            "tracking_id": "UA-83905031-1"
+          }
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 1
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

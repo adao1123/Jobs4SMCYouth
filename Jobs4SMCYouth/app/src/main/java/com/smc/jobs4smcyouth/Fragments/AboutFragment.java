@@ -7,7 +7,9 @@ import android.graphics.Color;
 import android.graphics.Typeface;
 import android.net.Uri;
 import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -15,7 +17,11 @@ import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.google.android.gms.analytics.HitBuilders;
+import com.google.android.gms.analytics.Tracker;
+import com.google.android.gms.common.api.GoogleApiClient;
 import com.smc.jobs4smcyouth.Models.AboutLocation;
+import com.smc.jobs4smcyouth.MyApplication;
 import com.smc.jobs4smcyouth.R;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
@@ -58,6 +64,8 @@ Redwood City, CA 94063
  * A simple {@link Fragment} subclass.
  */
 public class AboutFragment extends Fragment implements OnMapReadyCallback{
+    private static final String TAG = AboutFragment.class.getSimpleName();
+
     private TextView phoneDCTextView;
     private TextView phoneAdultTextView;
     private TextView phoneBelmontTextView;
@@ -68,10 +76,43 @@ public class AboutFragment extends Fragment implements OnMapReadyCallback{
     private static String longitude;
     private List<AboutLocation> officeLocations;
 
+    private Tracker tracker;
+
     public AboutFragment() {
         // Required empty public constructor
     }
 
+
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+
+
+        MyApplication application = (MyApplication) getActivity().getApplication();
+        tracker = application.getDefaultTracker();
+        sendScreenImageName();
+
+    }
+
+
+
+    private void sendScreenImageName() {
+
+        String name = TAG;
+        // [START screen_view_hit]
+        Log.i(TAG, "Setting screen name: " + name);
+        tracker.setScreenName("Screen~" + "AboutFragment");
+        tracker.send(new HitBuilders.ScreenViewBuilder().build());
+        // [END screen_view_hit]
+
+        tracker.send(new HitBuilders.EventBuilder()
+                .setCategory("Action")
+                .setAction("Share")
+                .build());
+
+
+
+    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -81,6 +122,8 @@ public class AboutFragment extends Fragment implements OnMapReadyCallback{
         initializeViews(v);
         initilizeLocations();
         initGoogleMaps();
+
+
 
 
         setDialNumberListener(phoneDCTextView, "6503018434");
