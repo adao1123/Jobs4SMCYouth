@@ -5,7 +5,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:padding="16dp"
-    tools:context=".Fragments.TransportationFragment">
+    tools:context="com.smc.jobs4smcyouth.Fragments.TransportationFragment">
 
     <android.support.v7.widget.CardView
         android:layout_width="match_parent"

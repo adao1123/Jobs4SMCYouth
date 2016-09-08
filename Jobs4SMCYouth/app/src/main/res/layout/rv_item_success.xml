@@ -40,7 +40,7 @@
             android:layout_gravity="center_horizontal"
             android:layout_margin="10dp"/>
 
-        <com.example.jobs4smcyouth.Utilities.ExpandableTextView
+        <com.smc.jobs4smcyouth.Utilities.ExpandableTextView
             android:layout_margin="5dp"
             android:id="@+id/rv_item_success_story"
             android:layout_width="match_parent"
