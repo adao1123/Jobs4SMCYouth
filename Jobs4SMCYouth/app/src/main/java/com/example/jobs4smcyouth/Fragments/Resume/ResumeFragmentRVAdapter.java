@@ -1,5 +1,11 @@
 package com.example.jobs4smcyouth.Fragments.Resume;
 
+import android.content.Context;
+import android.content.res.Resources;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.graphics.drawable.Drawable;
+import android.support.v4.print.PrintHelper;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -9,6 +15,7 @@ import com.example.jobs4smcyouth.R;
 import com.example.jobs4smcyouth.Utilities.TouchImageView;
 import com.squareup.picasso.Picasso;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -19,6 +26,10 @@ public class ResumeFragmentRVAdapter extends RecyclerView.Adapter<RecyclerView.V
     private static final int RESUMEWEBSITES = 0;
     private final List<String> links;
     Picasso picasso;
+    PrintHelper photoPrinter;
+    Resources resources;
+    List<Integer> drawablesArrayList;
+    List<String> imageNamesList;
 
     ResumeClickListener resumeClickListener;
 
@@ -86,13 +97,18 @@ public class ResumeFragmentRVAdapter extends RecyclerView.Adapter<RecyclerView.V
 
             picasso = Picasso.with(parent.getContext());
 
+            photoPrinter = new PrintHelper(parent.getContext());
+            resources = parent.getContext().getResources();
+            createDrawablesList();
+            createNamesList();
+
             return resumeViewHolder;
         }
 
     }
 
     @Override
-    public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
+    public void onBindViewHolder(RecyclerView.ViewHolder holder, final int position) {
         final int itemType = getItemViewType(position);
 
         if(itemType == RESUMEWEBSITES){
@@ -100,7 +116,18 @@ public class ResumeFragmentRVAdapter extends RecyclerView.Adapter<RecyclerView.V
         }else{
             picasso.load(links.get(position))  // Load image from URL
                     .resize(1000, 1400)                        // Resize Image
-                    .into(((ResumeViewHolder)holder).templateImageView);      // Load image to view
+                    .into(((ResumeViewHolder)holder).templateImageView); // Load image to view
+            ((ResumeViewHolder) holder).templateImageView.setOnLongClickListener(new View.OnLongClickListener() {
+                @Override
+                public boolean onLongClick(View v) {
+                    photoPrinter.setScaleMode(PrintHelper.SCALE_MODE_FIT);
+                    Bitmap bitmap = BitmapFactory.decodeResource(
+                            resources,
+                            drawablesArrayList.get(position));
+                    photoPrinter.printBitmap("Printing " + imageNamesList.get(position), bitmap);
+                    return true;
+                }
+            });
         }
 
     }
@@ -108,6 +135,26 @@ public class ResumeFragmentRVAdapter extends RecyclerView.Adapter<RecyclerView.V
     @Override
     public int getItemCount() {
         return links.size();
+    }
+
+    private void createDrawablesList(){
+        drawablesArrayList = new ArrayList<Integer>();
+        drawablesArrayList.add(R.drawable.coverletter_sample1);
+        drawablesArrayList.add(R.drawable.coverletter_sample2);
+        drawablesArrayList.add(R.drawable.resume_sample1);
+        drawablesArrayList.add(R.drawable.resume_sample2);
+        drawablesArrayList.add(R.drawable.resume_sample3);
+        drawablesArrayList.add(R.drawable.references_sample);
+    }
+
+    private void createNamesList(){
+        imageNamesList = new ArrayList<String>();
+        imageNamesList.add("Cover Letter Sample 1");
+        imageNamesList.add("Cover Letter Sample 2");
+        imageNamesList.add("Resume Sample 1");
+        imageNamesList.add("Resume Sample 2");
+        imageNamesList.add("Resume Sample 3");
+        imageNamesList.add("References Sample");
     }
 
 
