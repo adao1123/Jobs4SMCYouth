@@ -19,7 +19,6 @@ import android.widget.TextView;
 
 import com.google.android.gms.analytics.HitBuilders;
 import com.google.android.gms.analytics.Tracker;
-import com.google.android.gms.common.api.GoogleApiClient;
 import com.smc.jobs4smcyouth.Models.AboutLocation;
 import com.smc.jobs4smcyouth.MyApplication;
 import com.smc.jobs4smcyouth.R;
@@ -76,7 +75,7 @@ public class AboutFragment extends Fragment implements OnMapReadyCallback{
     private static String longitude;
     private List<AboutLocation> officeLocations;
 
-    private Tracker tracker;
+    private Tracker analyticsTracker;
 
     public AboutFragment() {
         // Required empty public constructor
@@ -89,7 +88,7 @@ public class AboutFragment extends Fragment implements OnMapReadyCallback{
 
 
         MyApplication application = (MyApplication) getActivity().getApplication();
-        tracker = application.getDefaultTracker();
+        analyticsTracker = application.getDefaultTracker();
         sendScreenImageName();
 
     }
@@ -101,11 +100,11 @@ public class AboutFragment extends Fragment implements OnMapReadyCallback{
         String name = TAG;
         // [START screen_view_hit]
         Log.i(TAG, "Setting screen name: " + name);
-        tracker.setScreenName("Screen~" + "AboutFragment");
-        tracker.send(new HitBuilders.ScreenViewBuilder().build());
+        analyticsTracker.setScreenName("Screen~" + "AboutFragment");
+        analyticsTracker.send(new HitBuilders.ScreenViewBuilder().build());
         // [END screen_view_hit]
 
-        tracker.send(new HitBuilders.EventBuilder()
+        analyticsTracker.send(new HitBuilders.EventBuilder()
                 .setCategory("Action")
                 .setAction("Share")
                 .build());
