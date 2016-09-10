@@ -8,10 +8,19 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
+import com.example.jobs4smcyouth.Models.JobListing;
 import com.example.jobs4smcyouth.Models.SuccessStory;
 import com.example.jobs4smcyouth.R;
 import com.example.jobs4smcyouth.Adapters.SuccessStoryAdapter;
+import com.example.jobs4smcyouth.Utilities.ExpandableTextView;
+import com.firebase.client.DataSnapshot;
+import com.firebase.client.Firebase;
+import com.firebase.client.FirebaseError;
+import com.firebase.client.ValueEventListener;
+import com.firebase.ui.FirebaseRecyclerAdapter;
+import com.github.ivbaranov.mli.MaterialLetterIcon;
 
 import java.util.ArrayList;
 
@@ -21,6 +30,7 @@ import java.util.ArrayList;
  */
 public class SuccessStoryFragment extends Fragment {
 
+    Firebase successFb;
     RecyclerView successRV;
 
     public SuccessStoryFragment() {
@@ -39,12 +49,60 @@ public class SuccessStoryFragment extends Fragment {
     @Override
     public void onViewCreated(View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        SuccessStoryAdapter successStoryAdapter = new SuccessStoryAdapter(getStories());
-        successRV.setAdapter(successStoryAdapter);
+        handleFirebase();
+        initRv();
+    }
 
-        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext());
-        //GridLayoutManager gridLayoutManager = new GridLayoutManager(getContext(), 2);
-        successRV.setLayoutManager(linearLayoutManager);
+    private void initRv(){
+        successRV.setAdapter(getFbAdapter());
+        successRV.setLayoutManager(new LinearLayoutManager(getContext()));
+    }
+
+    private void handleFirebase(){
+        Firebase firebaseRef = new Firebase("https://jobs-4-smc-youth.firebaseio.com/");
+        successFb = firebaseRef.child("Success Stories");
+        successFb.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                if (!dataSnapshot.hasChildren()) addListingsToFb();
+            }
+
+            @Override
+            public void onCancelled(FirebaseError firebaseError) {
+
+            }
+        });
+    }
+
+    private FirebaseRecyclerAdapter getFbAdapter(){
+        FirebaseRecyclerAdapter adapter = new FirebaseRecyclerAdapter<SuccessStory,SuccessViewHolder>(SuccessStory.class,R.layout.rv_item_success,SuccessViewHolder.class,successFb){
+            @Override
+            protected void populateViewHolder(SuccessViewHolder successViewHolder, SuccessStory successStory, int i) {
+                successViewHolder.successNameTV.setText(successStory.getName());
+                successViewHolder.successStoryTV.setText(successStory.getStory());
+                successViewHolder.letterIcon.setLetter(successStory.getName().substring(0,1));
+            }
+        };
+        return adapter;
+    }
+
+    public static class SuccessViewHolder extends RecyclerView.ViewHolder{
+        public TextView successNameTV;
+        public ExpandableTextView successStoryTV;
+        public MaterialLetterIcon letterIcon;
+        public SuccessViewHolder(View itemView) {
+            super(itemView);
+            successNameTV = (TextView)itemView.findViewById(R.id.rv_item_success_name);
+            successStoryTV = (ExpandableTextView) itemView.findViewById(R.id.rv_item_success_story);
+            letterIcon = (MaterialLetterIcon)itemView.findViewById(R.id.success_letter);
+        }
+    }
+
+
+    private void addListingsToFb(){
+        for (SuccessStory successStory : getStories()){
+            successFb.push().setValue(successStory);
+        }
     }
 
     private ArrayList<SuccessStory> getStories(){
