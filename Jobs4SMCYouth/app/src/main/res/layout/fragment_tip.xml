@@ -21,6 +21,7 @@
             android:layout_margin="8dp"
             card_view:cardCornerRadius="2dp"
             card_view:cardUseCompatPadding="false"
+            android:clickable="true"
             android:layout_height="wrap_content">
 
             <LinearLayout
@@ -33,19 +34,20 @@
                     android:id="@+id/tip_rule1_tv_id"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="1.) Take a calendar/notebook with you to work	" />
+                    android:textAlignment="center"
+                    android:textStyle="bold"
+                    android:textSize="18sp"
+                    android:text="Take a calendar or notebook with you to work." />
 
                 <TextView
+                    android:layout_marginTop="10dp"
                     android:id="@+id/tip_rule1_detail_tv_id"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="35dp"
-                    android:text="Record hard-to-remember information, instructions, and meetings you may have to attend.\n" />
+                    android:text="Record hard-to-remember information, instructions, and meetings you may have to attend." />
 
             </LinearLayout>
-
         </android.support.v7.widget.CardView>
-
 
         <android.support.v7.widget.CardView
             android:id="@+id/tip_tipCard_rules2"
@@ -55,6 +57,7 @@
             android:layout_margin="8dp"
             card_view:cardCornerRadius="2dp"
             card_view:cardUseCompatPadding="false"
+            android:clickable="true"
             android:layout_height="wrap_content">
 
             <LinearLayout
@@ -67,19 +70,20 @@
                     android:id="@+id/tip_rule2_tv_id"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="2.) Ensure transportation to work." />
+                    android:textAlignment="center"
+                    android:textStyle="bold"
+                    android:textSize="18sp"
+                    android:text="Ensure transportation to work." />
 
                 <TextView
                     android:id="@+id/tip_rule2_detail_tv_id"
+                    android:layout_marginTop="10dp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="35dp"
-                    android:text="If you have a car, make sure it is dependable to drive.  Allow extra driving time. If you depend on someone else for transportation, be sure he/she is always available. However, try to have a “plan b” (i.e. Public transportation). If you are going to be late, call your employer. If taking public transportation, know the bus routes and times.\n" />
+                    android:text="If you have a car, make sure it is dependable to drive.  Allow extra driving time. If you depend on someone else for transportation, be sure he/she is always available. However, try to have a “plan b” (i.e. Public transportation). If you are going to be late, call your employer. If taking public transportation, know the bus routes and times." />
 
             </LinearLayout>
-
         </android.support.v7.widget.CardView>
-
 
         <android.support.v7.widget.CardView
             android:id="@+id/tip_tipCard_rules3"
@@ -89,6 +93,7 @@
             android:layout_margin="8dp"
             card_view:cardCornerRadius="2dp"
             card_view:cardUseCompatPadding="false"
+            android:clickable="true"
             android:layout_height="wrap_content">
 
             <LinearLayout
@@ -97,26 +102,24 @@
                 android:orientation="vertical"
                 android:padding="16dp">
 
-
                 <TextView
                     android:id="@+id/tip_rule3_tv_id"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="3.) Get plenty of rest for work" />
+                    android:textAlignment="center"
+                    android:textStyle="bold"
+                    android:textSize="18sp"
+                    android:text="Get plenty of rest for work." />
 
                 <TextView
                     android:id="@+id/tip_rule3_detail_tv_id"
+                    android:layout_marginTop="10dp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="35dp"
-                    android:text="Strain and tension the first few days and weeks of a job will take more energy out of your system than you expect. Avoid a heavy social schedule and get plenty of rest. \n" />
-
+                    android:text="Strain and tension the first few days and weeks of a job will take more energy out of your system than you expect. Avoid a heavy social schedule and get plenty of rest." />
 
             </LinearLayout>
-
         </android.support.v7.widget.CardView>
-
-
 
         <android.support.v7.widget.CardView
             android:id="@+id/tip_tipCard_rules4"
@@ -126,6 +129,7 @@
             android:layout_margin="8dp"
             card_view:cardCornerRadius="2dp"
             card_view:cardUseCompatPadding="false"
+            android:clickable="true"
             android:layout_height="wrap_content">
 
             <LinearLayout
@@ -134,25 +138,24 @@
                 android:orientation="vertical"
                 android:padding="16dp">
 
-
                 <TextView
                     android:id="@+id/tip_rule4_tv_id"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="4.) Ask the right questions" />
+                    android:textAlignment="center"
+                    android:textStyle="bold"
+                    android:textSize="18sp"
+                    android:text="Ask the right questions." />
 
                 <TextView
                     android:id="@+id/tip_rule4_detail_tv_id"
+                    android:layout_marginTop="10dp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="35dp"
-                    android:text="Try to find your own answer first. Ask questions at appropriate times. Don’t be afraid to ask if you are not sure about something. \n" />
+                    android:text="Try to find your own answer first. Ask questions at appropriate times. Don’t be afraid to ask if you are not sure about something." />
 
             </LinearLayout>
-
         </android.support.v7.widget.CardView>
-
-
 
         <android.support.v7.widget.CardView
             android:id="@+id/tip_tipCard_rules5"
@@ -162,6 +165,7 @@
             android:layout_margin="8dp"
             card_view:cardCornerRadius="2dp"
             card_view:cardUseCompatPadding="false"
+            android:clickable="true"
             android:layout_height="wrap_content">
 
             <LinearLayout
@@ -170,22 +174,23 @@
                 android:orientation="vertical"
                 android:padding="16dp">
 
-
                 <TextView
                     android:id="@+id/tip_rule5_tv_id"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="5.) Use good judgement in working extra hours" />
+                    android:textAlignment="center"
+                    android:textStyle="bold"
+                    android:textSize="18sp"
+                    android:text="Use good judgement in working extra hours." />
 
                 <TextView
                     android:id="@+id/tip_rule5_detail_tv_id"
+                    android:layout_marginTop="10dp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="35dp"
-                    android:text="Abide by management’s instructions. Working extra hours and eliminating breaks and lunch to impress management will not develop good relationships with your fellow employees. \n" />
+                    android:text="Abide by management’s instructions. Working extra hours and eliminating breaks and lunch to impress management will not develop good relationships with your fellow employees." />
 
             </LinearLayout>
-
         </android.support.v7.widget.CardView>
 
 
@@ -197,6 +202,7 @@
             android:layout_margin="8dp"
             card_view:cardCornerRadius="2dp"
             card_view:cardUseCompatPadding="false"
+            android:clickable="true"
             android:layout_height="wrap_content">
 
             <LinearLayout
@@ -205,23 +211,23 @@
                 android:orientation="vertical"
                 android:padding="16dp">
 
-
                 <TextView
                     android:id="@+id/tip_rule6_tv_id"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="6.) Do not flaunt your knowledge and education" />
+                    android:textAlignment="center"
+                    android:textStyle="bold"
+                    android:textSize="18sp"
+                    android:text="Do not flaunt your knowledge and education." />
 
                 <TextView
                     android:id="@+id/tip_rule6_detail_tv_id"
+                    android:layout_marginTop="10dp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="35dp"
-                    android:text="Do not try to impress people with what you know. Until you are sure, be safe and do it the way you are instructed. \n" />
+                    android:text="Do not try to impress people with what you know. Until you are sure, be safe and do it the way you are instructed." />
             </LinearLayout>
-
         </android.support.v7.widget.CardView>
-
 
         <android.support.v7.widget.CardView
             android:id="@+id/tip_tipCard_rules7"
@@ -231,6 +237,7 @@
             android:layout_margin="8dp"
             card_view:cardCornerRadius="2dp"
             card_view:cardUseCompatPadding="false"
+            android:clickable="true"
             android:layout_height="wrap_content">
 
             <LinearLayout
@@ -243,19 +250,20 @@
                     android:id="@+id/tip_rule7_tv_id"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="7.) Build a relationship with all employees" />
+                    android:textAlignment="center"
+                    android:textStyle="bold"
+                    android:textSize="18sp"
+                    android:text="Build a relationship with all employees." />
 
                 <TextView
                     android:id="@+id/tip_rule7_detail_tv_id"
+                    android:layout_marginTop="10dp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="35dp"
-                    android:text="Be cautious in spending too much time with one person, too soon. \n" />
+                    android:text="Be cautious in spending too much time with one person, too soon." />
             </LinearLayout>
 
         </android.support.v7.widget.CardView>
-
-
 
         <android.support.v7.widget.CardView
             android:id="@+id/tip_tipCard_rules8"
@@ -265,6 +273,7 @@
             android:layout_margin="8dp"
             card_view:cardCornerRadius="2dp"
             card_view:cardUseCompatPadding="false"
+            android:clickable="true"
             android:layout_height="wrap_content">
 
             <LinearLayout
@@ -273,22 +282,23 @@
                 android:orientation="vertical"
                 android:padding="16dp">
 
-
                 <TextView
                     android:id="@+id/tip_rule8_tv_id"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="8.) Stay busy (Take initiative)" />
+                    android:textAlignment="center"
+                    android:textStyle="bold"
+                    android:textSize="18sp"
+                    android:text="Stay busy (take initiative)." />
 
                 <TextView
                     android:id="@+id/tip_rule8_detail_tv_id"
+                    android:layout_marginTop="10dp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="35dp"
-                    android:text="Try to avoid “just sitting there.” Let the supervisor know when you have completed your work to work on new projects. \n" />
+                    android:text="Try to avoid “just sitting there.” Let the supervisor know when you have completed your work so you can work on new projects." />
 
             </LinearLayout>
-
         </android.support.v7.widget.CardView>
 
 
@@ -300,6 +310,7 @@
             android:layout_margin="8dp"
             card_view:cardCornerRadius="2dp"
             card_view:cardUseCompatPadding="false"
+            android:clickable="true"
             android:layout_height="wrap_content">
 
             <LinearLayout
@@ -308,22 +319,23 @@
                 android:orientation="vertical"
                 android:padding="16dp">
 
-
                 <TextView
                     android:id="@+id/tip_rule9_tv_id"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="9.) Dress appropriately" />
+                    android:textAlignment="center"
+                    android:textStyle="bold"
+                    android:textSize="18sp"
+                    android:text="Dress appropriately." />
 
                 <TextView
                     android:id="@+id/tip_rule9_detail_tv_id"
+                    android:layout_marginTop="10dp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="35dp"
-                    android:text="Abide by the dress code. \n" />
+                    android:text="Abide by the dress code." />
 
             </LinearLayout>
-
         </android.support.v7.widget.CardView>
 
         <android.support.v7.widget.CardView
@@ -334,6 +346,7 @@
             android:layout_margin="8dp"
             card_view:cardCornerRadius="2dp"
             card_view:cardUseCompatPadding="false"
+            android:clickable="true"
             android:layout_height="wrap_content">
 
             <LinearLayout
@@ -346,19 +359,20 @@
                     android:id="@+id/tip_rule10_tv_id"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="10.) Be familiar with company rules" />
+                    android:textAlignment="center"
+                    android:textStyle="bold"
+                    android:textSize="18sp"
+                    android:text="Be familiar with company rules." />
 
                 <TextView
                     android:id="@+id/tip_rule10_detail_tv_id"
+                    android:layout_marginTop="10dp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="35dp"
-                    android:text="Review your employee handbook \n" />
+                    android:text="Review your employee handbook." />
 
             </LinearLayout>
-
         </android.support.v7.widget.CardView>
 
     </LinearLayout>
-
 </android.support.v4.widget.NestedScrollView>
