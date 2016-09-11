@@ -17,7 +17,7 @@
             android:layout_height="wrap_content">
 
             <fragment
-                android:name="com.google.android.gms.maps.SupportMapFragment"
+                class="com.google.android.gms.maps.SupportMapFragment"
                 android:layout_width="match_parent"
                 android:layout_height="200dp"
                 android:id="@+id/about_fragment_map" />

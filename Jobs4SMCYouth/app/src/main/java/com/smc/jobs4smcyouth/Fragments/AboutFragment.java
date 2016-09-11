@@ -71,11 +71,13 @@ public class AboutFragment extends Fragment implements OnMapReadyCallback{
     private TextView phoneRedwoodTextView;
 
     private GoogleMap map;
+    private SupportMapFragment mapFragment;
     private static String latitude;
     private static String longitude;
     private List<AboutLocation> officeLocations;
 
     private Tracker analyticsTracker;
+    private View view;
 
     public AboutFragment() {
         // Required empty public constructor
@@ -108,29 +110,27 @@ public class AboutFragment extends Fragment implements OnMapReadyCallback{
                 .setCategory("Action")
                 .setAction("Share")
                 .build());
-
-
-
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View v = inflater.inflate(R.layout.fragment_about, container, false);
+        super.onCreateView(inflater, container, savedInstanceState);
 
-        initializeViews(v);
-        initilizeLocations();
+        if(view == null){
+            view = inflater.inflate(R.layout.fragment_about, container, false);
+        }
+
         initGoogleMaps();
-
-
-
+        initializeViews(view);
+        initilizeLocations();
 
         setDialNumberListener(phoneDCTextView, "6503018434");
         setDialNumberListener(phoneAdultTextView, "6503018434");
         setDialNumberListener(phoneBelmontTextView, "6508026534");
         setDialNumberListener(phoneRedwoodTextView, "6508026534");
 
-        return v;
+        return view;
     }
 
     private void initializeViews(View v){
@@ -208,8 +208,11 @@ public class AboutFragment extends Fragment implements OnMapReadyCallback{
     }
 
     private void initGoogleMaps(){
-        SupportMapFragment mapFragment = (SupportMapFragment) getChildFragmentManager().findFragmentById(R.id.about_fragment_map);
-        mapFragment.getMapAsync(this);
+        if(map == null){
+            mapFragment = (SupportMapFragment) getChildFragmentManager().findFragmentById(R.id.about_fragment_map);
+            mapFragment.getMapAsync(this);
+        }
+
     }
 
     @Override
