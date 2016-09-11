@@ -8,4 +8,5 @@
     <dimen name="card_view_corner_radius">2dp</dimen>
     <dimen name="standard_linear_layout_padding">16dp</dimen>
     <dimen name="top_margin_details_text_expanding_card_view">10dp</dimen>
+    <dimen name="nested_scrollview_top_margin">8dp</dimen>
 </resources>
