@@ -96,6 +96,12 @@ public class JobSiteFragment extends Fragment implements JobSiteFragmentRVAdapte
         links.add("Calopps.org");
 
 
+        ArrayList<Integer> linksImage = new ArrayList<>();
+        linksImage.add
+
+
+
+
         JobSiteFragmentRVAdapter jobSiteRVAdapter = new JobSiteFragmentRVAdapter(links, this);
 
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getActivity(), LinearLayoutManager.VERTICAL, false);

@@ -76,7 +76,7 @@ public class JobSiteFragmentRVAdapter extends RecyclerView.Adapter<JobSiteFragme
         Log.d("JobSiteRVAdapter", "OnBindViewHolder items");
         holder.jobListTextView.setText(links.get(position));
 
-        //holder.jobListImageView.setImageResource(R.drawable.logo_careerbuilder);
+        holder.jobListImageView.setImageResource(R.drawable.logo_careerbuilder);
 
         holder.bind(clickListener, links.get(position));
 
