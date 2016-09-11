@@ -7,6 +7,7 @@
     android:layout_margin="8dp"
     card_view:cardCornerRadius="2dp"
     card_view:cardUseCompatPadding="false"
+    card_view:contentPadding="15dp"
     android:layout_height="wrap_content">
     <LinearLayout
         android:layout_width="match_parent"
@@ -24,12 +25,15 @@
             android:layout_height="wrap_content"/>
 
         <com.github.ivbaranov.mli.MaterialLetterIcon
+            android:id="@+id/success_letter"
             android:layout_gravity="center_horizontal"
             android:layout_width="80dp"
             android:layout_height="80dp"
             android:layout_margin="10dp"
             card_view:mli_letter_color="@color/accent"
-            card_view:mli_shape_color="@color/primary"
+            card_view:mli_shape_color="@color/primary_light"
+            card_view:mli_letter="S"
+            card_view:mli_letter_size="50"
             app:mli_shape_type="circle"/>
 
         <ImageView
@@ -40,7 +44,7 @@
             android:layout_gravity="center_horizontal"
             android:layout_margin="10dp"/>
 
-        <com.example.jobs4smcyouth.Utilities.ExpandableTextView
+        <com.smc.jobs4smcyouth.Utilities.ExpandableTextView
             android:layout_margin="5dp"
             android:id="@+id/rv_item_success_story"
             android:layout_width="match_parent"

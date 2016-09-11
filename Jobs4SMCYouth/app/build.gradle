@@ -5,11 +5,12 @@ android {
     buildToolsVersion "23.0.3"
 
     defaultConfig {
-        applicationId "com.example.jobs4smcyouth"
+        applicationId "com.smc.jobs4smcyouth"
         minSdkVersion 19
         targetSdkVersion 23
         versionCode 1
         versionName "1.0"
+        multiDexEnabled true
     }
     buildTypes {
         release {
@@ -26,6 +27,7 @@ android {
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
     testCompile 'junit:junit:4.12'
+    compile 'com.android.support:multidex:1.0.0'
 
     compile 'com.android.support:appcompat-v7:23.4.0'
     compile 'com.android.support:support-v4:23.4.0'
@@ -43,6 +45,11 @@ dependencies {
     compile 'io.reactivex:rxandroid:1.2.1'
     compile 'io.reactivex:rxjava:1.1.6'
 
+    compile 'com.google.android.gms:play-services-maps:9.2.0'
+    compile 'com.google.android.gms:play-services-location:9.2.0'
 
     compile 'com.hp.mss:mobileprintsdk:v2.02.418'
+
+    compile 'com.google.android.gms:play-services-analytics:9.2.0'
 }
+apply plugin: 'com.google.gms.google-services'

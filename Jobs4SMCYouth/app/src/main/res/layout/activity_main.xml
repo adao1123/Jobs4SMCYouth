@@ -11,7 +11,7 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     android:fitsSystemWindows="true"
     android:id="@+id/drawerlayout_id"
-    tools:context="com.example.jobs4smcyouth.MainActivity">
+    tools:context="com.smc.jobs4smcyouth.MainActivity">
 
     <android.support.design.widget.CoordinatorLayout
         android:layout_width="match_parent"
