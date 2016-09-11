@@ -17,26 +17,26 @@ import com.example.jobs4smcyouth.R;
  * A simple {@link Fragment} subclass.
  */
 public class TipFragment extends Fragment {
-    CardView tip1Card;
-    CardView tip2Card;
-    CardView tip3Card;
-    CardView tip4Card;
-    CardView tip5Card;
-    CardView tip6Card;
-    CardView tip7Card;
-    CardView tip8Card;
-    CardView tip9Card;
-    CardView tip10Card;
-    TextView tip1Detail;
-    TextView tip2Detail;
-    TextView tip3Detail;
-    TextView tip4Detail;
-    TextView tip5Detail;
-    TextView tip6Detail;
-    TextView tip7Detail;
-    TextView tip8Detail;
-    TextView tip9Detail;
-    TextView tip10Detail;
+    private CardView tip1Card;
+    private CardView tip2Card;
+    private CardView tip3Card;
+    private CardView tip4Card;
+    private CardView tip5Card;
+    private CardView tip6Card;
+    private CardView tip7Card;
+    private CardView tip8Card;
+    private CardView tip9Card;
+    private CardView tip10Card;
+    private TextView tip1Detail;
+    private TextView tip2Detail;
+    private TextView tip3Detail;
+    private TextView tip4Detail;
+    private TextView tip5Detail;
+    private TextView tip6Detail;
+    private TextView tip7Detail;
+    private TextView tip8Detail;
+    private TextView tip9Detail;
+    private TextView tip10Detail;
 
     public TipFragment() {
         // Required empty public constructor
