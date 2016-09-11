@@ -120,10 +120,7 @@ public class JobSiteFragment extends Fragment implements JobSiteFragmentRVAdapte
         linksImage.add(R.drawable.logo_calopps);
 
 
-
-
         JobSiteFragmentRVAdapter jobSiteRVAdapter = new JobSiteFragmentRVAdapter(links, linksImage, this);
-
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getActivity(), LinearLayoutManager.VERTICAL, false);
         GridLayoutManager gridLayoutManager = new GridLayoutManager(getActivity(), 2);
         jobListRecyclerView.setLayoutManager(gridLayoutManager);

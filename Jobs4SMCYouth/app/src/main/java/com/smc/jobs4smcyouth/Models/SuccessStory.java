@@ -7,6 +7,9 @@ public class SuccessStory {
     private String name;
     private String story;
 
+    public SuccessStory() {
+    }
+
     public SuccessStory(String name, String story) {
         this.name = name;
         this.story = story;
