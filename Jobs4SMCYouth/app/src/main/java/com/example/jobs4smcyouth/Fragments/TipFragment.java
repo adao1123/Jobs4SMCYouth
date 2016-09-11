@@ -8,6 +8,8 @@ import android.support.v7.widget.CardView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.TextView;
 
 import com.example.jobs4smcyouth.R;
@@ -37,6 +39,8 @@ public class TipFragment extends Fragment {
     private TextView tip8Detail;
     private TextView tip9Detail;
     private TextView tip10Detail;
+    private Animation slideUp;
+    private Animation slideDown;
 
     public TipFragment() {
         // Required empty public constructor
@@ -49,6 +53,7 @@ public class TipFragment extends Fragment {
         // Inflate the layout for this fragment
         View v = inflater.inflate(R.layout.fragment_tip, container, false);
         initiateViews(v);
+        loadAnimation();
         expandDetails();
         return v;
     }
@@ -84,6 +89,15 @@ public class TipFragment extends Fragment {
         tip8Detail.setVisibility(View.GONE);
         tip9Detail.setVisibility(View.GONE);
         tip10Detail.setVisibility(View.GONE);
+    }
+
+    private void loadAnimation(){
+        slideUp = AnimationUtils.loadAnimation(getActivity(),
+                R.anim.slide_up);
+
+        slideDown = AnimationUtils.loadAnimation(getActivity(),
+                R.anim.slide_down);
+
     }
 
     private void expandDetails(){
