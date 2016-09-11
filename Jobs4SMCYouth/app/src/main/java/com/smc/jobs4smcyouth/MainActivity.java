@@ -1,5 +1,6 @@
 package com.smc.jobs4smcyouth;
 
+import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.design.widget.NavigationView;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
@@ -10,6 +11,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.smc.jobs4smcyouth.Fragments.AboutFragment;
@@ -53,6 +55,8 @@ public class MainActivity extends AppCompatActivity {
     DrawerLayout drawerLayout;
     TextView titleTV;
     Toolbar toolbar;
+    CollapsingToolbarLayout collapsingToolbar;
+    ImageView headerImageView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -61,8 +65,14 @@ public class MainActivity extends AppCompatActivity {
         drawerLayout = (DrawerLayout)findViewById(R.id.drawerlayout_id);
         titleTV = (TextView)findViewById(R.id.title_text_id);
         navigationView = (NavigationView)findViewById(R.id.nvView_id);
+        collapsingToolbar = (CollapsingToolbarLayout) findViewById(R.id.collapsing_toolbar);
+        if(collapsingToolbar == null){
+            collapsingToolbar.setTitle("Job Postings");
+        }
         toolbar = (Toolbar) findViewById(R.id.toolbar);
-        toolbar.setTitle("Job Posting");
+//        toolbar.setTitle("Job Posting");
+        headerImageView = (ImageView) findViewById(R.id.header_image_id);
+        headerImageView.setImageResource(R.drawable.jobs_header);
         setSupportActionBar(toolbar);
         setActionBarDrawer();
         initializeFragments();
@@ -70,7 +80,6 @@ public class MainActivity extends AppCompatActivity {
         openScreen();
         setUpDrawerContent(navigationView);
         initializeFragments();
-
     }
 
     private void initFragmentManager(){
@@ -101,56 +110,69 @@ public class MainActivity extends AppCompatActivity {
             case R.id.drawer_job_post_id:
                 fragmentTransaction.replace(R.id.fragment_container_id, jobPostFragment);
                 titleTV.setText("Jobs and Interview Listings");
+                headerImageView.setImageResource(R.drawable.jobs_header);
                 break;
             case R.id.drawer_scholarship_id:
                 fragmentTransaction.replace(R.id.fragment_container_id, scholarshipFragment);
                 titleTV.setText("Scholarships");
+                headerImageView.setImageResource(R.drawable.scholarship_header1);
                 break;
             case R.id.drawer_transportation_id:
                 fragmentTransaction.replace(R.id.fragment_container_id, transportationFragment);
                 titleTV.setText("Transportation Vouchers");
+                headerImageView.setImageResource(R.drawable.transportation_header2);
                 break;
             case R.id.drawer_requirements_id:
                 fragmentTransaction.replace(R.id.fragment_container_id, requirementFragment);
                 titleTV.setText("Requirements");
+                headerImageView.setImageResource(R.drawable.requirements_header);
                 break;
             case R.id.drawer_success_stories_id:
                 fragmentTransaction.replace(R.id.fragment_container_id, successStoryFragment);
                 titleTV.setText("Success Stories");
+                headerImageView.setImageResource(R.drawable.success_header2);
                 break;
             case R.id.drawer_about_id:
                 fragmentTransaction.replace(R.id.fragment_container_id, aboutFragment);
                 titleTV.setText("About Jobs4Youth");
+                headerImageView.setImageResource(R.drawable.about_header);
                 break;
             case R.id.drawer_applications_id:
                 fragmentTransaction.replace(R.id.fragment_container_id, applicationFragment);
                 titleTV.setText("Applications");
+                headerImageView.setImageResource(R.drawable.generic_header3);
                 break;
             case R.id.drawer_interview_id:
                 fragmentTransaction.replace(R.id.fragment_container_id, interviewFragment);
                 titleTV.setText("Interview Tips");
+                headerImageView.setImageResource(R.drawable.interview_header1);
                 break;
             case R.id.drawer_resume_id:
                 fragmentTransaction.replace(R.id.fragment_container_id, resumeFragment);
                 titleTV.setText("How To Build A Resume");
+                headerImageView.setImageResource(R.drawable.application_header1);
                 break;
             case R.id.drawer_job_site_id:
                 fragmentTransaction.replace(R.id.fragment_container_id, jobSiteFragment);
                 titleTV.setText("Useful Websites for the Job Search");
+                headerImageView.setImageResource(R.drawable.generic_header1);
                 break;
             case R.id.drawer_tips_id:
                 fragmentTransaction.replace(R.id.fragment_container_id, tipFragment);
                 titleTV.setText("User Tips");
+                headerImageView.setImageResource(R.drawable.tips_header4);
                 break;
             case R.id.drawer_print_id:
                 fragmentTransaction.replace(R.id.fragment_container_id, printLayoutFragment);
                 titleTV.setText("Print");
+                headerImageView.setImageResource(R.drawable.generic_header2);
                 break;
             default: break;
         }
         fragmentTransaction.commit();
         menuItem.setChecked(true);
-        toolbar.setTitle(menuItem.getTitle());
+        collapsingToolbar.setTitle(menuItem.getTitle());
+//        toolbar.setTitle(menuItem.getTitle());
         drawerLayout.closeDrawers();
     }
 
