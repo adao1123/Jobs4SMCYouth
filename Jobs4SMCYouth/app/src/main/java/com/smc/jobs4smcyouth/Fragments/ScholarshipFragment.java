@@ -79,7 +79,7 @@ public class ScholarshipFragment extends Fragment {
     }
 
     private FirebaseRecyclerAdapter getFbRvAdapter(){
-        FirebaseRecyclerAdapter adapter = new FirebaseRecyclerAdapter<Scholarship,ScholarshipViewHolder>(Scholarship.class, com.smc.jobs4smcyouth.R.layout.rv_item_jobs,ScholarshipViewHolder.class,scholarshipFb){
+        FirebaseRecyclerAdapter adapter = new FirebaseRecyclerAdapter<Scholarship,ScholarshipViewHolder>(Scholarship.class, R.layout.rv_item_scholarships,ScholarshipViewHolder.class,scholarshipFb){
             @Override
             protected void populateViewHolder(final ScholarshipViewHolder scholarshipViewHolder, Scholarship scholarship, int i) {
                 scholarshipViewHolder.titleTv.setText(scholarship.getTitle());

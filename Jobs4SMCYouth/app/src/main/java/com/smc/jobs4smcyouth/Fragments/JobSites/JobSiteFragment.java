@@ -97,7 +97,7 @@ public class JobSiteFragment extends Fragment implements JobSiteFragmentRVAdapte
 
 
         ArrayList<Integer> linksImage = new ArrayList<>();
-        linksImage.add
+//        linksImage.add
 
 
 
