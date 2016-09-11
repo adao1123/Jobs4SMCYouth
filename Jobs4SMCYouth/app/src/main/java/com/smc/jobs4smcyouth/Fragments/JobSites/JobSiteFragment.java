@@ -17,6 +17,7 @@ import android.view.ViewGroup;
 import com.google.android.gms.analytics.HitBuilders;
 import com.google.android.gms.analytics.Tracker;
 import com.smc.jobs4smcyouth.MyApplication;
+import com.smc.jobs4smcyouth.R;
 import com.smc.jobs4smcyouth.Utilities.WebViewFragment.WebViewFragment;
 
 import java.util.ArrayList;
@@ -97,12 +98,31 @@ public class JobSiteFragment extends Fragment implements JobSiteFragmentRVAdapte
 
 
         ArrayList<Integer> linksImage = new ArrayList<>();
-        linksImage.add
+        linksImage.add(R.drawable.logo_acinet_full);
+        linksImage.add(0);
+        linksImage.add(R.drawable.logo_bajobs);
+        linksImage.add(R.drawable.logo_careersorg);
+        linksImage.add(R.drawable.logo_craigslist);
+        linksImage.add(R.drawable.logo_bayareajobs);
+        linksImage.add(R.drawable.logo_caljobs);
+        linksImage.add(R.drawable.logo_careerbuilder);
+        linksImage.add(R.drawable.logo_experience);
+        linksImage.add(R.drawable.logo_glassdoor);
+        linksImage.add(R.drawable.logo_idealist);
+        linksImage.add(R.drawable.logo_indeed);
+        linksImage.add(0);
+        linksImage.add(R.drawable.logo_jobstar);
+        linksImage.add(R.drawable.logo_monster);
+        linksImage.add(R.drawable.logo_simplyhired);
+        linksImage.add(0);
+        linksImage.add(R.drawable.logo_snagajob);
+        linksImage.add(R.drawable.logo_startup_hire);
+        linksImage.add(R.drawable.logo_calopps);
 
 
 
 
-        JobSiteFragmentRVAdapter jobSiteRVAdapter = new JobSiteFragmentRVAdapter(links, this);
+        JobSiteFragmentRVAdapter jobSiteRVAdapter = new JobSiteFragmentRVAdapter(links, linksImage, this);
 
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getActivity(), LinearLayoutManager.VERTICAL, false);
         GridLayoutManager gridLayoutManager = new GridLayoutManager(getActivity(), 2);

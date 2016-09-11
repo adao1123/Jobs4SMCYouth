@@ -20,6 +20,7 @@ import java.util.List;
 public class JobSiteFragmentRVAdapter extends RecyclerView.Adapter<JobSiteFragmentRVAdapter.JobSiteViewHolder> {
 
     private final List<String> links;
+    private final List<Integer> linksImages;
     private final OnCardViewClickListener clickListener;
     Picasso picasso;
 
@@ -51,8 +52,9 @@ public class JobSiteFragmentRVAdapter extends RecyclerView.Adapter<JobSiteFragme
         }
     }
 
-    public JobSiteFragmentRVAdapter(List<String> links, OnCardViewClickListener clickListener){
+    public JobSiteFragmentRVAdapter(List<String> links, List<Integer> linksImages, OnCardViewClickListener clickListener){
         this.links = links;
+        this.linksImages =linksImages;
         this.clickListener = clickListener;
     }
 
@@ -76,7 +78,7 @@ public class JobSiteFragmentRVAdapter extends RecyclerView.Adapter<JobSiteFragme
         Log.d("JobSiteRVAdapter", "OnBindViewHolder items");
         holder.jobListTextView.setText(links.get(position));
 
-        holder.jobListImageView.setImageResource(R.drawable.logo_careerbuilder);
+        holder.jobListImageView.setImageResource(linksImages.get(position));
 
         holder.bind(clickListener, links.get(position));
 
