@@ -1,11 +1,13 @@
 <android.support.v4.widget.NestedScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:card_view="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:card_view="http://schemas.android.com/tools"
+    android:fitsSystemWindows="true"
+    android:layout_marginTop="@dimen/nested_scrollview_top_margin"
     tools:context=".Fragments.TransportationFragment">
 
     <LinearLayout
@@ -17,8 +19,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
-            android:layout_margin="8dp"
-            card_view:cardCornerRadius="2dp"
+            android:layout_margin="@dimen/card_view_layout_margin"
+            card_view:cardCornerRadius="@dimen/card_view_corner_radius"
+            app:cardBackgroundColor="@color/card_view_background"
             card_view:cardUseCompatPadding="false">
 
             <LinearLayout
@@ -51,15 +54,15 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
-            android:layout_margin="8dp"
-            card_view:cardCornerRadius="2dp"
+            android:layout_margin="@dimen/card_view_layout_margin"
+            card_view:cardCornerRadius="@dimen/card_view_corner_radius"
             card_view:cardUseCompatPadding="false">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:padding="16dp">
+                android:padding="@dimen/standard_linear_layout_padding">
 
                 <FrameLayout
                     android:id="@+id/transportation_wVContainer_id"
