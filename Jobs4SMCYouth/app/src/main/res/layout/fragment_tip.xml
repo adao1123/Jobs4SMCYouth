@@ -23,8 +23,7 @@
             card_view:cardCornerRadius="@dimen/card_view_corner_radius"
             card_view:cardUseCompatPadding="false"
             android:clickable="true"
-            app:cardBackgroundColor="@color/card_view_background"
-            android:stateListAnimator="@anim/lift_on_touch">
+            app:cardBackgroundColor="@color/card_view_background">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -60,8 +59,7 @@
             card_view:cardCornerRadius="@dimen/card_view_corner_radius"
             card_view:cardUseCompatPadding="false"
             android:clickable="true"
-            app:cardBackgroundColor="@color/card_view_background"
-            android:stateListAnimator="@anim/lift_on_touch">
+            app:cardBackgroundColor="@color/card_view_background">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -97,8 +95,7 @@
             card_view:cardCornerRadius="@dimen/card_view_corner_radius"
             card_view:cardUseCompatPadding="false"
             android:clickable="true"
-            app:cardBackgroundColor="@color/card_view_background"
-            android:stateListAnimator="@anim/lift_on_touch">
+            app:cardBackgroundColor="@color/card_view_background">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -134,8 +131,7 @@
             card_view:cardCornerRadius="@dimen/card_view_corner_radius"
             card_view:cardUseCompatPadding="false"
             android:clickable="true"
-            app:cardBackgroundColor="@color/card_view_background"
-            android:stateListAnimator="@anim/lift_on_touch">
+            app:cardBackgroundColor="@color/card_view_background">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -171,8 +167,7 @@
             card_view:cardCornerRadius="@dimen/card_view_corner_radius"
             card_view:cardUseCompatPadding="false"
             android:clickable="true"
-            app:cardBackgroundColor="@color/card_view_background"
-            android:stateListAnimator="@anim/lift_on_touch">
+            app:cardBackgroundColor="@color/card_view_background">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -209,8 +204,7 @@
             card_view:cardCornerRadius="@dimen/card_view_corner_radius"
             card_view:cardUseCompatPadding="false"
             android:clickable="true"
-            app:cardBackgroundColor="@color/card_view_background"
-            android:stateListAnimator="@anim/lift_on_touch">
+            app:cardBackgroundColor="@color/card_view_background">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -245,8 +239,7 @@
             card_view:cardCornerRadius="@dimen/card_view_corner_radius"
             card_view:cardUseCompatPadding="false"
             android:clickable="true"
-            app:cardBackgroundColor="@color/card_view_background"
-            android:stateListAnimator="@anim/lift_on_touch">
+            app:cardBackgroundColor="@color/card_view_background">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -282,8 +275,7 @@
             card_view:cardCornerRadius="@dimen/card_view_corner_radius"
             card_view:cardUseCompatPadding="false"
             android:clickable="true"
-            app:cardBackgroundColor="@color/card_view_background"
-            android:stateListAnimator="@anim/lift_on_touch">
+            app:cardBackgroundColor="@color/card_view_background">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -320,8 +312,7 @@
             card_view:cardCornerRadius="@dimen/card_view_corner_radius"
             card_view:cardUseCompatPadding="false"
             android:clickable="true"
-            app:cardBackgroundColor="@color/card_view_background"
-            android:stateListAnimator="@anim/lift_on_touch">
+            app:cardBackgroundColor="@color/card_view_background">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -357,8 +348,7 @@
             card_view:cardCornerRadius="@dimen/card_view_corner_radius"
             card_view:cardUseCompatPadding="false"
             android:clickable="true"
-            app:cardBackgroundColor="@color/card_view_background"
-            android:stateListAnimator="@anim/lift_on_touch">
+            app:cardBackgroundColor="@color/card_view_background">
 
             <LinearLayout
                 android:layout_width="match_parent"
