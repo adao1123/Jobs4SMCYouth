@@ -39,6 +39,7 @@ dependencies {
     compile 'com.firebaseui:firebase-ui:0.3.1'
 
     compile 'com.squareup.picasso:picasso:2.3.3'
+    compile 'com.makeramen:roundedimageview:2.2.1'
 
     compile 'com.github.ivbaranov:materiallettericon:0.2.2'
 

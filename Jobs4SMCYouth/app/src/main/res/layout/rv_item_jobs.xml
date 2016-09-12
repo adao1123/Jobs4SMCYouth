@@ -3,41 +3,53 @@
     xmlns:card_view="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_margin="8dp"
+    android:layout_marginTop="8dp"
+    android:layout_marginLeft="8dp"
+    android:layout_marginRight="8dp"
     card_view:cardCornerRadius="2dp"
     card_view:cardUseCompatPadding="false"
+    card_view:cardBackgroundColor="@color/card_view_background"
     android:layout_height="wrap_content">
 
     <LinearLayout
+        android:id="@+id/jobs_listing"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="5dp"
         android:orientation="horizontal">
 
-        <ImageView
-            android:layout_width="50dp"
-            android:layout_height="50dp"
+        <com.makeramen.roundedimageview.RoundedImageView
+            android:id="@+id/rv_item_jobs_image"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
             android:layout_gravity="center_vertical"
             android:scaleType="fitXY"
             android:layout_margin="10dp"
+            card_view:riv_corner_radius="10dp"
             android:src="@drawable/icon_jobpost"/>
 
 
         <LinearLayout
             android:layout_width="match_parent"
             android:orientation="vertical"
+            android:gravity="center_vertical"
+            android:layout_gravity="center_vertical"
             android:layout_margin="5dp"
             android:layout_height="wrap_content">
 
             <LinearLayout
+                android:id="@+id/jobs_title_view"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
 
                 <TextView
+                    android:id="@+id/jobs_title_text"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Title: "
+                    android:textColor="@color/card_view_title"
+                    android:visibility="gone"
                     android:textStyle="bold"
                     android:gravity="left"/>
 
@@ -45,6 +57,9 @@
                     android:id="@+id/rv_item_jobs_title"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:textColor="@color/card_view_title"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
                     android:gravity="left"/>
 
 
@@ -52,13 +67,16 @@
 
 
             <LinearLayout
+                android:id="@+id/jobs_city_view"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:visibility="gone"
                 android:orientation="horizontal">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:textColor="@color/card_view_title"
                     android:text="Location: "
                     android:textStyle="bold"
                     android:gravity="left"/>
@@ -73,7 +91,9 @@
             </LinearLayout>
 
             <LinearLayout
+                android:id="@+id/jobs_payrate_view"
                 android:layout_width="match_parent"
+                android:visibility="gone"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
 
@@ -81,6 +101,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Pay Rate: "
+                    android:textColor="@color/card_view_title"
                     android:textStyle="bold"
                     android:gravity="left"/>
 
@@ -93,13 +114,16 @@
 
 
             <LinearLayout
+                android:id="@+id/jobs_age_view"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:visibility="gone"
                 android:orientation="horizontal">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:textColor="@color/card_view_title"
                     android:text="Age: "
                     android:textStyle="bold"
                     android:gravity="left"/>
@@ -114,14 +138,17 @@
 
 
             <LinearLayout
+                android:id="@+id/jobs_duties_view"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:visibility="gone"
                 android:orientation="horizontal">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Duties: "
+                    android:textColor="@color/card_view_title"
                     android:textStyle="bold"
                     android:gravity="left"/>
 

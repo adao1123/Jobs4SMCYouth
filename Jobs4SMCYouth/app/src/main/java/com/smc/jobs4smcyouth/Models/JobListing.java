@@ -9,16 +9,19 @@ public class JobListing {
     private String jobDuty;
     private String jobPayrate;
     private String jobAge;
+    private String jobImageLink;
 
     public JobListing() {
     }
 
-    public JobListing(String jobTitle, String jobCity, String jobDuty, String jobPayrate, String jobAge) {
+    public JobListing(String jobTitle, String jobCity, String jobDuty, String jobPayrate, String jobAge, String jobImageLink) {
         this.jobTitle = jobTitle;
         this.jobCity = jobCity;
         this.jobDuty = jobDuty;
         this.jobPayrate = jobPayrate;
         this.jobAge = jobAge;
+        this.jobImageLink = jobImageLink;
+
     }
 
     public String getJobTitle() {
@@ -60,4 +63,13 @@ public class JobListing {
     public void setJobAge(String jobAge) {
         this.jobAge = jobAge;
     }
+
+    public String getJobImageLink() {
+        return jobImageLink;
+    }
+
+    public void setJobImageLink(String jobImageLink) {
+        this.jobImageLink = jobImageLink;
+    }
+
 }
