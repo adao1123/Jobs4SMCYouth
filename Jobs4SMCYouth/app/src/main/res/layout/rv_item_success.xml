@@ -5,6 +5,7 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_margin="8dp"
+    card_view:cardBackgroundColor="@color/card_view_background"
     card_view:cardCornerRadius="2dp"
     card_view:cardUseCompatPadding="false"
     card_view:contentPadding="15dp"
@@ -30,8 +31,8 @@
             android:layout_width="80dp"
             android:layout_height="80dp"
             android:layout_margin="10dp"
-            card_view:mli_letter_color="@color/accent"
-            card_view:mli_shape_color="@color/primary_light"
+            card_view:mli_letter_color="@color/primary_light"
+            card_view:mli_shape_color="@color/accent"
             card_view:mli_letter="S"
             card_view:mli_letter_size="50"
             app:mli_shape_type="circle"/>
