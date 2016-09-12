@@ -41,6 +41,8 @@ public class TipFragment extends Fragment {
     private TextView tip10Detail;
     private Animation slideUp;
     private Animation slideDown;
+    private Animation liftOnTouch;
+    private Animation downOnTouch;
 
     public TipFragment() {
         // Required empty public constructor
@@ -92,12 +94,8 @@ public class TipFragment extends Fragment {
     }
 
     private void loadAnimation(){
-        slideUp = AnimationUtils.loadAnimation(getActivity(),
-                R.anim.slide_up);
-
-        slideDown = AnimationUtils.loadAnimation(getActivity(),
-                R.anim.slide_down);
-
+        slideUp = AnimationUtils.loadAnimation(getActivity(), R.anim.slide_up);
+        slideDown = AnimationUtils.loadAnimation(getActivity(), R.anim.slide_down);
     }
 
     private void expandDetails(){
@@ -106,8 +104,10 @@ public class TipFragment extends Fragment {
             public void onClick(View v) {
                 if(tip1Detail.getVisibility() == View.GONE){
                     tip1Detail.setVisibility(View.VISIBLE);
+                    tip1Detail.startAnimation(slideDown);
                 } else{
                     tip1Detail.setVisibility(View.GONE);
+                    tip1Detail.startAnimation(slideUp);
                 }
             }
         });
@@ -117,8 +117,10 @@ public class TipFragment extends Fragment {
             public void onClick(View v) {
                 if(tip2Detail.getVisibility() == View.GONE){
                     tip2Detail.setVisibility(View.VISIBLE);
+                    tip2Detail.startAnimation(slideDown);
                 } else{
                     tip2Detail.setVisibility(View.GONE);
+                    tip2Detail.startAnimation(slideUp);
                 }
             }
         });
