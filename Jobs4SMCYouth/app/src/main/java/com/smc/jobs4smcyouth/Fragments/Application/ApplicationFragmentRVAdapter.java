@@ -162,6 +162,7 @@ public class ApplicationFragmentRVAdapter extends RecyclerView.Adapter<RecyclerV
 
     private void createDrawablesList(){
         drawablesArrayList = new ArrayList<Integer>();
+        drawablesArrayList.add(0);
         drawablesArrayList.add(R.drawable.application_master1);
         drawablesArrayList.add(R.drawable.application_master2);
         drawablesArrayList.add(R.drawable.application_volunteer1);
@@ -174,6 +175,7 @@ public class ApplicationFragmentRVAdapter extends RecyclerView.Adapter<RecyclerV
 
     private void createNamesList(){
         imageNamesList = new ArrayList<String>();
+        imageNamesList.add("");
         imageNamesList.add("Master Application Sample 1");
         imageNamesList.add("Master Applicatio Sample 2");
         imageNamesList.add("Volunteer Experience Sample 1");
