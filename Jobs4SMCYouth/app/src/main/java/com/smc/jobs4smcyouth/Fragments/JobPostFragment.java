@@ -17,6 +17,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.makeramen.roundedimageview.RoundedImageView;
 import com.smc.jobs4smcyouth.Models.JobListing;
 import com.smc.jobs4smcyouth.R;
 import com.firebase.client.DataSnapshot;
@@ -92,8 +93,8 @@ public class JobPostFragment extends Fragment {
                 viewHolder.jobsDutiesTV.setText(jobListing.getJobDuty());
                 viewHolder.jobsPayrateTV.setText(jobListing.getJobPayrate());
                 viewHolder.jobsAgeTV.setText(jobListing.getJobAge());
-                Picasso.with(getContext()).load("http://www.tarleton.edu/applications/press/files/3452.JPG")
-                        .resize(200,200).error(R.drawable.ic_support).into(viewHolder.jobsImage);
+                Picasso.with(getContext()).load(jobListing.getJobImageLink())
+                        .resize(200,200).centerCrop().error(R.drawable.ic_support).into(viewHolder.jobsImage);
                 viewHolder.jobsListingView.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
@@ -105,8 +106,8 @@ public class JobPostFragment extends Fragment {
                             viewHolder.jobsTitleWord.setVisibility(View.GONE);
                             viewHolder.jobsTitleTV.setTextSize(20);
                             viewHolder.jobsTitleTV.setTypeface(Typeface.DEFAULT_BOLD);
+                            viewHolder.jobsTitleTV.setTextColor(getContext().getResources().getColor(R.color.card_view_title));
                             viewHolder.jobsImage.setVisibility(View.VISIBLE);
-
                         }else{
                             viewHolder.jobsImage.setVisibility(View.GONE);
                             viewHolder.dutyView.setVisibility(View.VISIBLE);
@@ -116,6 +117,7 @@ public class JobPostFragment extends Fragment {
                             viewHolder.cityView.setVisibility(View.VISIBLE);
                             viewHolder.jobsTitleTV.setTextSize(15);
                             viewHolder.jobsTitleTV.setTypeface(Typeface.DEFAULT);
+                            viewHolder.jobsTitleTV.setTextColor(getContext().getResources().getColor(android.R.color.tab_indicator_text));
                         }
                     }
                 });
@@ -132,7 +134,7 @@ public class JobPostFragment extends Fragment {
         public TextView jobsPayrateTV;
         public TextView jobsAgeTV;
         public TextView jobsTitleWord;
-        public ImageView jobsImage;
+        public RoundedImageView jobsImage;
         public LinearLayout jobsListingView;
         public LinearLayout titleView;
         public LinearLayout cityView;
@@ -141,7 +143,7 @@ public class JobPostFragment extends Fragment {
         public LinearLayout ageView;
         public JobsViewHolder(View itemView) {
             super(itemView);
-            jobsImage = (ImageView)itemView.findViewById(R.id.rv_item_jobs_image);
+            jobsImage = (RoundedImageView)itemView.findViewById(R.id.rv_item_jobs_image);
             jobsTitleTV = (TextView)itemView.findViewById(R.id.rv_item_jobs_title);
             jobsCityTV = (TextView)itemView.findViewById(R.id.rv_item_jobs_city);
             jobsDutiesTV = (TextView)itemView.findViewById(R.id.rv_item_jobs_duties);
@@ -170,7 +172,8 @@ public class JobPostFragment extends Fragment {
                     getResources().getStringArray(R.array.city)[i],
                     getResources().getStringArray(R.array.duties)[i],
                     getResources().getStringArray(R.array.payRate)[i],
-                    getResources().getStringArray(R.array.age)[i]);
+                    getResources().getStringArray(R.array.age)[i],
+                    "http://www.tarleton.edu/applications/press/files/3452.JPG");
             jobListings.add(jobListing);
         }
         return jobListings;
