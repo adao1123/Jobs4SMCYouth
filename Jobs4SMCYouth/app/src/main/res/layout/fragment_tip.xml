@@ -23,7 +23,7 @@
             card_view:cardCornerRadius="@dimen/card_view_corner_radius"
             card_view:cardUseCompatPadding="false"
             android:clickable="true"
-            android:stateListAnimator="@anim/lift_on_touch">
+            app:cardBackgroundColor="@color/card_view_background">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -38,6 +38,7 @@
                     android:textAlignment="center"
                     android:textStyle="bold"
                     android:textSize="18sp"
+                    android:textColor="@color/card_view_title"
                     android:text="Take a calendar or notebook with you to work." />
 
                 <TextView
@@ -58,7 +59,7 @@
             card_view:cardCornerRadius="@dimen/card_view_corner_radius"
             card_view:cardUseCompatPadding="false"
             android:clickable="true"
-            android:stateListAnimator="@anim/lift_on_touch">
+            app:cardBackgroundColor="@color/card_view_background">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -73,6 +74,7 @@
                     android:textAlignment="center"
                     android:textStyle="bold"
                     android:textSize="18sp"
+                    android:textColor="@color/card_view_title"
                     android:text="Ensure transportation to work." />
 
                 <TextView
@@ -93,7 +95,7 @@
             card_view:cardCornerRadius="@dimen/card_view_corner_radius"
             card_view:cardUseCompatPadding="false"
             android:clickable="true"
-            android:stateListAnimator="@anim/lift_on_touch">
+            app:cardBackgroundColor="@color/card_view_background">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -108,6 +110,7 @@
                     android:textAlignment="center"
                     android:textStyle="bold"
                     android:textSize="18sp"
+                    android:textColor="@color/card_view_title"
                     android:text="Get plenty of rest for work." />
 
                 <TextView
@@ -128,7 +131,7 @@
             card_view:cardCornerRadius="@dimen/card_view_corner_radius"
             card_view:cardUseCompatPadding="false"
             android:clickable="true"
-            android:stateListAnimator="@anim/lift_on_touch">
+            app:cardBackgroundColor="@color/card_view_background">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -143,6 +146,7 @@
                     android:textAlignment="center"
                     android:textStyle="bold"
                     android:textSize="18sp"
+                    android:textColor="@color/card_view_title"
                     android:text="Ask the right questions." />
 
                 <TextView
@@ -163,7 +167,7 @@
             card_view:cardCornerRadius="@dimen/card_view_corner_radius"
             card_view:cardUseCompatPadding="false"
             android:clickable="true"
-            android:stateListAnimator="@anim/lift_on_touch">
+            app:cardBackgroundColor="@color/card_view_background">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -178,6 +182,7 @@
                     android:textAlignment="center"
                     android:textStyle="bold"
                     android:textSize="18sp"
+                    android:textColor="@color/card_view_title"
                     android:text="Use good judgement in working extra hours." />
 
                 <TextView
@@ -199,7 +204,7 @@
             card_view:cardCornerRadius="@dimen/card_view_corner_radius"
             card_view:cardUseCompatPadding="false"
             android:clickable="true"
-            android:stateListAnimator="@anim/lift_on_touch">
+            app:cardBackgroundColor="@color/card_view_background">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -214,6 +219,7 @@
                     android:textAlignment="center"
                     android:textStyle="bold"
                     android:textSize="18sp"
+                    android:textColor="@color/card_view_title"
                     android:text="Do not flaunt your knowledge and education." />
 
                 <TextView
@@ -233,7 +239,7 @@
             card_view:cardCornerRadius="@dimen/card_view_corner_radius"
             card_view:cardUseCompatPadding="false"
             android:clickable="true"
-            android:stateListAnimator="@anim/lift_on_touch">
+            app:cardBackgroundColor="@color/card_view_background">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -248,6 +254,7 @@
                     android:textAlignment="center"
                     android:textStyle="bold"
                     android:textSize="18sp"
+                    android:textColor="@color/card_view_title"
                     android:text="Build a relationship with all employees." />
 
                 <TextView
@@ -268,7 +275,7 @@
             card_view:cardCornerRadius="@dimen/card_view_corner_radius"
             card_view:cardUseCompatPadding="false"
             android:clickable="true"
-            android:stateListAnimator="@anim/lift_on_touch">
+            app:cardBackgroundColor="@color/card_view_background">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -283,6 +290,7 @@
                     android:textAlignment="center"
                     android:textStyle="bold"
                     android:textSize="18sp"
+                    android:textColor="@color/card_view_title"
                     android:text="Stay busy (take initiative)." />
 
                 <TextView
@@ -304,7 +312,7 @@
             card_view:cardCornerRadius="@dimen/card_view_corner_radius"
             card_view:cardUseCompatPadding="false"
             android:clickable="true"
-            android:stateListAnimator="@anim/lift_on_touch">
+            app:cardBackgroundColor="@color/card_view_background">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -319,6 +327,7 @@
                     android:textAlignment="center"
                     android:textStyle="bold"
                     android:textSize="18sp"
+                    android:textColor="@color/card_view_title"
                     android:text="Dress appropriately." />
 
                 <TextView
@@ -339,7 +348,7 @@
             card_view:cardCornerRadius="@dimen/card_view_corner_radius"
             card_view:cardUseCompatPadding="false"
             android:clickable="true"
-            android:stateListAnimator="@anim/lift_on_touch">
+            app:cardBackgroundColor="@color/card_view_background">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -354,6 +363,7 @@
                     android:textAlignment="center"
                     android:textStyle="bold"
                     android:textSize="18sp"
+                    android:textColor="@color/card_view_title"
                     android:text="Be familiar with company rules." />
 
                 <TextView
