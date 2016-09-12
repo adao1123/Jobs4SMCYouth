@@ -2,11 +2,12 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    app:layout_behavior="@string/appbar_scrolling_view_behavior"
     xmlns:card_view="http://schemas.android.com/tools"
-    android:fitsSystemWindows="true"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    android:fitsSystemWindows="true"
+    android:layout_marginTop="@dimen/nested_scrollview_top_margin"
     tools:context=".Fragments.TipFragment">
 
     <LinearLayout
@@ -16,11 +17,10 @@
 
         <android.support.v7.widget.CardView
             android:id="@+id/tip_tipCard_rules"
-            android:orientation="vertical"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="8dp"
-            card_view:cardCornerRadius="2dp"
+            android:layout_margin="@dimen/card_view_layout_margin"
+            card_view:cardCornerRadius="@dimen/card_view_corner_radius"
             card_view:cardUseCompatPadding="false"
             android:clickable="true"
             android:stateListAnimator="@anim/lift_on_touch">
@@ -29,7 +29,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:padding="16dp">
+                android:padding="@dimen/standard_linear_layout_padding">
 
                 <TextView
                     android:id="@+id/tip_rule1_tv_id"
@@ -44,7 +44,7 @@
                     android:id="@+id/tip_rule1_detail_tv_id"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
+                    android:layout_marginTop="@dimen/top_margin_details_text_expanding_card_view"
                     android:text="Record hard-to-remember information, instructions, and meetings you may have to attend." />
 
             </LinearLayout>
@@ -52,11 +52,10 @@
 
         <android.support.v7.widget.CardView
             android:id="@+id/tip_tipCard_rules2"
-            android:orientation="vertical"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="8dp"
-            card_view:cardCornerRadius="2dp"
+            android:layout_margin="@dimen/card_view_layout_margin"
+            card_view:cardCornerRadius="@dimen/card_view_corner_radius"
             card_view:cardUseCompatPadding="false"
             android:clickable="true"
             android:stateListAnimator="@anim/lift_on_touch">
@@ -65,7 +64,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:padding="16dp">
+                android:padding="@dimen/standard_linear_layout_padding">
 
                 <TextView
                     android:id="@+id/tip_rule2_tv_id"
@@ -80,7 +79,7 @@
                     android:id="@+id/tip_rule2_detail_tv_id"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
+                    android:layout_marginTop="@dimen/top_margin_details_text_expanding_card_view"
                     android:text="If you have a car, make sure it is dependable to drive.  Allow extra driving time. If you depend on someone else for transportation, be sure he/she is always available. However, try to have a “plan b” (i.e. Public transportation). If you are going to be late, call your employer. If taking public transportation, know the bus routes and times." />
 
             </LinearLayout>
@@ -88,11 +87,10 @@
 
         <android.support.v7.widget.CardView
             android:id="@+id/tip_tipCard_rules3"
-            android:orientation="vertical"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="8dp"
-            card_view:cardCornerRadius="2dp"
+            android:layout_margin="@dimen/card_view_layout_margin"
+            card_view:cardCornerRadius="@dimen/card_view_corner_radius"
             card_view:cardUseCompatPadding="false"
             android:clickable="true"
             android:stateListAnimator="@anim/lift_on_touch">
@@ -101,7 +99,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:padding="16dp">
+                android:padding="@dimen/standard_linear_layout_padding">
 
                 <TextView
                     android:id="@+id/tip_rule3_tv_id"
@@ -116,7 +114,7 @@
                     android:id="@+id/tip_rule3_detail_tv_id"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
+                    android:layout_marginTop="@dimen/top_margin_details_text_expanding_card_view"
                     android:text="Strain and tension the first few days and weeks of a job will take more energy out of your system than you expect. Avoid a heavy social schedule and get plenty of rest." />
 
             </LinearLayout>
@@ -124,11 +122,10 @@
 
         <android.support.v7.widget.CardView
             android:id="@+id/tip_tipCard_rules4"
-            android:orientation="vertical"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="8dp"
-            card_view:cardCornerRadius="2dp"
+            android:layout_margin="@dimen/card_view_layout_margin"
+            card_view:cardCornerRadius="@dimen/card_view_corner_radius"
             card_view:cardUseCompatPadding="false"
             android:clickable="true"
             android:stateListAnimator="@anim/lift_on_touch">
@@ -137,7 +134,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:padding="16dp">
+                android:padding="@dimen/standard_linear_layout_padding">
 
                 <TextView
                     android:id="@+id/tip_rule4_tv_id"
@@ -152,7 +149,7 @@
                     android:id="@+id/tip_rule4_detail_tv_id"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
+                    android:layout_marginTop="@dimen/top_margin_details_text_expanding_card_view"
                     android:text="Try to find your own answer first. Ask questions at appropriate times. Don’t be afraid to ask if you are not sure about something." />
 
             </LinearLayout>
@@ -160,11 +157,10 @@
 
         <android.support.v7.widget.CardView
             android:id="@+id/tip_tipCard_rules5"
-            android:orientation="vertical"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="8dp"
-            card_view:cardCornerRadius="2dp"
+            android:layout_margin="@dimen/card_view_layout_margin"
+            card_view:cardCornerRadius="@dimen/card_view_corner_radius"
             card_view:cardUseCompatPadding="false"
             android:clickable="true"
             android:stateListAnimator="@anim/lift_on_touch">
@@ -173,7 +169,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:padding="16dp">
+                android:padding="@dimen/standard_linear_layout_padding">
 
                 <TextView
                     android:id="@+id/tip_rule5_tv_id"
@@ -188,7 +184,7 @@
                     android:id="@+id/tip_rule5_detail_tv_id"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
+                    android:layout_marginTop="@dimen/top_margin_details_text_expanding_card_view"
                     android:text="Abide by management’s instructions. Working extra hours and eliminating breaks and lunch to impress management will not develop good relationships with your fellow employees." />
 
             </LinearLayout>
@@ -197,11 +193,10 @@
 
         <android.support.v7.widget.CardView
             android:id="@+id/tip_tipCard_rules6"
-            android:orientation="vertical"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="8dp"
-            card_view:cardCornerRadius="2dp"
+            android:layout_margin="@dimen/card_view_layout_margin"
+            card_view:cardCornerRadius="@dimen/card_view_corner_radius"
             card_view:cardUseCompatPadding="false"
             android:clickable="true"
             android:stateListAnimator="@anim/lift_on_touch">
@@ -210,7 +205,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:padding="16dp">
+                android:padding="@dimen/standard_linear_layout_padding">
 
                 <TextView
                     android:id="@+id/tip_rule6_tv_id"
@@ -225,18 +220,17 @@
                     android:id="@+id/tip_rule6_detail_tv_id"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
+                    android:layout_marginTop="@dimen/top_margin_details_text_expanding_card_view"
                     android:text="Do not try to impress people with what you know. Until you are sure, be safe and do it the way you are instructed." />
             </LinearLayout>
         </android.support.v7.widget.CardView>
 
         <android.support.v7.widget.CardView
             android:id="@+id/tip_tipCard_rules7"
-            android:orientation="vertical"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="8dp"
-            card_view:cardCornerRadius="2dp"
+            android:layout_margin="@dimen/card_view_layout_margin"
+            card_view:cardCornerRadius="@dimen/card_view_corner_radius"
             card_view:cardUseCompatPadding="false"
             android:clickable="true"
             android:stateListAnimator="@anim/lift_on_touch">
@@ -245,7 +239,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:padding="16dp">
+                android:padding="@dimen/standard_linear_layout_padding">
 
                 <TextView
                     android:id="@+id/tip_rule7_tv_id"
@@ -260,7 +254,7 @@
                     android:id="@+id/tip_rule7_detail_tv_id"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
+                    android:layout_marginTop="@dimen/top_margin_details_text_expanding_card_view"
                     android:text="Be cautious in spending too much time with one person, too soon." />
             </LinearLayout>
 
@@ -268,11 +262,10 @@
 
         <android.support.v7.widget.CardView
             android:id="@+id/tip_tipCard_rules8"
-            android:orientation="vertical"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="8dp"
-            card_view:cardCornerRadius="2dp"
+            android:layout_margin="@dimen/card_view_layout_margin"
+            card_view:cardCornerRadius="@dimen/card_view_corner_radius"
             card_view:cardUseCompatPadding="false"
             android:clickable="true"
             android:stateListAnimator="@anim/lift_on_touch">
@@ -281,7 +274,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:padding="16dp">
+                android:padding="@dimen/standard_linear_layout_padding">
 
                 <TextView
                     android:id="@+id/tip_rule8_tv_id"
@@ -296,7 +289,7 @@
                     android:id="@+id/tip_rule8_detail_tv_id"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
+                    android:layout_marginTop="@dimen/top_margin_details_text_expanding_card_view"
                     android:text="Try to avoid “just sitting there.” Let the supervisor know when you have completed your work so you can work on new projects." />
 
             </LinearLayout>
@@ -305,11 +298,10 @@
 
         <android.support.v7.widget.CardView
             android:id="@+id/tip_tipCard_rules9"
-            android:orientation="vertical"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="8dp"
-            card_view:cardCornerRadius="2dp"
+            android:layout_margin="@dimen/card_view_layout_margin"
+            card_view:cardCornerRadius="@dimen/card_view_corner_radius"
             card_view:cardUseCompatPadding="false"
             android:clickable="true"
             android:stateListAnimator="@anim/lift_on_touch">
@@ -318,7 +310,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:padding="16dp">
+                android:padding="@dimen/standard_linear_layout_padding">
 
                 <TextView
                     android:id="@+id/tip_rule9_tv_id"
@@ -333,7 +325,7 @@
                     android:id="@+id/tip_rule9_detail_tv_id"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
+                    android:layout_marginTop="@dimen/top_margin_details_text_expanding_card_view"
                     android:text="Abide by the dress code." />
 
             </LinearLayout>
@@ -341,11 +333,10 @@
 
         <android.support.v7.widget.CardView
             android:id="@+id/tip_tipCard_rules10"
-            android:orientation="vertical"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="8dp"
-            card_view:cardCornerRadius="2dp"
+            android:layout_margin="@dimen/card_view_layout_margin"
+            card_view:cardCornerRadius="@dimen/card_view_corner_radius"
             card_view:cardUseCompatPadding="false"
             android:clickable="true"
             android:stateListAnimator="@anim/lift_on_touch">
@@ -354,7 +345,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:padding="16dp">
+                android:padding="@dimen/standard_linear_layout_padding">
 
                 <TextView
                     android:id="@+id/tip_rule10_tv_id"
@@ -369,7 +360,7 @@
                     android:id="@+id/tip_rule10_detail_tv_id"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
+                    android:layout_marginTop="@dimen/top_margin_details_text_expanding_card_view"
                     android:text="Review your employee handbook." />
 
             </LinearLayout>

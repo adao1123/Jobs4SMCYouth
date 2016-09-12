@@ -3,13 +3,13 @@
     <color name="primary">#8BC34A</color>
     <color name="primary_dark">#689F38</color>
     <color name="primary_light">#DCEDC8</color>
+    <color name="card_view_background">#DCEDC8</color>
     <color name="accent">#7C4DFF</color>
+    <color name="card_view_title">#7C4DFF</color>
     <color name="primary_text">#212121</color>
     <color name="secondary_text">#727272</color>
     <color name="icons">#212121</color>
     <color name="divider">#B6B6B6</color>
     <color name="background">#f9f9f9</color>
-
-
     <color name="TextColorGrey">#b0b0b0</color>
 </resources>
