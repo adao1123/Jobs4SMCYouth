@@ -9,6 +9,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v7.widget.CardView;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
@@ -70,6 +71,10 @@ public class AboutFragment extends Fragment implements OnMapReadyCallback{
     private TextView phoneBelmontTextView;
     private TextView phoneRedwoodTextView;
     private TextView smcEmailTextView;
+    private CardView aboutCardView;
+    private LinearLayout aboutDetail;
+    private CardView servicesCardView;
+    private LinearLayout servicesDetail;
 
     private GoogleMap map;
     private SupportMapFragment mapFragment;
@@ -126,10 +131,13 @@ public class AboutFragment extends Fragment implements OnMapReadyCallback{
         initializeViews(view);
         initilizeLocations();
 
+        expandDetails();
+
         setDialNumberListener(phoneDCTextView, "6503018434");
         setDialNumberListener(phoneAdultTextView, "6503018434");
         setDialNumberListener(phoneBelmontTextView, "6508026534");
         setDialNumberListener(phoneRedwoodTextView, "6508026534");
+
         setSendEmailListener(smcEmailTextView , "jobsforyouth@smcgov.org");
 
         return view;
@@ -141,6 +149,10 @@ public class AboutFragment extends Fragment implements OnMapReadyCallback{
         phoneBelmontTextView = (TextView) v.findViewById(R.id.about_phoneBelmont_tV_id);
         phoneRedwoodTextView = (TextView) v.findViewById(R.id.about_phoneRedwood_tV_id);
         smcEmailTextView = (TextView) v.findViewById(R.id.about_email_tv_id);
+        aboutCardView = (CardView)v.findViewById(R.id.about_aboutCard_id);
+        aboutDetail = (LinearLayout)v.findViewById(R.id.about_aboutInfo_LinearLayout);
+        servicesCardView = (CardView)v.findViewById(R.id.about_servicesCard_id);
+        servicesDetail = (LinearLayout)v.findViewById(R.id.about_servicesOffered_LinearLayout);
     }
 
 
@@ -233,6 +245,33 @@ public class AboutFragment extends Fragment implements OnMapReadyCallback{
             startActivity(emailIntent);
         }
     }
+
+    private void expandDetails(){
+        aboutCardView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(aboutDetail.getVisibility() == View.GONE){
+                    aboutDetail.setVisibility(View.VISIBLE);
+                }else{
+                    aboutDetail.setVisibility(View.GONE);
+                }
+            }
+        });
+
+        servicesCardView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(servicesDetail.getVisibility() == View.GONE){
+                    servicesDetail.setVisibility(View.VISIBLE);
+                }else{
+                    servicesDetail.setVisibility(View.GONE);
+                }
+            }
+        });
+
+    }
+
+
 
     private void initGoogleMaps(){
         if(map == null){
