@@ -1,15 +1,116 @@
 <android.support.v4.widget.NestedScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:card_view="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    android:fitsSystemWindows="true"
+    android:layout_marginTop="@dimen/nested_scrollview_top_margin"
     tools:context="com.smc.jobs4smcyouth.Fragments.AboutFragment">
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_marginRight="10dp"
+        android:layout_marginLeft="10dp"
         android:orientation="vertical">
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/about_aboutCard_id"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/card_view_layout_margin"
+            card_view:cardCornerRadius="@dimen/card_view_corner_radius"
+            card_view:cardUseCompatPadding="false"
+            android:clickable="true"
+            android:foreground="@drawable/selectable_item_background"
+            app:cardBackgroundColor="@color/card_view_background">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="@dimen/standard_linear_layout_padding">
+
+                <TextView
+                    android:id="@+id/about_aboutTitle_tV_id"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="About"
+                    android:textAlignment="center"
+                    android:textStyle="bold"
+                    android:textSize="@dimen/title_text"
+                    android:textColor="@color/card_view_title"/>
+
+                <LinearLayout
+                    android:id="@+id/about_aboutInfo_LinearLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/about_about_tv_id"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/about_j4y"
+                        android:textAlignment="center"
+                        />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/about_servicesCard_id"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/card_view_layout_margin"
+            card_view:cardCornerRadius="@dimen/card_view_corner_radius"
+            card_view:cardUseCompatPadding="false"
+            android:clickable="true"
+            android:foreground="@drawable/selectable_item_background"
+            app:cardBackgroundColor="@color/card_view_background">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="@dimen/standard_linear_layout_padding">
+
+                <TextView
+                    android:id="@+id/about_servicesTitle_tV_id"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Services Offered"
+                    android:textAlignment="center"
+                    android:textStyle="bold"
+                    android:textSize="@dimen/title_text"
+                    android:textColor="@color/card_view_title"/>
+
+                <LinearLayout
+                    android:id="@+id/about_servicesOffered_LinearLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/about_servicesOffered_tv_id"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/about_services"
+                        android:textAlignment="center"
+                        />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </android.support.v7.widget.CardView>
+
 
         <FrameLayout
             android:id="@+id/about_maps_container"
@@ -19,239 +120,163 @@
             <fragment
                 class="com.google.android.gms.maps.SupportMapFragment"
                 android:layout_width="match_parent"
-                android:layout_height="200dp"
+                android:layout_height="300dp"
                 android:id="@+id/about_fragment_map" />
 
         </FrameLayout>
 
-        <ScrollView
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/about_locationsCard_id"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/card_view_layout_margin"
+            card_view:cardCornerRadius="@dimen/card_view_corner_radius"
+            card_view:cardUseCompatPadding="false"
+            android:clickable="true"
+            android:foreground="@drawable/selectable_item_background"
+            app:cardBackgroundColor="@color/card_view_background">
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginRight="10dp"
-                android:layout_marginLeft="10dp"
-                android:orientation="vertical">
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="@dimen/standard_linear_layout_padding">
 
-                <android.support.v7.widget.CardView
-                    android:id="@+id/about_aboutCard_id"
+                <TextView
+                    android:id="@+id/about_locationsTitle_tV_id"
                     android:layout_width="match_parent"
-                    card_view:cardCornerRadius="2dp"
-                    card_view:cardUseCompatPadding="false"
-                    android:layout_marginBottom="10dp"
-                    android:layout_height="wrap_content">
+                    android:layout_height="wrap_content"
+                    android:text="Office Locations"
+                    android:textAlignment="center"
+                    android:textStyle="bold"
+                    android:textSize="@dimen/title_text"
+                    android:textColor="@color/card_view_title"/>
 
-                    <LinearLayout
+                <LinearLayout
+                    android:id="@+id/about_locations_info_LinearLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:orientation="vertical"
+                        android:text="Email"
+                        android:textStyle="bold"
+                        android:textAlignment="center"
+                        />
 
-                        android:padding="16dp">
-
-                        <TextView
-                            android:id="@+id/about_aboutTitle_tV_id"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="About"
-                            android:textStyle="bold"
-                            android:textColor="@color/primary"
-                            android:textSize="30sp"
-                            android:textAlignment="center"
-                            android:layout_marginTop="20dp"
-                            android:layout_marginBottom="10dp"
-                            android:textAllCaps="true"/>
-
-                        <TextView
-                            android:id="@+id/about_about_tv_id"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="@string/about_j4y"
-                            android:textAlignment="center"
-                            />
-
-                    </LinearLayout>
-
-                </android.support.v7.widget.CardView>
-
-                <android.support.v7.widget.CardView
-                    android:id="@+id/about_servicesCard_id"
-                    android:layout_width="match_parent"
-                    card_view:cardCornerRadius="2dp"
-                    android:layout_marginBottom="10dp"
-                    card_view:cardUseCompatPadding="false"
-                    android:layout_height="wrap_content">
-
-                    <LinearLayout
+                    <TextView
+                        android:id="@+id/about_email_tv_id"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:orientation="vertical"
-                        android:padding="16dp">
+                        android:text="jobsforyouth@smcgov.org"
+                        android:textAlignment="center"
+                        android:textColor="@color/card_view_title"
+                        />
 
-                        <TextView
-                            android:id="@+id/about_servicesTitle_tV_id"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="Services Offered"
-                            android:textStyle="bold"
-                            android:textColor="@color/primary"
-                            android:textSize="30sp"
-                            android:textAlignment="center"
-                            android:layout_marginTop="20dp"
-                            android:layout_marginBottom="10dp"
-                            android:textAllCaps="true"/>
-
-                        <TextView
-                            android:id="@+id/about_servicesOffered_tv_id"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="@string/about_services"
-                            android:textAlignment="center"
-                            />
-
-                    </LinearLayout>
-
-                </android.support.v7.widget.CardView>
-
-                <android.support.v7.widget.CardView
-                    android:id="@+id/about_locationsCard_id"
-                    android:layout_width="match_parent"
-                    card_view:cardCornerRadius="2dp"
-                    android:layout_marginBottom="10dp"
-                    card_view:cardUseCompatPadding="false"
-                    android:layout_height="wrap_content">
-
-                    <LinearLayout
+                    <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:orientation="vertical"
-                        android:padding="16dp">
+                        android:text="\nSan Mateo County Human Services Agency"
+                        android:textStyle="bold"
+                        android:textAlignment="center"
+                        />
 
-                        <TextView
-                            android:id="@+id/about_locationsTitle_tV_id"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="Office Locations"
-                            android:textStyle="bold"
-                            android:textColor="@color/primary"
-                            android:textSize="30sp"
-                            android:textAlignment="center"
-                            android:layout_marginTop="20dp"
-                            android:layout_marginBottom="10dp"
-                            android:textAllCaps="true"/>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="271 92nd Street\nDaly City, CA 94015\nFax: (650)757-3224"
+                        android:textAlignment="center"
+                        />
 
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="Email"
-                            android:textStyle="bold"
-                            android:textAlignment="center"
-                            />
+                    <TextView
+                        android:id="@+id/about_phoneDC_tV_id"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="(650)301-8434"
+                        android:textAlignment="center"
+                        android:textColor="@color/card_view_title"
+                        />
 
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="jobsforyouth@smcgov.org"
-                            android:textAlignment="center"
-                            />
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="\nSan Mateo Adult School (satellite office)"
+                        android:textStyle="bold"
+                        android:textAlignment="center"
+                        />
 
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="San Mateo County Human Services Agency"
-                            android:textStyle="bold"
-                            android:textAlignment="center"
-                            />
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="*No representative on-site\n789 E. Poplar Ave\nSan Mateo, CA 94401"
+                        android:textAlignment="center"
+                        />
 
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="271 92nd Street\nDaly City, CA 94015\nFax: (650)757-3224"
-                            android:textAlignment="center"
-                            />
+                    <TextView
+                        android:id="@+id/about_phoneAdultSchool_tV_id"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="(650)301-8434"
+                        android:textAlignment="center"
+                        android:textColor="@color/card_view_title"
+                        />
 
-                        <TextView
-                            android:id="@+id/about_phoneDC_tV_id"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="(650)301-8434"
-                            android:textAlignment="center"
-                            />
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="\nSan Mateo County Human Services Agency"
+                        android:textStyle="bold"
+                        android:textAlignment="center"
+                        />
 
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="San Mateo Adult School (satellite office)"
-                            android:textStyle="bold"
-                            android:textAlignment="center"
-                            />
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="*No representative on-site\n400 Harbor Blvd\nBuilding B\nBelmont, CA 94002\nFax: (650)508-0782"
+                        android:textAlignment="center"
+                        />
 
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="*No representative on-site\n789 E. Poplar Ave\nSan Mateo, CA 94401 \n"
-                            android:textAlignment="center"
-                            />
+                    <TextView
+                        android:id="@+id/about_phoneBelmont_tV_id"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="(650)802-6534"
+                        android:textAlignment="center"
+                        android:textColor="@color/card_view_title"
+                        />
 
-                        <TextView
-                            android:id="@+id/about_phoneAdultSchool_tV_id"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="(650)301-8434"
-                            android:textAlignment="center"
-                            />
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="\nSan Mateo County Human Services Agency (satellite office)"
+                        android:textStyle="bold"
+                        android:textAlignment="center"
+                        />
 
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="San Mateo County Human Services Agency"
-                            android:textStyle="bold"
-                            android:textAlignment="center"
-                            />
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="*No representative on-site\n2500 Midlefield Road\nRedwood City, CA 94063"
+                        android:textAlignment="center"
+                        />
 
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="*No representative on-site\n400 Harbor Blvd\nBuilding B\nBelmont, CA 94002\nFax: (650)508-0782"
-                            android:textAlignment="center"
-                            />
+                    <TextView
+                        android:id="@+id/about_phoneRedwood_tV_id"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="(650)802-6534"
+                        android:textAlignment="center"
+                        android:textColor="@color/card_view_title"
+                        />
+                </LinearLayout>
 
-                        <TextView
-                            android:id="@+id/about_phoneBelmont_tV_id"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="(650)802-6534"
-                            android:textAlignment="center"
-                            />
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="San Mateo County Human Services Agency (satellite office)"
-                            android:textStyle="bold"
-                            android:textAlignment="center"
-                            />
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="*No representative on-site\n2500 Midlefield Road\nRedwood City, CA 94063\n"
-                            android:textAlignment="center"
-                            />
-
-                        <TextView
-                            android:id="@+id/about_phoneRedwood_tV_id"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="(650)802-6534"
-                            android:textAlignment="center"
-                            />
-                    </LinearLayout>
-
-                </android.support.v7.widget.CardView>
             </LinearLayout>
-        </ScrollView>
 
+        </android.support.v7.widget.CardView>
     </LinearLayout>
+
+
 </android.support.v4.widget.NestedScrollView>

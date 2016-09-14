@@ -69,6 +69,7 @@ public class AboutFragment extends Fragment implements OnMapReadyCallback{
     private TextView phoneAdultTextView;
     private TextView phoneBelmontTextView;
     private TextView phoneRedwoodTextView;
+    private TextView smcEmailTextView;
 
     private GoogleMap map;
     private SupportMapFragment mapFragment;
@@ -129,6 +130,7 @@ public class AboutFragment extends Fragment implements OnMapReadyCallback{
         setDialNumberListener(phoneAdultTextView, "6503018434");
         setDialNumberListener(phoneBelmontTextView, "6508026534");
         setDialNumberListener(phoneRedwoodTextView, "6508026534");
+        setSendEmailListener(smcEmailTextView , "jobsforyouth@smcgov.org");
 
         return view;
     }
@@ -138,6 +140,7 @@ public class AboutFragment extends Fragment implements OnMapReadyCallback{
         phoneAdultTextView = (TextView) v.findViewById(R.id.about_phoneAdultSchool_tV_id);
         phoneBelmontTextView = (TextView) v.findViewById(R.id.about_phoneBelmont_tV_id);
         phoneRedwoodTextView = (TextView) v.findViewById(R.id.about_phoneRedwood_tV_id);
+        smcEmailTextView = (TextView) v.findViewById(R.id.about_email_tv_id);
     }
 
 
@@ -204,6 +207,30 @@ public class AboutFragment extends Fragment implements OnMapReadyCallback{
         intent.setData(Uri.parse("tel:" + phoneNumber));
         if (intent.resolveActivity(getActivity().getPackageManager()) != null) {
             startActivity(intent);
+        }
+    }
+
+    private void setSendEmailListener(TextView textView, final String email){
+        textView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Log.d("Tag", "email clicked");
+                sendEmail(email);
+            }
+        });
+    }
+
+    public void sendEmail(String email){
+        Intent emailIntent = new Intent(Intent.ACTION_SENDTO);
+
+        emailIntent.setType("message/rfc822");
+        emailIntent.setData(Uri.parse("mailto:"+email));
+
+        emailIntent.putExtra(Intent.EXTRA_SUBJECT, "Jobs For Youth Inquiry");
+        emailIntent.putExtra(Intent.EXTRA_TEXT, "Hi Jobs for Youth, \n");
+
+        if(emailIntent.resolveActivity(getActivity().getPackageManager()) != null){
+            startActivity(emailIntent);
         }
     }
 
