@@ -97,27 +97,55 @@ public class JobSiteFragment extends Fragment implements JobSiteFragmentRVAdapte
         links.add("Calopps.org");
 
 
-        ArrayList<Integer> linksImage = new ArrayList<>();
-        linksImage.add(R.drawable.logo_acinet_full);
-        linksImage.add(0);
-        linksImage.add(R.drawable.logo_bajobs);
-        linksImage.add(R.drawable.logo_careersorg);
-        linksImage.add(R.drawable.logo_craigslist);
-        linksImage.add(R.drawable.logo_bayareajobs);
-        linksImage.add(R.drawable.logo_caljobs);
-        linksImage.add(R.drawable.logo_careerbuilder);
-        linksImage.add(R.drawable.logo_experience);
-        linksImage.add(R.drawable.logo_glassdoor);
-        linksImage.add(R.drawable.logo_idealist);
-        linksImage.add(R.drawable.logo_indeed);
-        linksImage.add(0);
-        linksImage.add(R.drawable.logo_jobstar);
-        linksImage.add(R.drawable.logo_monster);
-        linksImage.add(R.drawable.logo_simplyhired);
-        linksImage.add(0);
-        linksImage.add(R.drawable.logo_snagajob);
-        linksImage.add(R.drawable.logo_startup_hire);
-        linksImage.add(R.drawable.logo_calopps);
+//        ArrayList<Integer> linksImage = new ArrayList<Integer>();
+//        linksImage.add(R.drawable.logo_acinet_full);
+//        linksImage.add(0);
+//        linksImage.add(R.drawable.logo_bajobs);
+//        linksImage.add(R.drawable.logo_careersorg);
+//        linksImage.add(R.drawable.logo_craigslist);
+//        linksImage.add(R.drawable.logo_bayareajobs);
+//        linksImage.add(R.drawable.logo_caljobs);
+//        linksImage.add(R.drawable.logo_careerbuilder);
+//        linksImage.add(R.drawable.logo_experience);
+//        linksImage.add(R.drawable.logo_glassdoor);
+//        linksImage.add(R.drawable.logo_idealist);
+//        linksImage.add(R.drawable.logo_indeed);
+//        linksImage.add(0);
+//        linksImage.add(R.drawable.logo_jobstar);
+//        linksImage.add(R.drawable.logo_monster);
+//        linksImage.add(R.drawable.logo_simplyhired);
+//        linksImage.add(0);
+//        linksImage.add(R.drawable.logo_snagajob);
+//        linksImage.add(R.drawable.logo_startup_hire);
+//        linksImage.add(R.drawable.logo_calopps);
+//
+
+        ArrayList<String> linksImage = new ArrayList<String>();
+        linksImage.add("http://i.imgur.com/WaMTa7X.png"); //acinet
+        linksImage.add("http://i.imgur.com/Pf6KAYq.png"); // empty
+        linksImage.add("http://i.imgur.com/T7pq1AY.png"); //bajobs
+        linksImage.add("http://i.imgur.com/RTLSHUL.png"); //careers org
+        linksImage.add("http://i.imgur.com/NbwCrXR.png"); //craigslist
+        linksImage.add("http://i.imgur.com/v6dPIoi.png"); //bay area jobs
+        linksImage.add("http://i.imgur.com/RBoYAlK.png"); //cal jobs
+        linksImage.add("http://i.imgur.com/5Whs49g.png"); //career builder
+        linksImage.add("http://i.imgur.com/Q9c73bv.png"); //experience
+        linksImage.add("http://i.imgur.com/Qr5eQSI.png"); // glassdoor
+        linksImage.add("http://i.imgur.com/UtHcmtS.png"); //idealist
+        linksImage.add("http://i.imgur.com/6g0gHLJ.png"); //indeed
+        linksImage.add("http://i.imgur.com/Pf6KAYq.png"); //empty
+        linksImage.add("http://i.imgur.com/ufg2jM4.png"); //jobstar
+        linksImage.add("http://i.imgur.com/hPysrW1.png"); //monster
+        linksImage.add("http://i.imgur.com/uPwztT8.png"); //simply hired
+        linksImage.add("http://i.imgur.com/Pf6KAYq.png"); //empty
+        linksImage.add("http://i.imgur.com/Rigwolq.png"); //snag a job
+        linksImage.add("http://i.imgur.com/FcDJory.png"); //startup hire
+        linksImage.add("http://i.imgur.com/aRteqkh.png"); //calopps
+
+
+
+
+
 
 
         JobSiteFragmentRVAdapter jobSiteRVAdapter = new JobSiteFragmentRVAdapter(links, linksImage, this);
