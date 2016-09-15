@@ -84,7 +84,7 @@ public class ResumeWebsitesFragmentRVAdapter extends
         picasso.load(linksImages.get(position))
                 .placeholder(R.drawable.icon_websites)
                 .error(R.drawable.icon_websites)
-                .resize(500, 300)
+                .resize(500, 225)
                 .into(holder.resumeListImageView);
     }
 
