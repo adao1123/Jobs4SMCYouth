@@ -8,6 +8,9 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.smc.jobs4smcyouth.R;
+import com.squareup.picasso.Picasso;
+
 import java.util.List;
 
 /**
@@ -17,7 +20,9 @@ public class ResumeWebsitesFragmentRVAdapter extends
         RecyclerView.Adapter<ResumeWebsitesFragmentRVAdapter.ResumeSitesViewHolder> {
 
     private final List<String> urls;
+    private final List<String> linksImages;
     private ResumeCardViewClickListener resumeCardViewClickListener;
+    Picasso picasso;
 
     public interface ResumeCardViewClickListener {
         void onResumeCardViewClick(String url);
@@ -47,8 +52,9 @@ public class ResumeWebsitesFragmentRVAdapter extends
     }
 
 
-    public ResumeWebsitesFragmentRVAdapter(List<String> urls, ResumeCardViewClickListener resumeCardViewClickListener){
+    public ResumeWebsitesFragmentRVAdapter(List<String> urls, List<String> linksImages, ResumeCardViewClickListener resumeCardViewClickListener){
         this.urls = urls;
+        this.linksImages = linksImages;
         this.resumeCardViewClickListener = resumeCardViewClickListener;
     }
 
@@ -63,6 +69,9 @@ public class ResumeWebsitesFragmentRVAdapter extends
         View view = LayoutInflater.from(parent.getContext()).inflate(com.smc.jobs4smcyouth.R.layout.rv_item_resume_website, parent, false);
         ResumeSitesViewHolder resumeSitesViewHolder = new ResumeSitesViewHolder(view);
 
+
+        picasso = Picasso.with(parent.getContext());
+
         return resumeSitesViewHolder;
     }
 
@@ -71,6 +80,12 @@ public class ResumeWebsitesFragmentRVAdapter extends
 
         holder.resumeListTextView.setText(urls.get(position));
         holder.bind(resumeCardViewClickListener, urls.get(position));
+
+        picasso.load(linksImages.get(position))
+                .placeholder(R.drawable.icon_websites)
+                .error(R.drawable.icon_websites)
+                .resize(500, 225)
+                .into(holder.resumeListImageView);
     }
 
     @Override
