@@ -20,7 +20,7 @@ import java.util.List;
 public class JobSiteFragmentRVAdapter extends RecyclerView.Adapter<JobSiteFragmentRVAdapter.JobSiteViewHolder> {
 
     private final List<String> links;
-    private final List<Integer> linksImages;
+    private final List<String> linksImages;
     private final OnCardViewClickListener clickListener;
     Picasso picasso;
 
@@ -52,7 +52,7 @@ public class JobSiteFragmentRVAdapter extends RecyclerView.Adapter<JobSiteFragme
         }
     }
 
-    public JobSiteFragmentRVAdapter(List<String> links, List<Integer> linksImages, OnCardViewClickListener clickListener){
+    public JobSiteFragmentRVAdapter(List<String> links, List<String> linksImages, OnCardViewClickListener clickListener){
         this.links = links;
         this.linksImages =linksImages;
         this.clickListener = clickListener;
@@ -76,15 +76,25 @@ public class JobSiteFragmentRVAdapter extends RecyclerView.Adapter<JobSiteFragme
     @Override
     public void onBindViewHolder(JobSiteViewHolder holder, final int position) {
         Log.d("JobSiteRVAdapter", "OnBindViewHolder items");
+        Log.d("JobSiteRVAdapter", "OnBindViewHolder items" + linksImages.get(position));
+
+
+
         holder.jobListTextView.setText(links.get(position));
 
-        holder.jobListImageView.setImageResource(linksImages.get(position));
+  //      holder.jobListImageView.setImageResource(linksImages.get(position));
 
         holder.bind(clickListener, links.get(position));
 
-//        picasso.load(links.get(position))  // Load image from URL
-//                .resize(1000, 1400)                        // Resize Image
-//                .into(holder.templateImageView);      // Load image to view
+
+
+        picasso.load(linksImages.get(position))  // Load image from URL
+                .placeholder(R.drawable.icon_websites)
+                .error(R.drawable.icon_websites)
+                .resize(500, 250)                        // Resize Image
+                //.fit()
+                .into(holder.jobListImageView);      // Load image to view
+
     }
 
     @Override
