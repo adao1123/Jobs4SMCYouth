@@ -13,21 +13,22 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="10dp"
-        android:orientation="horizontal">
+        android:orientation="vertical">
 
         <ImageView
             android:id="@+id/jobListFrag_job_imageView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginRight="10dp"
+            android:layout_gravity="center_horizontal"
             android:src="@drawable/icon_websites"/>
 
         <TextView
             android:id="@+id/jobListFrag_job_textView"
-            android:visibility="gone"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
+            android:textColor="@color/card_view_title"
             android:text="Job Name"/>
 
     </LinearLayout>
