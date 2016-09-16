@@ -49,8 +49,8 @@ dependencies {
     compile 'io.reactivex:rxandroid:1.2.1'
     compile 'io.reactivex:rxjava:1.1.6'
     compile 'com.google.android.gms:play-services-maps:9.4.0'
-    compile 'com.google.android.gms:play-services-location:9.2.0'
+    compile 'com.google.android.gms:play-services-location:9.4.0'
     compile 'com.hp.mss:mobileprintsdk:v2.02.418'
-    compile 'com.google.android.gms:play-services-analytics:9.2.0'
+    compile 'com.google.android.gms:play-services-analytics:9.4.0'
 }
 apply plugin: 'com.google.gms.google-services'
