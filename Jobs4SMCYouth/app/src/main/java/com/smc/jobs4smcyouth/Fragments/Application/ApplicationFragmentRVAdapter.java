@@ -9,6 +9,8 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -35,6 +37,9 @@ public class ApplicationFragmentRVAdapter extends RecyclerView.Adapter<RecyclerV
     List<Integer> drawablesArrayList;
     List<String> imageNamesList;
 
+    Animation slideUp;
+    Animation slideDown;
+
     class ApplicationRulesViewHolder extends RecyclerView.ViewHolder{
 
         LinearLayout rulesView;
@@ -45,8 +50,8 @@ public class ApplicationFragmentRVAdapter extends RecyclerView.Adapter<RecyclerV
 
             rulesView = (LinearLayout)itemView.findViewById(R.id.application_rulesView);
             titleTextView = (TextView)itemView.findViewById(R.id.application_rulesTitle_tV_id);
-
         }
+
         public void bind(){
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -55,12 +60,12 @@ public class ApplicationFragmentRVAdapter extends RecyclerView.Adapter<RecyclerV
                     //applicationOneClickListener.onApplicationOneClick();
                    // MainBus.getInstance().post(new ApplicationRulesClickEvent(view));
 
-                    if(titleTextView.getVisibility() == View.VISIBLE){
+                    if(rulesView.getVisibility() == View.GONE){
                         rulesView.setVisibility(View.VISIBLE);
-                        titleTextView.setVisibility(View.GONE);
+                        rulesView.setAnimation(slideDown);
                     }else{
                         rulesView.setVisibility(View.GONE);
-                        titleTextView.setVisibility(View.VISIBLE);
+                        rulesView.setAnimation(slideUp);
                     }
                 }
             });
@@ -107,6 +112,9 @@ public class ApplicationFragmentRVAdapter extends RecyclerView.Adapter<RecyclerV
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
 
+        slideUp = AnimationUtils.loadAnimation(parent.getContext(), R.anim.slide_up);
+        slideDown = AnimationUtils.loadAnimation(parent.getContext(), R.anim.slide_down);
+
         switch(viewType){
             case 0:
                 View viewRule = LayoutInflater.from(parent.getContext()).inflate(R.layout.rv_item_application, parent, false);
@@ -148,9 +156,6 @@ public class ApplicationFragmentRVAdapter extends RecyclerView.Adapter<RecyclerV
                     return true;
                 }
             });
-
-
-
         }
     }
 
@@ -158,7 +163,6 @@ public class ApplicationFragmentRVAdapter extends RecyclerView.Adapter<RecyclerV
     public int getItemCount() {
         return imageLinks.size();
     }
-
 
     private void createDrawablesList(){
         drawablesArrayList = new ArrayList<Integer>();
@@ -184,7 +188,5 @@ public class ApplicationFragmentRVAdapter extends RecyclerView.Adapter<RecyclerV
         imageNamesList.add("Job Application No Experience Sample 2");
         imageNamesList.add("Job Application with Experience Sample 1");
         imageNamesList.add("Job Application with Experience Sample 2");
-
     }
-
 }
