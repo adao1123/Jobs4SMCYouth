@@ -101,14 +101,11 @@ public class AboutFragment extends Fragment implements OnMapReadyCallback{
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-
         MyApplication application = (MyApplication) getActivity().getApplication();
         analyticsTracker = application.getDefaultTracker();
         sendScreenImageName();
 
     }
-
-
 
     private void sendScreenImageName() {
 

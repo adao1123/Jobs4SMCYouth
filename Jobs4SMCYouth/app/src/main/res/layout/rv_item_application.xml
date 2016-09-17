@@ -9,7 +9,6 @@
     card_view:cardCornerRadius="@dimen/card_view_corner_radius"
     card_view:cardUseCompatPadding="false"
     android:clickable="true"
-    android:foreground="@drawable/selectable_item_background"
     app:cardBackgroundColor="@color/card_view_background">
 
     <LinearLayout
