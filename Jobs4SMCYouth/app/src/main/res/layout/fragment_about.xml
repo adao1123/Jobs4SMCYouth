@@ -25,7 +25,6 @@
             card_view:cardCornerRadius="@dimen/card_view_corner_radius"
             card_view:cardUseCompatPadding="false"
             android:clickable="true"
-            android:foreground="@drawable/selectable_item_background"
             app:cardBackgroundColor="@color/card_view_background">
 
             <LinearLayout
@@ -44,22 +43,17 @@
                     android:textSize="@dimen/title_text"
                     android:textColor="@color/card_view_title"/>
 
-                <LinearLayout
-                    android:id="@+id/about_aboutInfo_LinearLayout"
+
+
+                <TextView
+                    android:id="@+id/about_about_tv_id"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:visibility="gone">
+                    android:text="@string/about_j4y"
+                    android:textAlignment="center"
+                    android:visibility="gone" />
 
-                    <TextView
-                        android:id="@+id/about_about_tv_id"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="@string/about_j4y"
-                        android:textAlignment="center"
-                        />
 
-                </LinearLayout>
 
             </LinearLayout>
 
@@ -73,7 +67,6 @@
             card_view:cardCornerRadius="@dimen/card_view_corner_radius"
             card_view:cardUseCompatPadding="false"
             android:clickable="true"
-            android:foreground="@drawable/selectable_item_background"
             app:cardBackgroundColor="@color/card_view_background">
 
             <LinearLayout
@@ -92,22 +85,17 @@
                     android:textSize="@dimen/title_text"
                     android:textColor="@color/card_view_title" />
 
-                <LinearLayout
-                    android:id="@+id/about_servicesOffered_LinearLayout"
+
+
+                <TextView
+                    android:id="@+id/about_servicesOffered_tv_id"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:visibility="gone">
+                    android:text="@string/about_services"
+                    android:textAlignment="center"
+                    android:visibility="gone"/>
 
-                    <TextView
-                        android:id="@+id/about_servicesOffered_tv_id"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="@string/about_services"
-                        android:textAlignment="center"
-                        />
 
-                </LinearLayout>
 
             </LinearLayout>
 
@@ -136,7 +124,6 @@
             card_view:cardCornerRadius="@dimen/card_view_corner_radius"
             card_view:cardUseCompatPadding="false"
             android:clickable="true"
-            android:foreground="@drawable/selectable_item_background"
             app:cardBackgroundColor="@color/card_view_background">
 
             <LinearLayout
