@@ -4,54 +4,55 @@
         <item
             android:id="@+id/drawer_job_post_id"
             android:icon="@drawable/icon_jobpost"
-            android:title="Job Posting"/>
+            android:title="@string/nav_job_post"/>
         <item
             android:id="@+id/drawer_scholarship_id"
             android:icon="@drawable/icon_scholarship"
-            android:title="Scholarships"/>
+            android:title="@string/nav_scholarships"/>
         <item
             android:id="@+id/drawer_transportation_id"
             android:icon="@drawable/icon_transportation"
-            android:title="Transportation"/>
+            android:title="@string/nav_transportation"/>
         <item
             android:id="@+id/drawer_requirements_id"
             android:icon="@drawable/icon_requirements"
-            android:title="Requirements"/>
+            android:title="@string/nav_requirements"/>
         <item
             android:id="@+id/drawer_success_stories_id"
             android:icon="@drawable/icon_successhappy"
-            android:title="Success Stories"/>
+            android:title="@string/nav_success_stories"/>
         <item
             android:id="@+id/drawer_about_id"
             android:icon="@drawable/icon_about"
-            android:title="About"/>
+            android:title="@string/nav_about"/>
         <item
             android:id="@+id/drawer_print_id"
             android:icon="@drawable/ic_print_black_24dp"
-            android:title="Print"/>
-        <item android:title="Job Prep">
+            android:title="@string/nav_print"/>
+
+        <item android:title="@string/nav_job_prep">
             <menu>
                 <group android:checkableBehavior="single">
                     <item
                         android:id="@+id/drawer_applications_id"
                         android:icon="@drawable/icon_application"
-                        android:title="Applications"/>
+                        android:title="@string/nav_applications"/>
                     <item
                         android:id="@+id/drawer_interview_id"
                         android:icon="@drawable/icon_interview"
-                        android:title="Interview"/>
+                        android:title="@string/nav_interview"/>
                     <item
                         android:id="@+id/drawer_resume_id"
                         android:icon="@drawable/icon_resume"
-                        android:title="Resume/Cover Letters"/>
+                        android:title="@string/nav_resume_cover_letters"/>
                     <item
                         android:id="@+id/drawer_job_site_id"
                         android:icon="@drawable/icon_websites"
-                        android:title="Job Search Websites"/>
+                        android:title="@string/nav_job_search_sites"/>
                     <item
                         android:id="@+id/drawer_tips_id"
                         android:icon="@drawable/icon_tips"
-                        android:title="Tips"/>
+                        android:title="@string/nav_tips"/>
 
                 </group>
             </menu>

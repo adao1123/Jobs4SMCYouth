@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="nav_job_post">채용 공고</string>
+    <string name="nav_scholarships">장학금</string>
+    <string name="nav_transportation">교통 안내</string>
+    <string name="nav_requirements">요구 사항</string>
+    <string name="nav_success_stories">성공 사례</string>
+    <string name="nav_about">소개</string>
+    <string name="nav_print">인쇄</string>
+    <string name="nav_job_prep">채용 절차</string>
+    <string name="nav_applications">지원서</string>
+    <string name="nav_interview">면접</string>
+    <string name="nav_resume_cover_letters">이력서/자기 소개서</string>
+    <string name="nav_job_search_sites">구직 사이트</string>
+    <string name="nav_tips">참고 사항</string>
+</resources>
