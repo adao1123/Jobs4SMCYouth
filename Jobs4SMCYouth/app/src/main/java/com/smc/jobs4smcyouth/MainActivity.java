@@ -112,7 +112,8 @@ public class MainActivity extends AppCompatActivity {
             case R.id.drawer_job_post_id:
                 fragmentTransaction.replace(R.id.fragment_container_id, jobPostFragment);
                 titleTV.setText("Jobs and Interview Listings");
-                headerImageView.setImageResource(R.drawable.jobs_header);
+                //headerImageView.setImageResource(R.drawable.jobs_header);
+                headerImageView.setImageResource(R.drawable.generic_header3);
                 break;
             case R.id.drawer_scholarship_id:
                 fragmentTransaction.replace(R.id.fragment_container_id, scholarshipFragment);
@@ -122,7 +123,7 @@ public class MainActivity extends AppCompatActivity {
             case R.id.drawer_volunteer_id:
                 fragmentTransaction.replace(R.id.fragment_container_id,volunteerFragment);
                 titleTV.setText("Volunteering Opportunities");
-                headerImageView.setImageResource(R.drawable.scholarship_header1); //placeholder
+                headerImageView.setImageResource(R.drawable.volunteer_header1); //placeholder
                 break;
             case R.id.drawer_transportation_id:
                 fragmentTransaction.replace(R.id.fragment_container_id, transportationFragment);
@@ -132,12 +133,12 @@ public class MainActivity extends AppCompatActivity {
             case R.id.drawer_requirements_id:
                 fragmentTransaction.replace(R.id.fragment_container_id, requirementFragment);
                 titleTV.setText("Requirements");
-                headerImageView.setImageResource(R.drawable.requirements_header);
+                headerImageView.setImageResource(R.drawable.generic_header13);
                 break;
             case R.id.drawer_success_stories_id:
                 fragmentTransaction.replace(R.id.fragment_container_id, successStoryFragment);
                 titleTV.setText("Success Stories");
-                headerImageView.setImageResource(R.drawable.success_header2);
+                headerImageView.setImageResource(R.drawable.success_header3);
                 break;
             case R.id.drawer_about_id:
                 fragmentTransaction.replace(R.id.fragment_container_id, aboutFragment);
@@ -157,7 +158,7 @@ public class MainActivity extends AppCompatActivity {
             case R.id.drawer_resume_id:
                 fragmentTransaction.replace(R.id.fragment_container_id, resumeFragment);
                 titleTV.setText("How To Build A Resume");
-                headerImageView.setImageResource(R.drawable.application_header1);
+                headerImageView.setImageResource(R.drawable.generic_header17);
                 break;
             case R.id.drawer_job_site_id:
                 fragmentTransaction.replace(R.id.fragment_container_id, jobSiteFragment);
