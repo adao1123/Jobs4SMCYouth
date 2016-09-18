@@ -75,7 +75,7 @@ public class MainActivity extends AppCompatActivity {
         toolbar = (Toolbar) findViewById(R.id.toolbar);
 //        toolbar.setTitle("Job Posting");
         headerImageView = (ImageView) findViewById(R.id.header_image_id);
-        headerImageView.setImageResource(R.drawable.jobs_header);
+        headerImageView.setImageResource(R.drawable.generic_header3);
         setSupportActionBar(toolbar);
         setActionBarDrawer();
         initializeFragments();
@@ -149,7 +149,7 @@ public class MainActivity extends AppCompatActivity {
             case R.id.drawer_applications_id:
                 fragmentTransaction.replace(R.id.fragment_container_id, applicationFragment);
                 titleTV.setText("Applications");
-                headerImageView.setImageResource(R.drawable.generic_header3);
+                headerImageView.setImageResource(R.drawable.generic_header6);
                 break;
             case R.id.drawer_interview_id:
                 fragmentTransaction.replace(R.id.fragment_container_id, interviewFragment);
@@ -164,7 +164,7 @@ public class MainActivity extends AppCompatActivity {
             case R.id.drawer_job_site_id:
                 fragmentTransaction.replace(R.id.fragment_container_id, jobSiteFragment);
                 titleTV.setText("Useful Websites for the Job Search");
-                headerImageView.setImageResource(R.drawable.generic_header1);
+                headerImageView.setImageResource(R.drawable.generic_header15);
                 break;
             case R.id.drawer_tips_id:
                 fragmentTransaction.replace(R.id.fragment_container_id, tipFragment);
