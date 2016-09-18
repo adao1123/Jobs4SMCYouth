@@ -120,7 +120,7 @@ public class VolunteerFragment extends Fragment {
                     @Override
                     public boolean onLongClick(View v) {
                         Bundle bundle = new Bundle();
-                        bundle.putString("url",volunteerOpportunity.getWebsite().substring(11));
+                        bundle.putString("url",volunteerOpportunity.getWebsite());
 
                         WebViewFragment webViewFragment = new WebViewFragment();
                         webViewFragment.setArguments(bundle);
