@@ -27,9 +27,7 @@ import com.smc.jobs4smcyouth.R;
  */
 public class TipFragment extends Fragment {
     private static final String TAG = TipFragment.class.getSimpleName();
-
     private Tracker analyticsTracker;
-
     private CardView tip1Card;
     private CardView tip2Card;
     private CardView tip3Card;
