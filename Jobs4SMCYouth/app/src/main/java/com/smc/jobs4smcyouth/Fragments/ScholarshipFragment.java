@@ -15,11 +15,14 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.firebase.client.DataSnapshot;
+import com.google.android.gms.analytics.HitBuilders;
+import com.google.android.gms.analytics.Tracker;
 import com.smc.jobs4smcyouth.Models.Scholarship;
 import com.firebase.client.Firebase;
 import com.firebase.client.FirebaseError;
 import com.firebase.client.ValueEventListener;
 import com.firebase.ui.FirebaseRecyclerAdapter;
+import com.smc.jobs4smcyouth.MyApplication;
 import com.smc.jobs4smcyouth.R;
 
 import java.util.ArrayList;
@@ -34,8 +37,35 @@ public class ScholarshipFragment extends Fragment {
     private RecyclerView scholarshipRv;
     private Firebase scholarshipFb;
 
+    private Tracker analyticsTracker;
+
     public ScholarshipFragment() {
         // Required empty public constructor
+    }
+
+
+    @Override
+    public void onCreate(Bundle savedInstanceState){
+        super.onCreate(savedInstanceState);
+
+        MyApplication application = (MyApplication) getActivity().getApplication();
+        analyticsTracker = application.getDefaultTracker();
+
+        sendScreenImageName();
+    }
+
+    private void sendScreenImageName(){
+        String name = TAG;
+        // [START screen_view_hit]
+        Log.i(TAG, "Setting screen name: " + name);
+        analyticsTracker.setScreenName("Screen~" + "ScholarshipFragment");
+        analyticsTracker.send(new HitBuilders.ScreenViewBuilder().build());
+        // [END screen_view_hit]
+
+        analyticsTracker.send(new HitBuilders.EventBuilder()
+                .setCategory("Action")
+                .setAction("Share")
+                .build());
     }
 
 
