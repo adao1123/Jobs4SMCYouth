@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="nav_job_post">नौकरी ढूंढे</string>
+    <string name="nav_scholarships">छात्रवृत्ति</string>
+    <string name="nav_transportation">परिवहन</string>
+    <string name="nav_requirements">आवश्यकताओं</string>
+    <string name="nav_success_stories">Success Stories</string>
+    <string name="nav_about">हमारे बारे में</string>
+    <string name="nav_print">छापें</string>
+    <string name="nav_job_prep">नौकरी कि तैयारी करें</string>
+    <string name="nav_applications">नौकरी के लिए आवेदन करें</string>
+    <string name="nav_interview">इंटरव्यू</string>
+    <string name="nav_resume_cover_letters">बायोडाटा</string>
+    <string name="nav_job_search_sites">नौकरी ढूँडने के लिए वेबसाइट्स</string>
+    <string name="nav_tips">सुझाव</string>
+
+</resources>
