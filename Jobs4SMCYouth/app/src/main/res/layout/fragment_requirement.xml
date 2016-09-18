@@ -26,12 +26,14 @@
             app:cardBackgroundColor="@color/card_view_background">
 
             <LinearLayout
+                android:id="@+id/requirement_permit_linearLayout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 android:padding="16dp">
 
                 <TextView
+                    android:id="@+id/requirement_permit_title_textView"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textAlignment="center"
@@ -40,24 +42,37 @@
                     android:textColor="@color/card_view_title"
                     android:text="Youth Work Permits" />
 
-                <TextView
+                <LinearLayout
+                    android:id="@+id/requirement_permit_detail_linearLayout"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Students under the age of 18 must provide the employer a work permit.Odd-jobs such as yard work and babysitting do not require work permits.\n"
-                    android:textAlignment="center"
-                    />
+                    android:orientation="vertical">
 
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="In order to receive your work permit, please follow the instructions below:\n"/>
 
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="30dp"
-                    android:text="1.) Obtain a work permit form from school (i.e. Counselor's Office, Career Center, Main Office). During spring, summer, and winter breaks, obtain a work permit from a school district office.\n\n2.) At the time of hire, have the employer complete the \'Employer Section\' on the Work Permit Form.\n\n3.) A parent or guardian must also sign the Work Permit Form.\n\n4.) Once the form is completed with the proper signatures, return the form back to the school or the school district office (during breaks).\n\n5.) A work permit from the school will be issued to the student."/>
-            </LinearLayout>
+                    <TextView
+                        android:id="@+id/requirement_permit_info1_textView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Students under the age of 18 must provide the employer a work permit.Odd-jobs such as yard work and babysitting do not require work permits.\n"
+                        android:textAlignment="center"
+                        />
+
+                    <TextView
+                        android:id="@+id/requirement_permit_info2_textView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="In order to receive your work permit, please follow the instructions below:\n"/>
+
+                    <TextView
+                        android:id="@+id/requirement_permit_info3_textView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="30dp"
+                        android:text="1.) Obtain a work permit form from school (i.e. Counselor's Office, Career Center, Main Office). During spring, summer, and winter breaks, obtain a work permit from a school district office.\n\n2.) At the time of hire, have the employer complete the \'Employer Section\' on the Work Permit Form.\n\n3.) A parent or guardian must also sign the Work Permit Form.\n\n4.) Once the form is completed with the proper signatures, return the form back to the school or the school district office (during breaks).\n\n5.) A work permit from the school will be issued to the student."/>
+
+
+                </LinearLayout>
+       </LinearLayout>
 
         </android.support.v7.widget.CardView>
 
