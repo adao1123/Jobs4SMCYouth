@@ -1,7 +1,9 @@
 package com.smc.jobs4smcyouth.Fragments;
 
 
+import android.content.Intent;
 import android.graphics.Typeface;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -38,6 +40,9 @@ public class ScholarshipFragment extends Fragment {
     private static final String TAG = "Scholarship Fragment";
     private RecyclerView scholarshipRv;
     private Firebase scholarshipFb;
+    private TextView contactTv;
+    private Intent send;
+    private String uriText;
 
     private Tracker analyticsTracker;
 
@@ -77,6 +82,7 @@ public class ScholarshipFragment extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(com.smc.jobs4smcyouth.R.layout.fragment_scholarship, container, false);
         scholarshipRv = (RecyclerView)view.findViewById(com.smc.jobs4smcyouth.R.id.scholarship_rv);
+        clickableContactUs(view);
         return view;
     }
 
@@ -252,6 +258,23 @@ public class ScholarshipFragment extends Fragment {
                     "http://cdn.geekwire.com/wp-content/uploads/2016/06/Woman-in-Tech.jpg"));
         }
         return scholarships;
+    }
+
+    private void clickableContactUs(View v){
+        contactTv = (TextView) v.findViewById(R.id.scholarship_contact_id);
+        contactTv.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                send = new Intent(Intent.ACTION_SENDTO);
+                send.setType("text/plain");
+                uriText = "mailto:" + Uri.encode("jobs4smcyouth@gmail.com") +
+                        "?subject=" + Uri.encode("Al Teglia Jobs for Youth Scholarship Fund") +
+                        "&body=" + Uri.encode("");
+                Uri uri = Uri.parse(uriText);
+                send.setData(uri);
+                startActivity(Intent.createChooser(send, "Send Email"));
+            }
+        });
     }
 
 }
