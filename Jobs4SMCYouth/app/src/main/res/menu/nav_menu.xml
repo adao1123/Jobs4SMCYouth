@@ -28,7 +28,8 @@
         <item
             android:id="@+id/drawer_print_id"
             android:icon="@drawable/ic_print_black_24dp"
-            android:title="Print"/>
+            android:title="@string/nav_print"/>
+
         <item android:title="@string/nav_job_prep">
             <menu>
                 <group android:checkableBehavior="single">
