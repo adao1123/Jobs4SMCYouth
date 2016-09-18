@@ -29,6 +29,7 @@ import com.makeramen.roundedimageview.RoundedImageView;
 import com.smc.jobs4smcyouth.Models.VolunteerOpportunity;
 import com.smc.jobs4smcyouth.R;
 import com.smc.jobs4smcyouth.Utilities.WebViewFragment.WebViewFragment;
+import com.squareup.picasso.Picasso;
 
 
 import java.util.ArrayList;
@@ -116,6 +117,8 @@ public class VolunteerFragment extends Fragment {
                 volunteerViewHolder.volunteerDateTV.setText(volunteerOpportunity.getDate());
                 volunteerViewHolder.volunteerOrganizerTV.setText(volunteerOpportunity.getOrganizer());
                 volunteerViewHolder.volunteerWebsiteTV.setText(volunteerOpportunity.getWebsite());
+                Picasso.with(getContext()).load(volunteerOpportunity.getIconLink()).resize(200,200).centerCrop().into(volunteerViewHolder.volunteerImage);
+                Picasso.with(getContext()).load(volunteerOpportunity.getIconLink()).into(volunteerViewHolder.volunteerImageTop);
                 volunteerViewHolder.volunteerListingView.setOnLongClickListener(new View.OnLongClickListener() {
                     @Override
                     public boolean onLongClick(View v) {
@@ -224,11 +227,13 @@ public class VolunteerFragment extends Fragment {
         volunteerOpportunities.add(new VolunteerOpportunity("Help a child be successful in school. Volunteer in our Homework Clubs and Literacy Classes!",
                 "Daly City Partnership","111 Lake Merced Blvd. Daly City, CA 94015","Flexible",
                 "Interested in obtaining valuable and rewarding experience working with children? Volunteer with us in our after school programs! You can help a child succeed in school and in life today. Mentor children in grades K-8 while helping them with their homework, leading them in enriching activities and reading stories to them. Scheduling and location are flexible and your time is appreciated. As schools face more and more budget cuts, the quality of the education our children receive is lowered. Your role as a volunteer could change a child's life.",
-                "http://www.volunteermatch.org/search/opp1193571.jsp"));
+                "http://www.volunteermatch.org/search/opp1193571.jsp",
+                "http://sailor.mnsun.com/wp-content/uploads/sites/30/2016/04/aw21NW_VolunteerMonth3.jpg"));
         volunteerOpportunities.add(new VolunteerOpportunity("No More Trash! Mussel Rock Beach Cleanup",
                 "Pacifica Beach Coalition","120 Westline Dr. Daly City, CA 94015","Sat Oct 22, 2016, 09:00 AM - 11:00 AM",
                 "Let's get rid of the trash but keep the ocean view! The Pacifica Beach Coalition supports a monthly coastal clean up from 9am to 11am, meeting at Mussel Rock car park situated at 120 Westline Drive, Daly City, California. The clean up site covers part of the northern most tip of Pacifica adjoining Daly City that receives strong winds that distributes plastic trash from the neighboring transfer station. It is a beach, bluff, and street clean up with vistas of ocean from every point. Please join us and learn about this beautiful area that sits on the San Andreas Fault, has mammoth remains embedded in the cliffs, and has also been an Ohlone Indian camp site and midden because of the abundance of mussels and other ocean foods. Supply provide but bring your own bucket and gloves if you can. We hope to see you there!",
-                "http://www.volunteermatch.org/search/opp1827354.jsp"));
+                "http://www.volunteermatch.org/search/opp1827354.jsp",
+                "http://www.volunteermatch.org/images/gallery/F177E77B-55EA-E330-5F7F-A02F1D647AA8"));
         volunteerOpportunities.add(new VolunteerOpportunity("California Coastal Cleanup Day - Come Join Us!",
                 "Pacifica Beach Coalition","Pacifica State Beach, Pacifica, CA 94044","Sat Sep 17, 2016, 09:00 AM - 11:00 AM",
                 "Coastal Cleanup Day (CCD) is an annual beach and waterway clean up held on the third Saturday of September. It is California's largest volunteer event and brings community awareness to cleaning up and protecting our marine environment.\n" +
@@ -244,7 +249,8 @@ public class VolunteerFragment extends Fragment {
                         "\n" +
                         "We will provide supplies but bring your own bucket and gloves if you have.\n" +
                         "\n" +
-                        "Don't hesitate to contact us for more details","http://www.volunteermatch.org/search/opp1759196.jsp"));
+                        "Don't hesitate to contact us for more details","http://www.volunteermatch.org/search/opp1759196.jsp",
+                "http://www.trbimg.com/img-56009aed/turbine/tn-cpt-me-0925-coastal-cleanup-20150924"));
         volunteerOpportunities.add(new VolunteerOpportunity("Google Code Corps Guru","Boys & Girls Clubs of North San Mateo County",
                 "201 W. Orange Ave. South San Francisco, CA 94080", "Mon Sep 05, 2016 - Mon Dec 05, 2016",
                 "Are you passionate about empowering underprivileged youth? Do you want to fight poverty using education? The Google Code Corps might be for you!\n" +
@@ -252,7 +258,8 @@ public class VolunteerFragment extends Fragment {
                         "The Google Code Corps is a partnership between Google, AmeriCorps, and the Boys & Girls Club aimed at empowering youth through access to a quality computer science education. We are looking for volunteers to help us teach underprivileged children how to code via Google’s CS First curriculum. This opportunity is located in South San Francisco, accessible by BART. We will be teaching children aged 9-14 the basics of computer science (Scratch, robotics, etc.) to enable them to be successful and break the cycle of poverty.\n" +
                         "\n" +
                         "Volunteers can expect a time commitment of 3 hours a week for 3 months. Computer science experience and/or experience with youth are preferred but not required. You will be trained and coached by Google Code Corps staff. Our summer cohort has been extremely successful, and we are looking for to fill our fall cohort, which starts in September. Please send resumes to pchan@theclubs.org or send a private message if you have questions. Thanks!",
-                "http://www.volunteermatch.org/search/opp2427371.jsp"));
+                "http://www.volunteermatch.org/search/opp2427371.jsp",
+                "https://pbs.twimg.com/media/CqGCFcwWEAA6l4k.jpg"));
         volunteerOpportunities.add(new VolunteerOpportunity("Come Help Deaf Children and Have Fun!","Weingarten Children's Center",
                 "5101 Great America Parkway, Santa Clara, CA 95054","Sat Oct 29, 2016, 08:00 AM - 11:59 PM",
                 "We are hosting our annual Benefit Gala this year on Saturday, October 29, 2016 at the Santa Clara Hyatt Regency. We are in need of volunteers for the event. Volunteers are essential to the success of this crucial fundraising event! The details are as follow:\n" +
@@ -292,7 +299,8 @@ public class VolunteerFragment extends Fragment {
                         "Please do not hesitate to contact me with any questions. I can be reached at jgreenman@weingartencc.org.\n" +
                         "\n" +
                         "Thank you!",
-                "http://www.volunteermatch.org/search/opp1808730.jsp"));
+                "http://www.volunteermatch.org/search/opp1808730.jsp",
+                "http://www.rit.edu/showcase/images/86--archive.jpg"));
         volunteerOpportunities.add(new VolunteerOpportunity("Volunteer at the South San Francisco Farmers' Market on Saturdays!",
                 "Pacific Coast Farmers' Market Association","35 West Orange Ave. South San Francisco, CA 94080","Flexible",
                 "Enjoy having access to fresh, California-grown fruits and veggies? Love the community at your local farmers’ market? Want to learn more about local and sustainable agriculture, and help others to learn more about it too? Get involved as a volunteer at the Inner Sunset Farmers' Market!\n" +
@@ -310,7 +318,8 @@ public class VolunteerFragment extends Fragment {
                         "4) Special events such as fresh produce samplings, kids’ activities and interactive learning games\n" +
                         "\n" +
                         "5) Assisting the market manager with other tasks as necessary",
-                "http://www.volunteermatch.org/search/opp2429044.jsp"));
+                "http://www.volunteermatch.org/search/opp2429044.jsp",
+                "http://www.volunteermatch.org/images/gallery/3C5DDDDE-0A80-F711-9278-4C08A61FFFBF"));
         return volunteerOpportunities;
     }
 
