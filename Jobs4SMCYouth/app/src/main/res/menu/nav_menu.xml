@@ -10,6 +10,10 @@
             android:icon="@drawable/icon_scholarship"
             android:title="Scholarships"/>
         <item
+            android:id="@+id/drawer_volunteer_id"
+            android:icon="@drawable/icon_scholarship"
+            android:title="Volunteer"/>
+        <item
             android:id="@+id/drawer_transportation_id"
             android:icon="@drawable/icon_transportation"
             android:title="Transportation"/>

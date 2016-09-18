@@ -67,23 +67,24 @@
 
 
             <LinearLayout
-                android:id="@+id/volunteer_city_view"
+                android:id="@+id/volunteer_address_view"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:visibility="gone"
                 android:orientation="horizontal">
 
                 <TextView
+                    android:id="@+id/volunteer_address_text"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textColor="@color/card_view_title"
-                    android:text="Location: "
+                    android:text="Address: "
                     android:textStyle="bold"
                     android:gravity="left"/>
 
 
                 <TextView
-                    android:id="@+id/rv_item_volunteer_city"
+                    android:id="@+id/rv_item_volunteer_address"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="left"/>
@@ -91,13 +92,14 @@
             </LinearLayout>
 
             <LinearLayout
-                android:id="@+id/volunteer_payrate_view"
+                android:id="@+id/volunteer_date_view"
                 android:layout_width="match_parent"
                 android:visibility="gone"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
 
                 <TextView
+                    android:id="@+id/volunteer_date_text"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Pay Rate: "
@@ -106,7 +108,7 @@
                     android:gravity="left"/>
 
                 <TextView
-                    android:id="@+id/rv_item_volunteer_payrate"
+                    android:id="@+id/rv_item_volunteer_date"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="left"/>
@@ -114,22 +116,23 @@
 
 
             <LinearLayout
-                android:id="@+id/volunteer_age_view"
+                android:id="@+id/volunteer_organizer_view"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:visibility="gone"
                 android:orientation="horizontal">
 
                 <TextView
+                    android:id="@+id/volunteer_organizer_text"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textColor="@color/card_view_title"
-                    android:text="Age: "
+                    android:text="Organizer: "
                     android:textStyle="bold"
                     android:gravity="left"/>
 
                 <TextView
-                    android:id="@+id/rv_item_volunteer_age"
+                    android:id="@+id/rv_item_volunteer_organizer"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="left"/>
@@ -138,22 +141,45 @@
 
 
             <LinearLayout
-                android:id="@+id/volunteer_duties_view"
+                android:id="@+id/volunteer_about_view"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:visibility="gone"
                 android:orientation="horizontal">
 
                 <TextView
+                    android:id="@+id/volunteer_about_text"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Duties: "
+                    android:text="About: "
                     android:textColor="@color/card_view_title"
                     android:textStyle="bold"
                     android:gravity="left"/>
 
                 <TextView
-                    android:id="@+id/rv_item_volunteer_duties"
+                    android:id="@+id/rv_item_volunteer_about"
+                    android:layout_width="match_parent"
+                    android:gravity="left"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/volunteer_website_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/volunteer_website_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="About: "
+                    android:textColor="@color/card_view_title"
+                    android:textStyle="bold"
+                    android:gravity="left"/>
+
+                <TextView
+                    android:id="@+id/rv_item_volunteer_website"
                     android:layout_width="match_parent"
                     android:gravity="left"
                     android:layout_height="wrap_content" />
