@@ -39,11 +39,14 @@
 
             <com.makeramen.roundedimageview.RoundedImageView
                 android:id="@+id/rv_item_volunteer_image_top"
-                android:layout_width="70dp"
-                android:layout_height="70dp"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
                 android:layout_gravity="center_horizontal"
                 android:scaleType="fitXY"
-                android:layout_margin="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="20dp"
+                android:layout_marginLeft="45dp"
+                android:layout_marginRight="45dp"
                 android:visibility="gone"
                 card_view:riv_corner_radius="10dp"
                 android:src="@drawable/icon_jobpost"/>

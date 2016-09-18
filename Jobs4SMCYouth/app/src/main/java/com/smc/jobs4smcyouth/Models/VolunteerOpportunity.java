@@ -10,17 +10,19 @@ public class VolunteerOpportunity {
     private String date;
     private String about;
     private String website;
+    private String iconLink;
 
     public VolunteerOpportunity() {
     }
 
-    public VolunteerOpportunity(String title, String organizer, String address, String date, String about, String website) {
+    public VolunteerOpportunity(String title, String organizer, String address, String date, String about, String website, String iconLink) {
         this.title = title;
         this.organizer = organizer;
         this.address = address;
         this.date = date;
         this.about = about;
         this.website = website;
+        this.iconLink = iconLink;
     }
 
     public String getTitle() {
@@ -69,5 +71,13 @@ public class VolunteerOpportunity {
 
     public void setWebsite(String website) {
         this.website = website;
+    }
+
+    public String getIconLink() {
+        return iconLink;
+    }
+
+    public void setIconLink(String iconLink) {
+        this.iconLink = iconLink;
     }
 }
