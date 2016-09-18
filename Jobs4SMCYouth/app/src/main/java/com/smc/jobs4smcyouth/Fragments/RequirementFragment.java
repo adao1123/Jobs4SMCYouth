@@ -20,6 +20,7 @@ import com.google.android.gms.analytics.HitBuilders;
 import com.google.android.gms.analytics.Tracker;
 import com.smc.jobs4smcyouth.MyApplication;
 import com.smc.jobs4smcyouth.R;
+import com.smc.jobs4smcyouth.Utilities.WebViewFragment.WebViewFragment;
 
 
 /**
@@ -83,11 +84,17 @@ public class RequirementFragment extends Fragment {
         laborLawsButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                laborLawsWebviewFragment = new LaborLawsWebviewFragment();
+                Bundle bundle = new Bundle();
+                bundle.putString("url", "calchamber.com/hrcalifornia/hr-library/recruiting-hiring/child-labor-laws/pages/child-labor-laws.aspx");
+
+                WebViewFragment webViewFragment = new WebViewFragment();
+                webViewFragment.setArguments(bundle);
+
+                FragmentManager fragmentManager;
                 fragmentManager = getFragmentManager();
-                fragmentTransaction = fragmentManager.beginTransaction();
-                fragmentTransaction.replace(R.id.fragment_container_id, laborLawsWebviewFragment);
-                fragmentTransaction.addToBackStack(null);
+                FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+                fragmentTransaction.addToBackStack("LaborLaws");
+                fragmentTransaction.replace(com.smc.jobs4smcyouth.R.id.fragment_container_id, webViewFragment);
                 fragmentTransaction.commit();
             }
         });
