@@ -79,19 +79,16 @@ public class JobSiteFragmentRVAdapter extends RecyclerView.Adapter<JobSiteFragme
         Log.d("JobSiteRVAdapter", "OnBindViewHolder items" + linksImages.get(position));
 
 
-
         holder.jobListTextView.setText(links.get(position));
 
   //      holder.jobListImageView.setImageResource(linksImages.get(position));
 
         holder.bind(clickListener, links.get(position));
 
-
-
         picasso.load(linksImages.get(position))  // Load image from URL
-                .placeholder(R.drawable.icon_websites)
-                .error(R.drawable.icon_websites)
                 .resize(500, 250)                        // Resize Image
+                .placeholder(R.drawable.jobs4youth)
+                .error(R.drawable.jobs4youth)
                 //.fit()
                 .into(holder.jobListImageView);      // Load image to view
 
