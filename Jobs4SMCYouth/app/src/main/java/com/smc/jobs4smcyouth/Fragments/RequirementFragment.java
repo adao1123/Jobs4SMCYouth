@@ -30,9 +30,6 @@ public class RequirementFragment extends Fragment {
     private static final String TAG = RequirementFragment.class.getSimpleName();
 
     Button laborLawsButton;
-    FragmentManager fragmentManager;
-    FragmentTransaction fragmentTransaction;
-    LaborLawsWebviewFragment laborLawsWebviewFragment;
 
     private Tracker analyticsTracker;
 
