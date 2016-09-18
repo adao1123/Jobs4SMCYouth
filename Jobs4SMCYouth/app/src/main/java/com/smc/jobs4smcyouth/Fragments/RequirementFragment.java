@@ -85,7 +85,7 @@ public class RequirementFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 Bundle bundle = new Bundle();
-                bundle.putString("url", "calchamber.com/hrcalifornia/hr-library/recruiting-hiring/child-labor-laws/pages/child-labor-laws.aspx");
+                bundle.putString("url", "http://www.calchamber.com/hrcalifornia/hr-library/recruiting-hiring/child-labor-laws/pages/child-labor-laws.aspx");
 
                 WebViewFragment webViewFragment = new WebViewFragment();
                 webViewFragment.setArguments(bundle);

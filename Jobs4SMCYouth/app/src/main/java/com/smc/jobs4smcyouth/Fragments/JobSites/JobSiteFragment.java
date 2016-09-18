@@ -75,26 +75,26 @@ public class JobSiteFragment extends Fragment implements JobSiteFragmentRVAdapte
         RecyclerView jobListRecyclerView = (RecyclerView)view.findViewById(com.smc.jobs4smcyouth.R.id.jobListFrag_recyclerView);
 
         ArrayList<String> links = new ArrayList<String>();
-        links.add("Acinet.org");
-        links.add("Ajb.dni.us");
-        links.add("Bajobs.com");
-        links.add("Careers.org");
-        links.add("Craigslist.org");
-        links.add("Bayareacareers.com");
-        links.add("Caljobs.ca.gov");
-        links.add("Careerbuilder.com");
-        links.add("Experience.com");
-        links.add("Glassdoor.com");
-        links.add("Idealist.org");
-        links.add("Indeed.com");
-        links.add("Jobhuntersbible.com");
-        links.add("Jobstar.org");
-        links.add("Monster.com");
-        links.add("Simplyhired.com");
-        links.add("Opportunitynocs.org");
-        links.add("Snagajob.com");
-        links.add("Startuphire.com");
-        links.add("Calopps.org");
+        links.add("http://www.Acinet.org");
+        links.add("http://www.Ajb.dni.us");
+        links.add("http://www.Bajobs.com");
+        links.add("http://www.Careers.org");
+        links.add("http://www.Craigslist.org");
+        links.add("http://www.Bayareacareers.com");
+        links.add("http://www.Caljobs.ca.gov");
+        links.add("http://www.Careerbuilder.com");
+        links.add("http://www.Experience.com");
+        links.add("http://www.Glassdoor.com");
+        links.add("http://www.Idealist.org");
+        links.add("http://www.Indeed.com");
+        links.add("http://www.Jobhuntersbible.com");
+        links.add("http://www.Jobstar.org");
+        links.add("http://www.Monster.com");
+        links.add("http://www.Simplyhired.com");
+        links.add("http://www.Opportunitynocs.org");
+        links.add("http://www.Snagajob.com");
+        links.add("http://www.Startuphire.com");
+        links.add("http://www.Calopps.org");
 
 
 //        ArrayList<Integer> linksImage = new ArrayList<Integer>();
