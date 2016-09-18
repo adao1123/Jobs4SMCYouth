@@ -65,7 +65,7 @@ public class JobPostFragment extends Fragment {
         String name = TAG;
         // [START screen_view_hit]
         Log.i(TAG, "Setting screen name: " + name);
-        analyticsTracker.setScreenName("Screen~" + "AboutFragment");
+        analyticsTracker.setScreenName("Screen~" + "JobPostFragment");
         analyticsTracker.send(new HitBuilders.ScreenViewBuilder().build());
         // [END screen_view_hit]
 
