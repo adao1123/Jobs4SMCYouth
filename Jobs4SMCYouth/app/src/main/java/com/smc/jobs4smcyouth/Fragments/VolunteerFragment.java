@@ -6,11 +6,15 @@ import android.support.v4.app.Fragment;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import com.firebase.client.Firebase;
+import com.google.android.gms.analytics.HitBuilders;
+import com.google.android.gms.analytics.Tracker;
+import com.smc.jobs4smcyouth.MyApplication;
 import com.smc.jobs4smcyouth.R;
 
 /**
@@ -23,9 +27,33 @@ public class VolunteerFragment extends Fragment {
     private LinearLayoutManager linearLayoutManager;
     private GridLayoutManager gridLayoutManager;
 
+    private Tracker analyticsTracker;
 
     public VolunteerFragment() {
         // Required empty public constructor
+    }
+
+    @Override
+    public void onCreate(Bundle savedInstanceState){
+        super.onCreate(savedInstanceState);
+
+        MyApplication application = (MyApplication)getActivity().getApplication();
+        analyticsTracker = application.getDefaultTracker();
+        sendScreenImageName();
+    }
+
+    private void sendScreenImageName(){
+        String name = TAG;
+        // [START screen_view_hit]
+        Log.i(TAG, "Setting Screen Name: " + TAG);
+        analyticsTracker.setScreenName("Screen~" + "VolunteerFragment");
+        analyticsTracker.send(new HitBuilders.ScreenViewBuilder().build());
+        // [END screen_view_hit]
+
+        analyticsTracker.send(new HitBuilders.EventBuilder()
+                .setCategory("Action")
+                .setAction("Share")
+                .build());
     }
 
 
