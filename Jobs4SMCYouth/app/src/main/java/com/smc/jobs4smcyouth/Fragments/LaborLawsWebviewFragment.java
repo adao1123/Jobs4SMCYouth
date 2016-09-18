@@ -53,7 +53,7 @@ public class LaborLawsWebviewFragment extends Fragment {
                 .setAction("Share")
                 .build());
     }
-    
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
