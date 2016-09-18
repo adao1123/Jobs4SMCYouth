@@ -30,13 +30,12 @@
                 android:layout_height="match_parent"
                 android:fitsSystemWindows="true"
                 app:contentScrim="@color/primary"
-
                 app:layout_scrollFlags="scroll|exitUntilCollapsed">
 
                 <ImageView
                     android:layout_width="match_parent"
                     android:paddingTop="25dp"
-                    android:layout_height="200dp"
+                    android:layout_height="250dp"
                     android:id="@+id/header_image_id"
                     android:scaleType="centerCrop"
                     android:fitsSystemWindows="true"
