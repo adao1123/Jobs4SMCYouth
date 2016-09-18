@@ -112,7 +112,8 @@ public class MainActivity extends AppCompatActivity {
             case R.id.drawer_job_post_id:
                 fragmentTransaction.replace(R.id.fragment_container_id, jobPostFragment);
                 titleTV.setText("Jobs and Interview Listings");
-                headerImageView.setImageResource(R.drawable.jobs_header);
+                //headerImageView.setImageResource(R.drawable.jobs_header);
+                headerImageView.setImageResource(R.drawable.generic_header3);
                 break;
             case R.id.drawer_scholarship_id:
                 fragmentTransaction.replace(R.id.fragment_container_id, scholarshipFragment);

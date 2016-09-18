@@ -122,7 +122,7 @@ public class JobSiteFragment extends Fragment implements JobSiteFragmentRVAdapte
 
         ArrayList<String> linksImage = new ArrayList<String>();
         linksImage.add("http://i.imgur.com/WaMTa7X.png"); //acinet
-        linksImage.add("http://i.imgur.com/Pf6KAYq.png"); // empty
+        linksImage.add("http://i.imgur.com/9cxaJf0.png"); // empty
         linksImage.add("http://i.imgur.com/T7pq1AY.png"); //bajobs
         linksImage.add("http://i.imgur.com/RTLSHUL.png"); //careers org
         linksImage.add("http://i.imgur.com/NbwCrXR.png"); //craigslist
@@ -133,11 +133,11 @@ public class JobSiteFragment extends Fragment implements JobSiteFragmentRVAdapte
         linksImage.add("http://i.imgur.com/Qr5eQSI.png"); // glassdoor
         linksImage.add("http://i.imgur.com/UtHcmtS.png"); //idealist
         linksImage.add("http://i.imgur.com/6g0gHLJ.png"); //indeed
-        linksImage.add("http://i.imgur.com/Pf6KAYq.png"); //empty
+        linksImage.add("http://i.imgur.com/9cxaJf0.png"); //empty
         linksImage.add("http://i.imgur.com/ufg2jM4.png"); //jobstar
         linksImage.add("http://i.imgur.com/hPysrW1.png"); //monster
         linksImage.add("http://i.imgur.com/uPwztT8.png"); //simply hired
-        linksImage.add("http://i.imgur.com/Pf6KAYq.png"); //empty
+        linksImage.add("http://i.imgur.com/9cxaJf0.png"); //empty
         linksImage.add("http://i.imgur.com/Rigwolq.png"); //snag a job
         linksImage.add("http://i.imgur.com/FcDJory.png"); //startup hire
         linksImage.add("http://i.imgur.com/aRteqkh.png"); //calopps
