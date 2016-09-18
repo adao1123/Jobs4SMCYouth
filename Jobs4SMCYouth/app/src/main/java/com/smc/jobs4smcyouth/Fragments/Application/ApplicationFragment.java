@@ -37,7 +37,6 @@ public class ApplicationFragment extends Fragment {
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-
         MyApplication application = (MyApplication) getActivity().getApplication();
         analyticsTracker = application.getDefaultTracker();
         sendScreenImageName();
@@ -59,9 +58,6 @@ public class ApplicationFragment extends Fragment {
                 .setCategory("Action")
                 .setAction("Share")
                 .build());
-
-
-
     }
 
 
@@ -91,12 +87,11 @@ public class ApplicationFragment extends Fragment {
         applicationRecyclerView.setLayoutManager(linearLayoutManager);
         applicationRecyclerView.setAdapter(applicationFragmentRVAdapter);
 
-        RecyclerView.ItemAnimator itemAnimator = new DefaultItemAnimator();
-        itemAnimator.setAddDuration(1000);
-        itemAnimator.setRemoveDuration(1000);
-        applicationRecyclerView.setItemAnimator(itemAnimator);
+//        RecyclerView.ItemAnimator itemAnimator = new DefaultItemAnimator();
+//        itemAnimator.setAddDuration(1000);
+//        itemAnimator.setRemoveDuration(1000);
+//        applicationRecyclerView.setItemAnimator(itemAnimator);
 
         return view;
     }
-
 }

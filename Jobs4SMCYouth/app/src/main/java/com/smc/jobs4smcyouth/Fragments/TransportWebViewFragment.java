@@ -10,17 +10,51 @@ import android.view.ViewGroup;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 
+import com.google.android.gms.analytics.HitBuilders;
+import com.google.android.gms.analytics.Tracker;
+import com.smc.jobs4smcyouth.MyApplication;
+
 
 /**
  * A simple {@link Fragment} subclass.
  */
 public class TransportWebViewFragment extends Fragment {
+    private final String TAG = TransportWebViewFragment.class.getSimpleName();
+
     private final String URL = "https://docs.google.com/spreadsheets/d/1f6V2nEdJ4HuXhshnqMPJfHyRtLxc-ivOBOXT2BjYYeo/edit#gid=1990877982";
     WebView webView;
     CustomWebViewClient customWebViewClient;
 
     public TransportWebViewFragment() {
         // Required empty public constructor
+    }
+
+    private Tracker analyticsTracker;
+
+    @Override
+    public void onCreate(Bundle savedInstanceState){
+        super.onCreate(savedInstanceState);
+
+        MyApplication application = (MyApplication)getActivity().getApplication();
+        analyticsTracker = application.getDefaultTracker();
+
+        sendScreenImageName();
+
+    }
+
+    private void sendScreenImageName(){
+        String name = TAG;
+        // [START screen_view_hit]
+        Log.i(TAG, "Setting Screen Name: " + name);
+        analyticsTracker.setScreenName("Screen~" + "TransportWebViewFragment");
+        analyticsTracker.send(new HitBuilders.ScreenViewBuilder().build());
+        // [END screen_view_hit]
+
+        analyticsTracker.send(new HitBuilders.EventBuilder()
+                .setCategory("Action")
+                .setAction("Share")
+                .build());
+
     }
 
 
