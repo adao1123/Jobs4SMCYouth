@@ -38,6 +38,8 @@ public class RequirementFragment extends Fragment {
 
     private Animation slideUp;
     private Animation slideDown;
+    private Animation fadeIn;
+    private Animation fadeOut;
 
 
     public RequirementFragment() {
@@ -107,6 +109,8 @@ public class RequirementFragment extends Fragment {
     private void loadAnimation(){
         slideUp = AnimationUtils.loadAnimation(getActivity(), R.anim.slide_up);
         slideDown = AnimationUtils.loadAnimation(getActivity(), R.anim.slide_down);
+        fadeIn = AnimationUtils.loadAnimation(getActivity(), R.anim.fade_in);
+        fadeOut = AnimationUtils.loadAnimation(getActivity(), R.anim.fade_out);
     }
 
     private void expandDetails(){
@@ -115,10 +119,10 @@ public class RequirementFragment extends Fragment {
             public void onClick(View v) {
                 if(requirementDetailLinearLayout.getVisibility() == View.GONE){
                     requirementDetailLinearLayout.setVisibility(View.VISIBLE);
-                    requirementDetailLinearLayout.startAnimation(slideDown);
+                    requirementDetailLinearLayout.startAnimation(fadeIn);
                 }else{
                     requirementDetailLinearLayout.setVisibility(View.GONE);
-                    requirementDetailLinearLayout.setAnimation(slideUp);
+                    requirementDetailLinearLayout.setAnimation(fadeOut);
                 }
             }
         });

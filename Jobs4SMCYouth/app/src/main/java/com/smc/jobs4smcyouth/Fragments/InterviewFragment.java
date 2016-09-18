@@ -9,6 +9,8 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.TextView;
 
 import com.google.android.gms.analytics.HitBuilders;
@@ -29,6 +31,10 @@ public class InterviewFragment extends Fragment {
     private TextView beforeDetail;
     private TextView duringDetail;
     private TextView afterDetail;
+    private Animation fadeIn;
+    private Animation fadeOut;
+    private Animation slideUp;
+    private Animation slideDown;
 
     private Tracker analyticsTracker;
 
@@ -67,8 +73,16 @@ public class InterviewFragment extends Fragment {
         // Inflate the layout for this fragment
         View v = inflater.inflate(R.layout.fragment_interview, container, false);
         initiateViews(v);
+        loadAnimation();
         expandDetails();
         return v;
+    }
+
+    private void loadAnimation(){
+        slideUp = AnimationUtils.loadAnimation(getActivity(), R.anim.slide_up);
+        slideDown = AnimationUtils.loadAnimation(getActivity(), R.anim.slide_down);
+        fadeIn = AnimationUtils.loadAnimation(getActivity(), R.anim.fade_in);
+        fadeOut = AnimationUtils.loadAnimation(getActivity(), R.anim.fade_out);
     }
 
     private void initiateViews(View v){
@@ -89,8 +103,10 @@ public class InterviewFragment extends Fragment {
             public void onClick(View v) {
                 if(beforeDetail.getVisibility() == View.GONE){
                     beforeDetail.setVisibility(View.VISIBLE);
+                    beforeDetail.startAnimation(fadeIn);
                 } else{
                     beforeDetail.setVisibility(View.GONE);
+                    beforeDetail.startAnimation(fadeOut);
                 }
             }
         });
@@ -100,8 +116,10 @@ public class InterviewFragment extends Fragment {
             public void onClick(View v) {
                 if(duringDetail.getVisibility() == View.GONE){
                     duringDetail.setVisibility(View.VISIBLE);
+                    beforeDetail.startAnimation(fadeIn);
                 } else{
                     duringDetail.setVisibility(View.GONE);
+                    beforeDetail.startAnimation(fadeOut);
                 }
             }
         });
@@ -111,8 +129,10 @@ public class InterviewFragment extends Fragment {
             public void onClick(View v) {
                 if(afterDetail.getVisibility() == View.GONE){
                     afterDetail.setVisibility(View.VISIBLE);
+                    beforeDetail.startAnimation(fadeIn);
                 } else{
                     afterDetail.setVisibility(View.GONE);
+                    beforeDetail.startAnimation(fadeOut);
                 }
             }
         });
