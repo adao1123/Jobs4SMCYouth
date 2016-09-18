@@ -158,7 +158,7 @@ public class MainActivity extends AppCompatActivity {
             case R.id.drawer_resume_id:
                 fragmentTransaction.replace(R.id.fragment_container_id, resumeFragment);
                 titleTV.setText("How To Build A Resume");
-                headerImageView.setImageResource(R.drawable.application_header1);
+                headerImageView.setImageResource(R.drawable.generic_header17);
                 break;
             case R.id.drawer_job_site_id:
                 fragmentTransaction.replace(R.id.fragment_container_id, jobSiteFragment);
