@@ -11,8 +11,8 @@
             android:title="@string/nav_scholarships"/>
         <item
             android:id="@+id/drawer_volunteer_id"
-            android:icon="@drawable/icon_scholarship"
-            android:title="Volunteer"/>
+            android:icon="@drawable/icon_volunteer1"
+            android:title="@string/nav_volunteer"/>
         <item
             android:id="@+id/drawer_transportation_id"
             android:icon="@drawable/icon_transportation"

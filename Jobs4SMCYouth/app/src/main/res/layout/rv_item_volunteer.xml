@@ -37,6 +37,17 @@
             android:layout_margin="5dp"
             android:layout_height="wrap_content">
 
+            <com.makeramen.roundedimageview.RoundedImageView
+                android:id="@+id/rv_item_volunteer_image_top"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:layout_gravity="center_horizontal"
+                android:scaleType="fitXY"
+                android:layout_margin="10dp"
+                android:visibility="gone"
+                card_view:riv_corner_radius="10dp"
+                android:src="@drawable/icon_jobpost"/>
+
             <LinearLayout
                 android:id="@+id/volunteer_title_view"
                 android:layout_width="match_parent"
@@ -173,7 +184,7 @@
                     android:id="@+id/volunteer_website_text"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="About: "
+                    android:text="Website: "
                     android:textColor="@color/card_view_title"
                     android:textStyle="bold"
                     android:gravity="left"/>

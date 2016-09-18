@@ -7,8 +7,9 @@
 
     <!-- TODO: Remove or change this placeholder text -->
 
-    <string name="nav_job_post">Job Posting</string>
+    <string name="nav_job_post">Job Listings</string>
     <string name="nav_scholarships">Scholarships</string>
+    <string name="nav_volunteer">Volunteer Opportunities</string>
     <string name="nav_transportation">Transportation</string>
     <string name="nav_requirements">Requirements</string>
     <string name="nav_success_stories">Success Stories</string>
