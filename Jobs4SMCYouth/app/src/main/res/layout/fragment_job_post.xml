@@ -6,6 +6,14 @@
     tools:context="com.smc.jobs4smcyouth.Fragments.JobPostFragment">
 
     <!-- TODO: Update blank fragment layout -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:text="Click on card for more detail."
+        android:gravity="center_horizontal"
+        android:textStyle="italic"/>
+
     <android.support.v7.widget.RecyclerView
         android:id="@+id/job_post_rv_id"
         android:layout_width="match_parent"
