@@ -5,6 +5,8 @@ import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -26,6 +28,7 @@ import com.firebase.ui.FirebaseRecyclerAdapter;
 import com.makeramen.roundedimageview.RoundedImageView;
 import com.smc.jobs4smcyouth.Models.VolunteerOpportunity;
 import com.smc.jobs4smcyouth.R;
+import com.smc.jobs4smcyouth.Utilities.WebViewFragment.WebViewFragment;
 
 
 import java.util.ArrayList;
@@ -106,13 +109,32 @@ public class VolunteerFragment extends Fragment {
     private void displayJobListings(){
         FirebaseRecyclerAdapter adapter = new FirebaseRecyclerAdapter<VolunteerOpportunity,VolunteerViewHolder>(VolunteerOpportunity.class,R.layout.rv_item_volunteer,VolunteerViewHolder.class,firebaseListings){
             @Override
-            protected void populateViewHolder(final VolunteerViewHolder volunteerViewHolder, VolunteerOpportunity volunteerOpportunity, int i) {
+            protected void populateViewHolder(final VolunteerViewHolder volunteerViewHolder, final VolunteerOpportunity volunteerOpportunity, int i) {
                 volunteerViewHolder.volunteerTitleTV.setText(volunteerOpportunity.getTitle());
                 volunteerViewHolder.volunteerAddressTV.setText(volunteerOpportunity.getAddress());
                 volunteerViewHolder.volunteerAboutTV.setText(volunteerOpportunity.getAbout());
                 volunteerViewHolder.volunteerDateTV.setText(volunteerOpportunity.getDate());
                 volunteerViewHolder.volunteerOrganizerTV.setText(volunteerOpportunity.getOrganizer());
                 volunteerViewHolder.volunteerWebsiteTV.setText(volunteerOpportunity.getWebsite());
+                volunteerViewHolder.volunteerListingView.setOnLongClickListener(new View.OnLongClickListener() {
+                    @Override
+                    public boolean onLongClick(View v) {
+                        Bundle bundle = new Bundle();
+                        bundle.putString("url",volunteerOpportunity.getWebsite().substring(11));
+
+                        WebViewFragment webViewFragment = new WebViewFragment();
+                        webViewFragment.setArguments(bundle);
+
+                        FragmentManager fragmentManager;
+                        fragmentManager = getFragmentManager();
+                        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+                        fragmentTransaction.addToBackStack("Jobs");
+                        fragmentTransaction.replace(com.smc.jobs4smcyouth.R.id.fragment_container_id, webViewFragment);
+                        fragmentTransaction.commit();
+
+                        return true;
+                    }
+                });
                 volunteerViewHolder.volunteerListingView.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
