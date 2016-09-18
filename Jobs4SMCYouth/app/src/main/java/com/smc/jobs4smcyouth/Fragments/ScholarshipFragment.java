@@ -123,6 +123,7 @@ public class ScholarshipFragment extends Fragment {
                 scholarshipViewHolder.maxTv.setText(scholarship.getMax());
                 scholarshipViewHolder.descriptionTv.setText(scholarship.getDescription());
                 Picasso.with(getContext()).load(scholarship.getIconLink()).resize(200,200).centerCrop().into(scholarshipViewHolder.iconIv);
+                Picasso.with(getContext()).load(scholarship.getIconLink()).into(scholarshipViewHolder.iconTopIv);
                 scholarshipViewHolder.listingView.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
@@ -132,6 +133,7 @@ public class ScholarshipFragment extends Fragment {
                             scholarshipViewHolder.emailView.setVisibility(View.VISIBLE);
                             scholarshipViewHolder.numberView.setVisibility(View.VISIBLE);
                             scholarshipViewHolder.iconIv.setVisibility(View.GONE);
+                            scholarshipViewHolder.iconTopIv.setVisibility(View.VISIBLE);
                             scholarshipViewHolder.addressView.setVisibility(View.VISIBLE);
                             scholarshipViewHolder.titleTextTv.setVisibility(View.VISIBLE);
                             scholarshipViewHolder.maxTexTv.setVisibility(View.VISIBLE);
@@ -154,6 +156,7 @@ public class ScholarshipFragment extends Fragment {
 //                            scholarshipViewHolder.maxTv.setGravity(View.FOCUS_LEFT);
 //                            scholarshipViewHolder.deadlineTextTv.setVisibility(View.GONE);
                             scholarshipViewHolder.iconIv.setVisibility(View.VISIBLE);
+                            scholarshipViewHolder.iconTopIv.setVisibility(View.GONE);
                             scholarshipViewHolder.descriptionView.setVisibility(View.GONE);
                             scholarshipViewHolder.addressView.setVisibility(View.GONE);
                             scholarshipViewHolder.contactView.setVisibility(View.GONE);
@@ -182,6 +185,7 @@ public class ScholarshipFragment extends Fragment {
         TextView deadlineTextTv;
         TextView maxTexTv;
         RoundedImageView iconIv;
+        RoundedImageView iconTopIv;
         LinearLayout switchView;
         LinearLayout listingView;
         LinearLayout titleView;
@@ -206,6 +210,7 @@ public class ScholarshipFragment extends Fragment {
             titleTextTv = (TextView)itemView.findViewById(R.id.scholarship_title_text);
             descriptionTv = (TextView)itemView.findViewById(R.id.scholarship_description);
             iconIv = (RoundedImageView)itemView.findViewById(R.id.scholarship_icon);
+            iconTopIv = (RoundedImageView)itemView.findViewById(R.id.scholarship_icon_top);
             switchView = (LinearLayout)itemView.findViewById(R.id.scholarship_switch_view);
             listingView = (LinearLayout)itemView.findViewById(R.id.scholarship_listing);
             titleView = (LinearLayout)itemView.findViewById(R.id.scholarship_title_view);

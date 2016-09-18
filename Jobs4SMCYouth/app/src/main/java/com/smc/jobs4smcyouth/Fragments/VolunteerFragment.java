@@ -106,13 +106,47 @@ public class VolunteerFragment extends Fragment {
     private void displayJobListings(){
         FirebaseRecyclerAdapter adapter = new FirebaseRecyclerAdapter<VolunteerOpportunity,VolunteerViewHolder>(VolunteerOpportunity.class,R.layout.rv_item_volunteer,VolunteerViewHolder.class,firebaseListings){
             @Override
-            protected void populateViewHolder(VolunteerViewHolder volunteerViewHolder, VolunteerOpportunity volunteerOpportunity, int i) {
+            protected void populateViewHolder(final VolunteerViewHolder volunteerViewHolder, VolunteerOpportunity volunteerOpportunity, int i) {
                 volunteerViewHolder.volunteerTitleTV.setText(volunteerOpportunity.getTitle());
                 volunteerViewHolder.volunteerAddressTV.setText(volunteerOpportunity.getAddress());
                 volunteerViewHolder.volunteerAboutTV.setText(volunteerOpportunity.getAbout());
                 volunteerViewHolder.volunteerDateTV.setText(volunteerOpportunity.getDate());
                 volunteerViewHolder.volunteerOrganizerTV.setText(volunteerOpportunity.getOrganizer());
                 volunteerViewHolder.volunteerWebsiteTV.setText(volunteerOpportunity.getWebsite());
+                volunteerViewHolder.volunteerListingView.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Log.i(TAG, "onClick: ");
+                        if (volunteerViewHolder.aboutView.getVisibility()!=View.VISIBLE){
+                            volunteerViewHolder.addressView.setVisibility(View.VISIBLE);
+                            volunteerViewHolder.aboutView.setVisibility(View.VISIBLE);
+                            volunteerViewHolder.dateView.setVisibility(View.VISIBLE);
+                            volunteerViewHolder.organizerView.setVisibility(View.VISIBLE);
+                            volunteerViewHolder.websiteView.setVisibility(View.VISIBLE);
+                            volunteerViewHolder.volunteerImage.setVisibility(View.GONE);
+                            volunteerViewHolder.volunteerImageTop.setVisibility(View.VISIBLE);
+                            volunteerViewHolder.volunteerTitleWord.setVisibility(View.VISIBLE);
+                            volunteerViewHolder.volunteerTitleTV.setTextSize(15);
+                            volunteerViewHolder.volunteerTitleTV.setTypeface(Typeface.DEFAULT);
+                            volunteerViewHolder.volunteerTitleTV.setTextColor(getContext().getResources().getColor(android.R.color.tab_indicator_text));
+
+
+                        }else{
+                            volunteerViewHolder.volunteerTitleTV.setTextColor(getContext().getResources().getColor(R.color.card_view_title));
+                            volunteerViewHolder.volunteerTitleTV.setTypeface(Typeface.DEFAULT_BOLD);
+                            volunteerViewHolder.volunteerTitleTV.setTextSize(20);
+                            volunteerViewHolder.volunteerTitleWord.setVisibility(View.GONE);
+                            volunteerViewHolder.addressView.setVisibility(View.GONE);
+                            volunteerViewHolder.aboutView.setVisibility(View.GONE);
+                            volunteerViewHolder.dateView.setVisibility(View.GONE);
+                            volunteerViewHolder.organizerView.setVisibility(View.GONE);
+                            volunteerViewHolder.websiteView.setVisibility(View.GONE);
+                            volunteerViewHolder.volunteerImageTop.setVisibility(View.GONE);
+                            volunteerViewHolder.volunteerImage.setVisibility(View.VISIBLE);
+
+                        }
+                    }
+                });
             }
         };
         volunteerListingRV.setAdapter(adapter);
@@ -128,6 +162,7 @@ public class VolunteerFragment extends Fragment {
         public TextView volunteerWebsiteTV;
         public TextView volunteerTitleWord;
         public RoundedImageView volunteerImage;
+        public RoundedImageView volunteerImageTop;
         public LinearLayout volunteerListingView;
         public LinearLayout titleView;
         public LinearLayout addressView;
@@ -138,6 +173,7 @@ public class VolunteerFragment extends Fragment {
         public VolunteerViewHolder(View itemView) {
             super(itemView);
             volunteerImage = (RoundedImageView)itemView.findViewById(R.id.rv_item_volunteer_image);
+            volunteerImageTop = (RoundedImageView)itemView.findViewById(R.id.rv_item_volunteer_image_top);
             volunteerTitleTV = (TextView)itemView.findViewById(R.id.rv_item_volunteer_title);
             volunteerAddressTV = (TextView)itemView.findViewById(R.id.rv_item_volunteer_address);
             volunteerAboutTV = (TextView)itemView.findViewById(R.id.rv_item_volunteer_about);
