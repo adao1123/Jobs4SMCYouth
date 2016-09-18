@@ -37,7 +37,7 @@ public class WebViewFragment extends Fragment {
         customWebViewClient = new CustomWebViewClient();
 
         Bundle bundle = this.getArguments();
-        url = "http://www." + bundle.getString("url", "http://hr.smcgov.org/SJFY");
+        url = bundle.getString("url", "http://hr.smcgov.org/SJFY");
         Log.d("JobWebViewFrag:", "This is returned url " + url);
 
         webView.setWebViewClient(customWebViewClient);

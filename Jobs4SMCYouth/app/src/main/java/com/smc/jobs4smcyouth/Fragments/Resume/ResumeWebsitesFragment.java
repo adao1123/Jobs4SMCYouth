@@ -66,16 +66,16 @@ public class ResumeWebsitesFragment extends Fragment
         RecyclerView resumeWebsitesListRecyclerView = (RecyclerView)view.findViewById(com.smc.jobs4smcyouth.R.id.resumeWebsiteListFrag_recyclerView);
 
         ArrayList<String> urls = new ArrayList<>();
-        urls.add("Careeronestop.org");
+        urls.add("http://www.Careeronestop.org");
         //urls.add("Damngood.com");
-        urls.add("Eresumes.com");
-        urls.add("Resume-help.org");
-        urls.add("Resumehelp.com");
-        urls.add("Myfuture.com");
-        urls.add("Susanireland.com");
-        urls.add("Truecareers.com");
-        urls.add("Monster.com");
-        urls.add("Quintcareers.com/resres.html");
+        urls.add("http://www.Eresumes.com");
+        urls.add("http://www.Resume-help.org");
+        urls.add("http://www.Resumehelp.com");
+        urls.add("http://www.Myfuture.com");
+        urls.add("http://www.Susanireland.com");
+        urls.add("http://www.Truecareers.com");
+        urls.add("http://www.Monster.com");
+        urls.add("http://www.Quintcareers.com/resres.html");
 
 
         ArrayList<String> linksImages = new ArrayList<>();
