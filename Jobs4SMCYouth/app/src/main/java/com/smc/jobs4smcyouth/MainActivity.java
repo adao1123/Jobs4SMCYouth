@@ -27,6 +27,7 @@ import com.smc.jobs4smcyouth.Fragments.ScholarshipFragment;
 import com.smc.jobs4smcyouth.Fragments.SuccessStoryFragment;
 import com.smc.jobs4smcyouth.Fragments.TipFragment;
 import com.smc.jobs4smcyouth.Fragments.TransportationFragment;
+import com.smc.jobs4smcyouth.Fragments.VolunteerFragment;
 import com.smc.jobs4smcyouth.Utilities.EventBus.ApplicationRulesClickEvent;
 import com.smc.jobs4smcyouth.Utilities.EventBus.MainBus;
 
@@ -52,6 +53,7 @@ public class MainActivity extends AppCompatActivity {
     TipFragment tipFragment;
     TransportationFragment transportationFragment;
     PrintLayoutFragment printLayoutFragment;
+    VolunteerFragment volunteerFragment;
     DrawerLayout drawerLayout;
     TextView titleTV;
     Toolbar toolbar;
@@ -116,6 +118,11 @@ public class MainActivity extends AppCompatActivity {
                 fragmentTransaction.replace(R.id.fragment_container_id, scholarshipFragment);
                 titleTV.setText("Scholarships");
                 headerImageView.setImageResource(R.drawable.scholarship_header1);
+                break;
+            case R.id.drawer_volunteer_id:
+                fragmentTransaction.replace(R.id.fragment_container_id,volunteerFragment);
+                titleTV.setText("Volunteering Opportunities");
+                headerImageView.setImageResource(R.drawable.scholarship_header1); //placeholder
                 break;
             case R.id.drawer_transportation_id:
                 fragmentTransaction.replace(R.id.fragment_container_id, transportationFragment);
@@ -190,6 +197,7 @@ public class MainActivity extends AppCompatActivity {
         tipFragment = new TipFragment();
         transportationFragment = new TransportationFragment();
         printLayoutFragment = new PrintLayoutFragment();
+        volunteerFragment = new VolunteerFragment();
     }
 
 

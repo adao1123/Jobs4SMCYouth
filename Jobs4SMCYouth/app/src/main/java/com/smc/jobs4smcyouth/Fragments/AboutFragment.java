@@ -15,6 +15,8 @@ import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -72,9 +74,11 @@ public class AboutFragment extends Fragment implements OnMapReadyCallback{
     private TextView phoneRedwoodTextView;
     private TextView smcEmailTextView;
     private CardView aboutCardView;
-    private LinearLayout aboutDetail;
+    private TextView aboutDetail;
+    //private LinearLayout aboutDetail;
     private CardView servicesCardView;
-    private LinearLayout servicesDetail;
+    //private LinearLayout servicesDetail;
+    private TextView servicesDetail;
 
     private GoogleMap map;
     private SupportMapFragment mapFragment;
@@ -85,6 +89,9 @@ public class AboutFragment extends Fragment implements OnMapReadyCallback{
     private Tracker analyticsTracker;
     private View view;
 
+    private Animation slideUp;
+    private Animation slideDown;
+
     public AboutFragment() {
         // Required empty public constructor
     }
@@ -94,14 +101,11 @@ public class AboutFragment extends Fragment implements OnMapReadyCallback{
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-
         MyApplication application = (MyApplication) getActivity().getApplication();
         analyticsTracker = application.getDefaultTracker();
         sendScreenImageName();
 
     }
-
-
 
     private void sendScreenImageName() {
 
@@ -131,6 +135,7 @@ public class AboutFragment extends Fragment implements OnMapReadyCallback{
         initializeViews(view);
         initilizeLocations();
 
+        loadAnimation();
         expandDetails();
 
         setDialNumberListener(phoneDCTextView, "6503018434");
@@ -150,9 +155,11 @@ public class AboutFragment extends Fragment implements OnMapReadyCallback{
         phoneRedwoodTextView = (TextView) v.findViewById(R.id.about_phoneRedwood_tV_id);
         smcEmailTextView = (TextView) v.findViewById(R.id.about_email_tv_id);
         aboutCardView = (CardView)v.findViewById(R.id.about_aboutCard_id);
-        aboutDetail = (LinearLayout)v.findViewById(R.id.about_aboutInfo_LinearLayout);
+        //aboutDetail = (LinearLayout)v.findViewById(R.id.about_aboutInfo_LinearLayout);
+        aboutDetail = (TextView)v.findViewById(R.id.about_about_tv_id);
         servicesCardView = (CardView)v.findViewById(R.id.about_servicesCard_id);
-        servicesDetail = (LinearLayout)v.findViewById(R.id.about_servicesOffered_LinearLayout);
+        //servicesDetail = (LinearLayout)v.findViewById(R.id.about_servicesOffered_LinearLayout);
+        servicesDetail = (TextView)v.findViewById(R.id.about_servicesOffered_tv_id);
     }
 
 
@@ -246,14 +253,21 @@ public class AboutFragment extends Fragment implements OnMapReadyCallback{
         }
     }
 
+    private void loadAnimation(){
+        slideUp = AnimationUtils.loadAnimation(getActivity(), R.anim.slide_up);
+        slideDown = AnimationUtils.loadAnimation(getActivity(), R.anim.slide_down);
+    }
+
     private void expandDetails(){
         aboutCardView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if(aboutDetail.getVisibility() == View.GONE){
                     aboutDetail.setVisibility(View.VISIBLE);
+                    aboutDetail.setAnimation(slideDown);
                 }else{
                     aboutDetail.setVisibility(View.GONE);
+                    aboutDetail.setAnimation(slideUp);
                 }
             }
         });
@@ -263,8 +277,10 @@ public class AboutFragment extends Fragment implements OnMapReadyCallback{
             public void onClick(View v) {
                 if(servicesDetail.getVisibility() == View.GONE){
                     servicesDetail.setVisibility(View.VISIBLE);
+                    servicesDetail.setAnimation(slideDown);
                 }else{
                     servicesDetail.setVisibility(View.GONE);
+                    servicesDetail.setAnimation(slideUp);
                 }
             }
         });

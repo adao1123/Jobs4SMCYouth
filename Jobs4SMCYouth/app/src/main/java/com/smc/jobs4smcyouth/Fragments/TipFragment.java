@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.CardView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,6 +13,9 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.TextView;
 
+import com.google.android.gms.analytics.HitBuilders;
+import com.google.android.gms.analytics.Tracker;
+import com.smc.jobs4smcyouth.MyApplication;
 import com.smc.jobs4smcyouth.R;
 
 
@@ -19,6 +23,10 @@ import com.smc.jobs4smcyouth.R;
  * A simple {@link Fragment} subclass.
  */
 public class TipFragment extends Fragment {
+    private static final String TAG = TipFragment.class.getSimpleName();
+
+    private Tracker analyticsTracker;
+
     private CardView tip1Card;
     private CardView tip2Card;
     private CardView tip3Card;
@@ -46,6 +54,31 @@ public class TipFragment extends Fragment {
 
     public TipFragment() {
         // Required empty public constructor
+    }
+
+    @Override
+    public void onCreate(Bundle savedInstanceState){
+        super.onCreate(savedInstanceState);
+
+        MyApplication application = (MyApplication)getActivity().getApplication();
+        analyticsTracker = application.getDefaultTracker();
+
+        sendScreenImageName();
+    }
+
+    private void sendScreenImageName(){
+        String name = TAG;
+        // [START screen_view_hit]
+        Log.i(TAG, "Setting screen name: " + name);
+        analyticsTracker.setScreenName("Screen~" + "TipFragment");
+        analyticsTracker.send(new HitBuilders.ScreenViewBuilder().build());
+        // [END screen_view_hit]
+
+        analyticsTracker.send(new HitBuilders.EventBuilder()
+                .setCategory("Action")
+                .setAction("Share")
+                .build());
+
     }
 
 

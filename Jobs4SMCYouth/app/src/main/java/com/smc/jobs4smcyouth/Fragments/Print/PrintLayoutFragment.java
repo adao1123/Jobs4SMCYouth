@@ -29,6 +29,7 @@ import android.os.Bundle;
 import android.print.PrintAttributes;
 import android.provider.MediaStore;
 import android.provider.OpenableColumns;
+import android.support.annotation.Nullable;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.SwitchCompat;
@@ -46,6 +47,8 @@ import android.widget.RadioGroup;
 import android.widget.RelativeLayout;
 import android.widget.Toast;
 
+import com.google.android.gms.analytics.HitBuilders;
+import com.google.android.gms.analytics.Tracker;
 import com.hp.mss.hpprint.model.ImagePrintItem;
 import com.hp.mss.hpprint.model.PDFPrintItem;
 import com.hp.mss.hpprint.model.PrintItem;
@@ -54,6 +57,7 @@ import com.hp.mss.hpprint.model.PrintMetricsData;
 import com.hp.mss.hpprint.model.asset.ImageAsset;
 import com.hp.mss.hpprint.model.asset.PDFAsset;
 import com.hp.mss.hpprint.util.PrintUtil;
+import com.smc.jobs4smcyouth.MyApplication;
 
 
 import java.io.File;
@@ -88,6 +92,32 @@ public class PrintLayoutFragment extends Fragment implements RadioGroup.OnChecke
     PrintAttributes.MediaSize mediaSize5x7;
     RelativeLayout filePickerLayout;
 
+    private Tracker analyticsTracker;
+
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+
+        MyApplication application = (MyApplication) getActivity().getApplication();
+        analyticsTracker = application.getDefaultTracker();
+        sendScreenImageName();
+
+    }
+
+    private void sendScreenImageName() {
+
+        String name = TAG;
+        // [START screen_view_hit]
+        Log.i(TAG, "Setting screen name: " + name);
+        analyticsTracker.setScreenName("Screen~" + "PrintFragment");
+        analyticsTracker.send(new HitBuilders.ScreenViewBuilder().build());
+        // [END screen_view_hit]
+
+        analyticsTracker.send(new HitBuilders.EventBuilder()
+                .setCategory("Action")
+                .setAction("Share")
+                .build());
+    }
 
 
     @Override
