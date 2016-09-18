@@ -71,6 +71,7 @@ public class MainActivity extends AppCompatActivity {
         if(collapsingToolbar == null){
             collapsingToolbar.setTitle("Job Postings");
         }
+        collapsingToolbar.setTitle("Job Listings");
         toolbar = (Toolbar) findViewById(R.id.toolbar);
 //        toolbar.setTitle("Job Posting");
         headerImageView = (ImageView) findViewById(R.id.header_image_id);
