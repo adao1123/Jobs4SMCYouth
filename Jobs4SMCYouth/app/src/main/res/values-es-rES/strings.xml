@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="nav_job_post">Empleo Anuncios</string>
+    <string name="nav_scholarships">Becas</string>
+    <string name="nav_volunteer">Voluntariados</string>
+    <string name="nav_transportation">Transporte</string>
+    <string name="nav_requirements">Requisitos</string>
+    <string name="nav_success_stories">Historias de éxito</string>
+    <string name="nav_about">Acerca de</string>
+    <string name="nav_print">Imprimir</string>
+    <string name="nav_job_prep">Preparación para el empleo</string>
+    <string name="nav_applications">Solicitudes</string>
+    <string name="nav_interview">Entrevista</string>
+    <string name="nav_resume_cover_letters">CV/Cartas de presentación</string>
+    <string name="nav_job_search_sites">Webs búsqueda de empleo</string>
+    <string name="nav_tips">Consejos</string>
+
+</resources>
