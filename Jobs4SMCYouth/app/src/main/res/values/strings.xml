@@ -17,8 +17,8 @@
     <string name="nav_print">Print</string>
     <string name="nav_job_prep">Job Prep</string>
     <string name="nav_applications">Applications</string>
-    <string name="nav_interview">Interview</string>
-    <string name="nav_resume_cover_letters">Resume/Cover Letters</string>
+    <string name="nav_interview">Interview Tips</string>
+    <string name="nav_resume_cover_letters">Resumes and Cover Letters</string>
     <string name="nav_job_search_sites">Job Search Websites</string>
     <string name="nav_tips">Tips</string>
 
