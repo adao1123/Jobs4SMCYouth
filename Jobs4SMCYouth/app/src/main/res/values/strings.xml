@@ -178,5 +178,30 @@
     <string name="select_a_file">SELECT A FILE</string>
     <string name="file_selected">File Selected</string>
     <string name="transportation"><![CDATA[The program can assist active participants with bus tickets to get to and from job related activities. For more information and to have the private online document shared with you, please contact <b><a href="jobs4smcyouth@gmail.com">Jobs for Youth</a></b>]]></string>
+    <string name="tip1_title">Take a calendar or notebook with you to work.</string>
+    <string name="tip1_detail">Record hard-to-remember information, instructions, and meetings you may have to attend.</string>
+    <string name="tip2_title">Ensure transportation to work.</string>
+    <string name="tip2_detail">If you have a car, make sure it is dependable to drive. Allow extra driving time. If you depend on someone else for transportation, be sure he/she is always available. However, try to have a “plan b” (i.e. Public transportation). If you are going to be late, call your employer. If taking public transportation, know the bus routes and times.</string>
+    <string name="tip3_title">Get plenty of rest for work.</string>
+    <string name="tip3_detail">Strain and tension the first few days and weeks of a job will take more energy out of your system than you expect. Avoid a heavy social schedule and get plenty of rest.</string>
+    <string name="tip4_title">Ask the right questions.</string>
+    <string name="tip4_detail">Try to find your own answer first. Ask questions at appropriate times. Don’t be afraid to ask if you are not sure about something.</string>
+    <string name="tip5_title">Use good judgement in working extra hours.</string>
+    <string name="tip5_detail">Abide by management’s instructions. Working extra hours and eliminating breaks and lunch to impress management will not develop good relationships with your fellow employees.</string>
+    <string name="tip6_title">Do not flaunt your knowledge and education.</string>
+    <string name="tip6_detail">Do not try to impress people with what you know. Until you are sure, be safe and do it the way you are instructed.</string>
+    <string name="tip7_title">Build a relationship with all employees.</string>
+    <string name="tip7_detail">Be cautious in spending too much time with one person, too soon.</string>
+    <string name="tip8_title">Stay busy (take initiative).</string>
+    <string name="tip8_detail">Try to avoid “just sitting there.” Let the supervisor know when you have completed your work so you can work on new projects.</string>
+    <string name="tip9_title">Dress appropriately.</string>
+    <string name="tip9_detail">Abide by the dress code.</string>
+    <string name="tip10_title">Be familiar with company rules.</string>
+    <string name="tip10_detail">Review your employee handbook.</string>
+    <string name="transportation_info">The program can assist active participants with bus tickets to get to and from job related activities.\n\nFor more information and access to the private transportation document, please contact</string>
+    <string name="transportation_Jobs_for_youth">Jobs for Youth.</string>
+    <string name="interview_before_title">Before the Job Interview</string>
+    <string name="interview_during_title">During the Job Interview</string>
+    <string name="interview_after_title">After the Job Interview</string>
 
 </resources>
