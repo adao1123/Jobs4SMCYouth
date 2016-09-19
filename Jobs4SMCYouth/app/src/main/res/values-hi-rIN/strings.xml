@@ -2,9 +2,10 @@
 <resources>
     <string name="nav_job_post">नौकरी ढूंढे</string>
     <string name="nav_scholarships">छात्रवृत्ति</string>
+    <string name="nav_volunteer">स्वयंसेवक बनने के लिए अवसरों की सूची</string>
     <string name="nav_transportation">परिवहन</string>
     <string name="nav_requirements">आवश्यकताओं</string>
-    <string name="nav_success_stories">Success Stories</string>
+    <string name="nav_success_stories">सफलता की कहानियां</string>
     <string name="nav_about">हमारे बारे में</string>
     <string name="nav_print">छापें</string>
     <string name="nav_job_prep">नौकरी कि तैयारी करें</string>
