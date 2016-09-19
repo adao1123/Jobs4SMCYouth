@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="nav_job_post">職缺列表</string>
+    <string name="nav_scholarships">助學計劃</string>
+    <string name="nav_transportation">交通資訊</string>
+    <string name="nav_requirements">兼職條款</string>
+    <string name="nav_success_stories">成功案例</string>
+    <string name="nav_about">關於我們</string>
+    <string name="nav_print">打印</string>
+    <string name="nav_job_prep">求職準備</string>
+    <string name="nav_applications">求職申請</string>
+    <string name="nav_interview">面試問題</string>
+    <string name="nav_resume_cover_letters">履歷範例</string>
+    <string name="nav_job_search_sites">徵才網站</string>
+    <string name="nav_tips">求職技巧</string>
+
+</resources>

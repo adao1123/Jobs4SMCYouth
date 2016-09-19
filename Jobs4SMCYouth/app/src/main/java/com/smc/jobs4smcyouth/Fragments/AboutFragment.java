@@ -91,6 +91,11 @@ public class AboutFragment extends Fragment implements OnMapReadyCallback{
 
     private Animation slideUp;
     private Animation slideDown;
+    private Animation fadeIn;
+    private Animation fadeOut;
+
+    private Intent send;
+    private String uriText;
 
     public AboutFragment() {
         // Required empty public constructor
@@ -229,33 +234,28 @@ public class AboutFragment extends Fragment implements OnMapReadyCallback{
         }
     }
 
+
     private void setSendEmailListener(TextView textView, final String email){
         textView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Log.d("Tag", "email clicked");
-                sendEmail(email);
+                send = new Intent(Intent.ACTION_SENDTO);
+                send.setType("text/plain");
+                uriText = "mailto:" + Uri.encode(email) +
+                        "?subject=" + Uri.encode("Jobs For Youth Inquiry") +
+                        "&body=" + Uri.encode("Hi Jobs for Youth,");
+                Uri uri = Uri.parse(uriText);
+                send.setData(uri);
+                startActivity(Intent.createChooser(send, "Send Email"));
             }
         });
-    }
-
-    public void sendEmail(String email){
-        Intent emailIntent = new Intent(Intent.ACTION_SENDTO);
-
-        emailIntent.setType("message/rfc822");
-        emailIntent.setData(Uri.parse("mailto:"+email));
-
-        emailIntent.putExtra(Intent.EXTRA_SUBJECT, "Jobs For Youth Inquiry");
-        emailIntent.putExtra(Intent.EXTRA_TEXT, "Hi Jobs for Youth, \n");
-
-        if(emailIntent.resolveActivity(getActivity().getPackageManager()) != null){
-            startActivity(emailIntent);
-        }
     }
 
     private void loadAnimation(){
         slideUp = AnimationUtils.loadAnimation(getActivity(), R.anim.slide_up);
         slideDown = AnimationUtils.loadAnimation(getActivity(), R.anim.slide_down);
+        fadeIn = AnimationUtils.loadAnimation(getActivity(), R.anim.fade_in);
+        fadeOut = AnimationUtils.loadAnimation(getActivity(), R.anim.fade_out);
     }
 
     private void expandDetails(){
@@ -264,10 +264,10 @@ public class AboutFragment extends Fragment implements OnMapReadyCallback{
             public void onClick(View v) {
                 if(aboutDetail.getVisibility() == View.GONE){
                     aboutDetail.setVisibility(View.VISIBLE);
-                    aboutDetail.setAnimation(slideDown);
+                    aboutDetail.setAnimation(fadeIn);
                 }else{
                     aboutDetail.setVisibility(View.GONE);
-                    aboutDetail.setAnimation(slideUp);
+                    aboutDetail.setAnimation(fadeOut);
                 }
             }
         });
@@ -277,10 +277,10 @@ public class AboutFragment extends Fragment implements OnMapReadyCallback{
             public void onClick(View v) {
                 if(servicesDetail.getVisibility() == View.GONE){
                     servicesDetail.setVisibility(View.VISIBLE);
-                    servicesDetail.setAnimation(slideDown);
+                    servicesDetail.setAnimation(fadeIn);
                 }else{
                     servicesDetail.setVisibility(View.GONE);
-                    servicesDetail.setAnimation(slideUp);
+                    servicesDetail.setAnimation(fadeOut);
                 }
             }
         });

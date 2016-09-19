@@ -2,13 +2,20 @@ package com.smc.jobs4smcyouth.Fragments;
 
 
 import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.CardView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.TextView;
 
+import com.google.android.gms.analytics.HitBuilders;
+import com.google.android.gms.analytics.Tracker;
+import com.smc.jobs4smcyouth.MyApplication;
 import com.smc.jobs4smcyouth.R;
 
 
@@ -16,15 +23,48 @@ import com.smc.jobs4smcyouth.R;
  * A simple {@link Fragment} subclass.
  */
 public class InterviewFragment extends Fragment {
+
+    private static final String TAG = InterviewFragment.class.getSimpleName();
     private CardView beforeCard;
     private CardView duringCard;
     private CardView afterCard;
     private TextView beforeDetail;
     private TextView duringDetail;
     private TextView afterDetail;
+    private Animation fadeIn;
+    private Animation fadeOut;
+    private Animation slideUp;
+    private Animation slideDown;
+
+    private Tracker analyticsTracker;
 
     public InterviewFragment() {
         // Required empty public constructor
+    }
+
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+
+        MyApplication application = (MyApplication) getActivity().getApplication();
+        analyticsTracker = application.getDefaultTracker();
+        sendScreenImageName();
+
+    }
+
+    private void sendScreenImageName() {
+
+        String name = TAG;
+        // [START screen_view_hit]
+        Log.i(TAG, "Setting screen name: " + name);
+        analyticsTracker.setScreenName("Screen~" + "AboutFragment");
+        analyticsTracker.send(new HitBuilders.ScreenViewBuilder().build());
+        // [END screen_view_hit]
+
+        analyticsTracker.send(new HitBuilders.EventBuilder()
+                .setCategory("Action")
+                .setAction("Share")
+                .build());
     }
 
     @Override
@@ -33,8 +73,16 @@ public class InterviewFragment extends Fragment {
         // Inflate the layout for this fragment
         View v = inflater.inflate(R.layout.fragment_interview, container, false);
         initiateViews(v);
+        loadAnimation();
         expandDetails();
         return v;
+    }
+
+    private void loadAnimation(){
+        slideUp = AnimationUtils.loadAnimation(getActivity(), R.anim.slide_up);
+        slideDown = AnimationUtils.loadAnimation(getActivity(), R.anim.slide_down);
+        fadeIn = AnimationUtils.loadAnimation(getActivity(), R.anim.fade_in);
+        fadeOut = AnimationUtils.loadAnimation(getActivity(), R.anim.fade_out);
     }
 
     private void initiateViews(View v){
@@ -55,8 +103,10 @@ public class InterviewFragment extends Fragment {
             public void onClick(View v) {
                 if(beforeDetail.getVisibility() == View.GONE){
                     beforeDetail.setVisibility(View.VISIBLE);
+                    beforeDetail.startAnimation(fadeIn);
                 } else{
                     beforeDetail.setVisibility(View.GONE);
+                    beforeDetail.startAnimation(fadeOut);
                 }
             }
         });
@@ -66,8 +116,10 @@ public class InterviewFragment extends Fragment {
             public void onClick(View v) {
                 if(duringDetail.getVisibility() == View.GONE){
                     duringDetail.setVisibility(View.VISIBLE);
+                    beforeDetail.startAnimation(fadeIn);
                 } else{
                     duringDetail.setVisibility(View.GONE);
+                    beforeDetail.startAnimation(fadeOut);
                 }
             }
         });
@@ -77,8 +129,10 @@ public class InterviewFragment extends Fragment {
             public void onClick(View v) {
                 if(afterDetail.getVisibility() == View.GONE){
                     afterDetail.setVisibility(View.VISIBLE);
+                    beforeDetail.startAnimation(fadeIn);
                 } else{
                     afterDetail.setVisibility(View.GONE);
+                    beforeDetail.startAnimation(fadeOut);
                 }
             }
         });

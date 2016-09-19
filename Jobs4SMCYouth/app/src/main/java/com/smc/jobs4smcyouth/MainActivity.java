@@ -27,6 +27,7 @@ import com.smc.jobs4smcyouth.Fragments.ScholarshipFragment;
 import com.smc.jobs4smcyouth.Fragments.SuccessStoryFragment;
 import com.smc.jobs4smcyouth.Fragments.TipFragment;
 import com.smc.jobs4smcyouth.Fragments.TransportationFragment;
+import com.smc.jobs4smcyouth.Fragments.VolunteerFragment;
 import com.smc.jobs4smcyouth.Utilities.EventBus.ApplicationRulesClickEvent;
 import com.smc.jobs4smcyouth.Utilities.EventBus.MainBus;
 
@@ -52,6 +53,7 @@ public class MainActivity extends AppCompatActivity {
     TipFragment tipFragment;
     TransportationFragment transportationFragment;
     PrintLayoutFragment printLayoutFragment;
+    VolunteerFragment volunteerFragment;
     DrawerLayout drawerLayout;
     TextView titleTV;
     Toolbar toolbar;
@@ -69,10 +71,11 @@ public class MainActivity extends AppCompatActivity {
         if(collapsingToolbar == null){
             collapsingToolbar.setTitle("Job Postings");
         }
+        collapsingToolbar.setTitle("Job Listings");
         toolbar = (Toolbar) findViewById(R.id.toolbar);
 //        toolbar.setTitle("Job Posting");
         headerImageView = (ImageView) findViewById(R.id.header_image_id);
-        headerImageView.setImageResource(R.drawable.jobs_header);
+        headerImageView.setImageResource(R.drawable.generic_header3);
         setSupportActionBar(toolbar);
         setActionBarDrawer();
         initializeFragments();
@@ -110,12 +113,18 @@ public class MainActivity extends AppCompatActivity {
             case R.id.drawer_job_post_id:
                 fragmentTransaction.replace(R.id.fragment_container_id, jobPostFragment);
                 titleTV.setText("Jobs and Interview Listings");
-                headerImageView.setImageResource(R.drawable.jobs_header);
+                //headerImageView.setImageResource(R.drawable.jobs_header);
+                headerImageView.setImageResource(R.drawable.generic_header3);
                 break;
             case R.id.drawer_scholarship_id:
                 fragmentTransaction.replace(R.id.fragment_container_id, scholarshipFragment);
                 titleTV.setText("Scholarships");
                 headerImageView.setImageResource(R.drawable.scholarship_header1);
+                break;
+            case R.id.drawer_volunteer_id:
+                fragmentTransaction.replace(R.id.fragment_container_id,volunteerFragment);
+                titleTV.setText("Volunteering Opportunities");
+                headerImageView.setImageResource(R.drawable.volunteer_header1); //placeholder
                 break;
             case R.id.drawer_transportation_id:
                 fragmentTransaction.replace(R.id.fragment_container_id, transportationFragment);
@@ -125,12 +134,12 @@ public class MainActivity extends AppCompatActivity {
             case R.id.drawer_requirements_id:
                 fragmentTransaction.replace(R.id.fragment_container_id, requirementFragment);
                 titleTV.setText("Requirements");
-                headerImageView.setImageResource(R.drawable.requirements_header);
+                headerImageView.setImageResource(R.drawable.generic_header13);
                 break;
             case R.id.drawer_success_stories_id:
                 fragmentTransaction.replace(R.id.fragment_container_id, successStoryFragment);
                 titleTV.setText("Success Stories");
-                headerImageView.setImageResource(R.drawable.success_header2);
+                headerImageView.setImageResource(R.drawable.success_header3);
                 break;
             case R.id.drawer_about_id:
                 fragmentTransaction.replace(R.id.fragment_container_id, aboutFragment);
@@ -140,7 +149,7 @@ public class MainActivity extends AppCompatActivity {
             case R.id.drawer_applications_id:
                 fragmentTransaction.replace(R.id.fragment_container_id, applicationFragment);
                 titleTV.setText("Applications");
-                headerImageView.setImageResource(R.drawable.generic_header3);
+                headerImageView.setImageResource(R.drawable.generic_header6);
                 break;
             case R.id.drawer_interview_id:
                 fragmentTransaction.replace(R.id.fragment_container_id, interviewFragment);
@@ -150,12 +159,12 @@ public class MainActivity extends AppCompatActivity {
             case R.id.drawer_resume_id:
                 fragmentTransaction.replace(R.id.fragment_container_id, resumeFragment);
                 titleTV.setText("How To Build A Resume");
-                headerImageView.setImageResource(R.drawable.application_header1);
+                headerImageView.setImageResource(R.drawable.generic_header17);
                 break;
             case R.id.drawer_job_site_id:
                 fragmentTransaction.replace(R.id.fragment_container_id, jobSiteFragment);
                 titleTV.setText("Useful Websites for the Job Search");
-                headerImageView.setImageResource(R.drawable.generic_header1);
+                headerImageView.setImageResource(R.drawable.generic_header15);
                 break;
             case R.id.drawer_tips_id:
                 fragmentTransaction.replace(R.id.fragment_container_id, tipFragment);
@@ -190,6 +199,7 @@ public class MainActivity extends AppCompatActivity {
         tipFragment = new TipFragment();
         transportationFragment = new TransportationFragment();
         printLayoutFragment = new PrintLayoutFragment();
+        volunteerFragment = new VolunteerFragment();
     }
 
 

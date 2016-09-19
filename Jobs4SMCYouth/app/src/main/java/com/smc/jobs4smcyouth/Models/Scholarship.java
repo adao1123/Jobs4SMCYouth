@@ -7,6 +7,7 @@ public class Scholarship {
     private String title;
     private String contact;
     private String address;
+    private String iconLink;
     private String email;
     private String applicationDeadline;
     private String numberOfAwards;
@@ -16,7 +17,7 @@ public class Scholarship {
     public Scholarship() {
     }
 
-    public Scholarship(String title, String contact, String address, String email, String applicationDeadline, String numberOfAwards, String max, String description) {
+    public Scholarship(String title, String contact, String address, String email, String applicationDeadline, String numberOfAwards, String max, String description, String iconLink) {
         this.title = title;
         this.contact = contact;
         this.address = address;
@@ -25,7 +26,19 @@ public class Scholarship {
         this.numberOfAwards = numberOfAwards;
         this.max = max;
         this.description = description;
+        this.iconLink = iconLink;
+
     }
+
+
+    public String getIconLink() {
+        return iconLink;
+    }
+
+    public void setIconLink(String iconLink) {
+        this.iconLink = iconLink;
+    }
+
 
     public String getTitle() {
         return title;

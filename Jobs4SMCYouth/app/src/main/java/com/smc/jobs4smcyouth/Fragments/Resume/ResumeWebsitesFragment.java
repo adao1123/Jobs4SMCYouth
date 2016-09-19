@@ -1,16 +1,21 @@
 package com.smc.jobs4smcyouth.Fragments.Resume;
 
 import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.google.android.gms.analytics.HitBuilders;
+import com.google.android.gms.analytics.Tracker;
+import com.smc.jobs4smcyouth.MyApplication;
 import com.smc.jobs4smcyouth.Utilities.WebViewFragment.WebViewFragment;
 
 import java.util.ArrayList;
@@ -21,8 +26,37 @@ import java.util.ArrayList;
 public class ResumeWebsitesFragment extends Fragment
         implements ResumeWebsitesFragmentRVAdapter.ResumeCardViewClickListener {
 
+
+    private static final String TAG = ResumeWebsitesFragment.class.getSimpleName();
+    private Tracker analyticsTracker;
+
     public ResumeWebsitesFragment() {
 
+    }
+
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+
+        MyApplication application = (MyApplication) getActivity().getApplication();
+        analyticsTracker = application.getDefaultTracker();
+        sendScreenImageName();
+
+    }
+
+    private void sendScreenImageName() {
+
+        String name = TAG;
+        // [START screen_view_hit]
+        Log.i(TAG, "Setting screen name: " + name);
+        analyticsTracker.setScreenName("Screen~" + "ResumeWebsitesFragment");
+        analyticsTracker.send(new HitBuilders.ScreenViewBuilder().build());
+        // [END screen_view_hit]
+
+        analyticsTracker.send(new HitBuilders.EventBuilder()
+                .setCategory("Action")
+                .setAction("Share")
+                .build());
     }
 
     @Override
@@ -32,16 +66,16 @@ public class ResumeWebsitesFragment extends Fragment
         RecyclerView resumeWebsitesListRecyclerView = (RecyclerView)view.findViewById(com.smc.jobs4smcyouth.R.id.resumeWebsiteListFrag_recyclerView);
 
         ArrayList<String> urls = new ArrayList<>();
-        urls.add("Careeronestop.org");
+        urls.add("http://www.Careeronestop.org");
         //urls.add("Damngood.com");
-        urls.add("Eresumes.com");
-        urls.add("Resume-help.org");
-        urls.add("Resumehelp.com");
-        urls.add("Myfuture.com");
-        urls.add("Susanireland.com");
-        urls.add("Truecareers.com");
-        urls.add("Monster.com");
-        urls.add("Quintcareers.com/resres.html");
+        urls.add("http://www.Eresumes.com");
+        urls.add("http://www.Resume-help.org");
+        urls.add("http://www.Resumehelp.com");
+        urls.add("http://www.Myfuture.com");
+        urls.add("http://www.Susanireland.com");
+        urls.add("http://www.Truecareers.com");
+        urls.add("http://www.Monster.com");
+        urls.add("http://www.Quintcareers.com/resres.html");
 
 
         ArrayList<String> linksImages = new ArrayList<>();

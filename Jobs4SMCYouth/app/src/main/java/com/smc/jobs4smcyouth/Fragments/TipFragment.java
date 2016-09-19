@@ -1,17 +1,24 @@
 package com.smc.jobs4smcyouth.Fragments;
 
 
+import android.content.res.ColorStateList;
+import android.graphics.drawable.RippleDrawable;
 import android.os.Bundle;
 import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.CardView;
+import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.TextView;
 
+import com.google.android.gms.analytics.HitBuilders;
+import com.google.android.gms.analytics.Tracker;
+import com.smc.jobs4smcyouth.MyApplication;
 import com.smc.jobs4smcyouth.R;
 
 
@@ -19,6 +26,8 @@ import com.smc.jobs4smcyouth.R;
  * A simple {@link Fragment} subclass.
  */
 public class TipFragment extends Fragment {
+    private static final String TAG = TipFragment.class.getSimpleName();
+    private Tracker analyticsTracker;
     private CardView tip1Card;
     private CardView tip2Card;
     private CardView tip3Card;
@@ -41,11 +50,35 @@ public class TipFragment extends Fragment {
     private TextView tip10Detail;
     private Animation slideUp;
     private Animation slideDown;
-    private Animation liftOnTouch;
-    private Animation downOnTouch;
+    private Animation fadeIn;
+    private Animation fadeOut;
 
     public TipFragment() {
         // Required empty public constructor
+    }
+
+    @Override
+    public void onCreate(Bundle savedInstanceState){
+        super.onCreate(savedInstanceState);
+
+        MyApplication application = (MyApplication)getActivity().getApplication();
+        analyticsTracker = application.getDefaultTracker();
+        sendScreenImageName();
+    }
+
+    private void sendScreenImageName(){
+        String name = TAG;
+        // [START screen_view_hit]
+        Log.i(TAG, "Setting screen name: " + name);
+        analyticsTracker.setScreenName("Screen~" + "TipFragment");
+        analyticsTracker.send(new HitBuilders.ScreenViewBuilder().build());
+        // [END screen_view_hit]
+
+        analyticsTracker.send(new HitBuilders.EventBuilder()
+                .setCategory("Action")
+                .setAction("Share")
+                .build());
+
     }
 
 
@@ -96,6 +129,8 @@ public class TipFragment extends Fragment {
     private void loadAnimation(){
         slideUp = AnimationUtils.loadAnimation(getActivity(), R.anim.slide_up);
         slideDown = AnimationUtils.loadAnimation(getActivity(), R.anim.slide_down);
+        fadeIn = AnimationUtils.loadAnimation(getActivity(), R.anim.fade_in);
+        fadeOut = AnimationUtils.loadAnimation(getActivity(), R.anim.fade_out);
     }
 
     private void expandDetails(){
@@ -104,10 +139,10 @@ public class TipFragment extends Fragment {
             public void onClick(View v) {
                 if(tip1Detail.getVisibility() == View.GONE){
                     tip1Detail.setVisibility(View.VISIBLE);
-                    tip1Detail.startAnimation(slideDown);
+                    tip1Detail.startAnimation(fadeIn);
                 } else{
                     tip1Detail.setVisibility(View.GONE);
-                    tip1Detail.startAnimation(slideUp);
+                    tip1Detail.startAnimation(fadeOut);
                 }
             }
         });
@@ -117,10 +152,10 @@ public class TipFragment extends Fragment {
             public void onClick(View v) {
                 if(tip2Detail.getVisibility() == View.GONE){
                     tip2Detail.setVisibility(View.VISIBLE);
-                    tip2Detail.startAnimation(slideDown);
+                    tip2Detail.startAnimation(fadeIn);
                 } else{
                     tip2Detail.setVisibility(View.GONE);
-                    tip2Detail.startAnimation(slideUp);
+                    tip2Detail.startAnimation(fadeOut);
                 }
             }
         });
@@ -130,8 +165,10 @@ public class TipFragment extends Fragment {
             public void onClick(View v) {
                 if(tip3Detail.getVisibility() == View.GONE){
                     tip3Detail.setVisibility(View.VISIBLE);
+                    tip2Detail.startAnimation(fadeIn);
                 } else{
                     tip3Detail.setVisibility(View.GONE);
+                    tip1Detail.startAnimation(fadeOut);
                 }
             }
         });
@@ -141,8 +178,10 @@ public class TipFragment extends Fragment {
             public void onClick(View v) {
                 if(tip4Detail.getVisibility() == View.GONE){
                     tip4Detail.setVisibility(View.VISIBLE);
+                    tip2Detail.startAnimation(fadeIn);
                 } else{
                     tip4Detail.setVisibility(View.GONE);
+                    tip1Detail.startAnimation(fadeOut);
                 }
             }
         });
@@ -152,8 +191,10 @@ public class TipFragment extends Fragment {
             public void onClick(View v) {
                 if(tip5Detail.getVisibility() == View.GONE){
                     tip5Detail.setVisibility(View.VISIBLE);
+                    tip2Detail.startAnimation(fadeIn);
                 } else{
                     tip5Detail.setVisibility(View.GONE);
+                    tip1Detail.startAnimation(fadeOut);
                 }
             }
         });
@@ -163,8 +204,10 @@ public class TipFragment extends Fragment {
             public void onClick(View v) {
                 if(tip6Detail.getVisibility() == View.GONE){
                     tip6Detail.setVisibility(View.VISIBLE);
+                    tip2Detail.startAnimation(fadeIn);
                 } else{
                     tip6Detail.setVisibility(View.GONE);
+                    tip1Detail.startAnimation(fadeOut);
                 }
             }
         });
@@ -174,8 +217,10 @@ public class TipFragment extends Fragment {
             public void onClick(View v) {
                 if(tip7Detail.getVisibility() == View.GONE){
                     tip7Detail.setVisibility(View.VISIBLE);
+                    tip2Detail.startAnimation(fadeIn);
                 } else{
                     tip7Detail.setVisibility(View.GONE);
+                    tip1Detail.startAnimation(fadeOut);
                 }
             }
         });
@@ -185,8 +230,10 @@ public class TipFragment extends Fragment {
             public void onClick(View v) {
                 if(tip8Detail.getVisibility() == View.GONE){
                     tip8Detail.setVisibility(View.VISIBLE);
+                    tip2Detail.startAnimation(fadeIn);
                 } else{
                     tip8Detail.setVisibility(View.GONE);
+                    tip1Detail.startAnimation(fadeOut);
                 }
             }
         });
@@ -196,8 +243,10 @@ public class TipFragment extends Fragment {
             public void onClick(View v) {
                 if(tip9Detail.getVisibility() == View.GONE){
                     tip9Detail.setVisibility(View.VISIBLE);
+                    tip2Detail.startAnimation(fadeIn);
                 } else{
                     tip9Detail.setVisibility(View.GONE);
+                    tip1Detail.startAnimation(fadeOut);
                 }
             }
         });
@@ -207,8 +256,10 @@ public class TipFragment extends Fragment {
             public void onClick(View v) {
                 if(tip10Detail.getVisibility() == View.GONE){
                     tip10Detail.setVisibility(View.VISIBLE);
+                    tip2Detail.startAnimation(fadeIn);
                 } else{
                     tip10Detail.setVisibility(View.GONE);
+                    tip1Detail.startAnimation(fadeOut);
                 }
             }
         });

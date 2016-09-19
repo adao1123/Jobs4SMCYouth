@@ -75,26 +75,26 @@ public class JobSiteFragment extends Fragment implements JobSiteFragmentRVAdapte
         RecyclerView jobListRecyclerView = (RecyclerView)view.findViewById(com.smc.jobs4smcyouth.R.id.jobListFrag_recyclerView);
 
         ArrayList<String> links = new ArrayList<String>();
-        links.add("Acinet.org");
-        links.add("Ajb.dni.us");
-        links.add("Bajobs.com");
-        links.add("Careers.org");
-        links.add("Craigslist.org");
-        links.add("Bayareacareers.com");
-        links.add("Caljobs.ca.gov");
-        links.add("Careerbuilder.com");
-        links.add("Experience.com");
-        links.add("Glassdoor.com");
-        links.add("Idealist.org");
-        links.add("Indeed.com");
-        links.add("Jobhuntersbible.com");
-        links.add("Jobstar.org");
-        links.add("Monster.com");
-        links.add("Simplyhired.com");
-        links.add("Opportunitynocs.org");
-        links.add("Snagajob.com");
-        links.add("Startuphire.com");
-        links.add("Calopps.org");
+        links.add("http://www.Acinet.org");
+        links.add("http://www.Ajb.dni.us");
+        links.add("http://www.Bajobs.com");
+        links.add("http://www.Careers.org");
+        links.add("http://www.Craigslist.org");
+        links.add("http://www.Bayareacareers.com");
+        links.add("http://www.Caljobs.ca.gov");
+        links.add("http://www.Careerbuilder.com");
+        links.add("http://www.Experience.com");
+        links.add("http://www.Glassdoor.com");
+        links.add("http://www.Idealist.org");
+        links.add("http://www.Indeed.com");
+        links.add("http://www.Jobhuntersbible.com");
+        links.add("http://www.Jobstar.org");
+        links.add("http://www.Monster.com");
+        links.add("http://www.Simplyhired.com");
+        links.add("http://www.Opportunitynocs.org");
+        links.add("http://www.Snagajob.com");
+        links.add("http://www.Startuphire.com");
+        links.add("http://www.Calopps.org");
 
 
 //        ArrayList<Integer> linksImage = new ArrayList<Integer>();
@@ -122,7 +122,7 @@ public class JobSiteFragment extends Fragment implements JobSiteFragmentRVAdapte
 
         ArrayList<String> linksImage = new ArrayList<String>();
         linksImage.add("http://i.imgur.com/WaMTa7X.png"); //acinet
-        linksImage.add("http://i.imgur.com/Pf6KAYq.png"); // empty
+        linksImage.add("http://i.imgur.com/9cxaJf0.png"); // empty
         linksImage.add("http://i.imgur.com/T7pq1AY.png"); //bajobs
         linksImage.add("http://i.imgur.com/RTLSHUL.png"); //careers org
         linksImage.add("http://i.imgur.com/NbwCrXR.png"); //craigslist
@@ -133,11 +133,11 @@ public class JobSiteFragment extends Fragment implements JobSiteFragmentRVAdapte
         linksImage.add("http://i.imgur.com/Qr5eQSI.png"); // glassdoor
         linksImage.add("http://i.imgur.com/UtHcmtS.png"); //idealist
         linksImage.add("http://i.imgur.com/6g0gHLJ.png"); //indeed
-        linksImage.add("http://i.imgur.com/Pf6KAYq.png"); //empty
+        linksImage.add("http://i.imgur.com/9cxaJf0.png"); //empty
         linksImage.add("http://i.imgur.com/ufg2jM4.png"); //jobstar
         linksImage.add("http://i.imgur.com/hPysrW1.png"); //monster
         linksImage.add("http://i.imgur.com/uPwztT8.png"); //simply hired
-        linksImage.add("http://i.imgur.com/Pf6KAYq.png"); //empty
+        linksImage.add("http://i.imgur.com/9cxaJf0.png"); //empty
         linksImage.add("http://i.imgur.com/Rigwolq.png"); //snag a job
         linksImage.add("http://i.imgur.com/FcDJory.png"); //startup hire
         linksImage.add("http://i.imgur.com/aRteqkh.png"); //calopps

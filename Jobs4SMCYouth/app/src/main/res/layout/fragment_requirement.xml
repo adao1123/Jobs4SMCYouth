@@ -1,8 +1,13 @@
 <android.support.v4.widget.NestedScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:card_view="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    android:fitsSystemWindows="true"
+    android:layout_marginTop="@dimen/nested_scrollview_top_margin"
     tools:context="com.smc.jobs4smcyouth.Fragments.RequirementFragment">
 
     <LinearLayout
@@ -13,44 +18,61 @@
         <android.support.v7.widget.CardView
             android:id="@+id/requirements_workPermitCard_id"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/card_view_layout_margin"
+            card_view:cardCornerRadius="@dimen/card_view_corner_radius"
+            card_view:cardUseCompatPadding="false"
+            android:clickable="true"
+            app:cardBackgroundColor="@color/card_view_background">
 
             <LinearLayout
+                android:id="@+id/requirement_permit_linearLayout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 android:padding="16dp">
 
                 <TextView
+                    android:id="@+id/requirement_permit_title_textView"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Youth Work Permits"
+                    android:textAlignment="center"
                     android:textStyle="bold"
-                    android:textColor="@color/primary"
-                    android:textSize="30sp"
-                    android:textAlignment="center"
-                    android:layout_marginTop="20dp"
-                    android:layout_marginBottom="10dp"
-                    android:textAllCaps="true"/>
+                    android:textSize="@dimen/title_text"
+                    android:textColor="@color/card_view_title"
+                    android:text="Youth Work Permits" />
 
-                <TextView
+                <LinearLayout
+                    android:id="@+id/requirement_permit_detail_linearLayout"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Students under the age of 18 must provide the employer a work permit.Odd-jobs such as yard work and babysitting do not require work permits.\n"
-                    android:textAlignment="center"
-                    />
+                    android:orientation="vertical">
 
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="In order to receive your work permit, please follow the instructions below:\n"/>
 
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="30dp"
-                    android:text="1.) Obtain a work permit form from school (i.e. Counselor's Office, Career Center, Main Office). During spring, summer, and winter breaks, obtain a work permit from a school district office.\n\n2.) At the time of hire, have the employer complete the \'Employer Section\' on the Work Permit Form.\n\n3.) A parent or guardian must also sign the Work Permit Form.\n\n4.) Once the form is completed with the proper signatures, return the form back to the school or the school district office (during breaks).\n\n5.) A work permit from the school will be issued to the student."/>
-            </LinearLayout>
+                    <TextView
+                        android:id="@+id/requirement_permit_info1_textView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Students under the age of 18 must provide the employer a work permit.Odd-jobs such as yard work and babysitting do not require work permits.\n"
+                        android:textAlignment="center"
+                        />
+
+                    <TextView
+                        android:id="@+id/requirement_permit_info2_textView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="In order to receive your work permit, please follow the instructions below:\n"/>
+
+                    <TextView
+                        android:id="@+id/requirement_permit_info3_textView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="30dp"
+                        android:text="1.) Obtain a work permit form from school (i.e. Counselor's Office, Career Center, Main Office). During spring, summer, and winter breaks, obtain a work permit from a school district office.\n\n2.) At the time of hire, have the employer complete the \'Employer Section\' on the Work Permit Form.\n\n3.) A parent or guardian must also sign the Work Permit Form.\n\n4.) Once the form is completed with the proper signatures, return the form back to the school or the school district office (during breaks).\n\n5.) A work permit from the school will be issued to the student."/>
+
+
+                </LinearLayout>
+       </LinearLayout>
 
         </android.support.v7.widget.CardView>
 
@@ -58,7 +80,11 @@
             android:id="@+id/requirements_laborLawsCard_id"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp">
+            android:layout_margin="@dimen/card_view_layout_margin"
+            card_view:cardCornerRadius="@dimen/card_view_corner_radius"
+            card_view:cardUseCompatPadding="false"
+            android:clickable="true"
+            app:cardBackgroundColor="@color/card_view_background">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -69,14 +95,11 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Youth Labor Laws"
-                    android:textStyle="bold"
-                    android:textColor="@color/primary"
-                    android:textSize="30sp"
                     android:textAlignment="center"
-                    android:layout_marginTop="20dp"
-                    android:layout_marginBottom="10dp"
-                    android:textAllCaps="true"/>
+                    android:textStyle="bold"
+                    android:textSize="@dimen/title_text"
+                    android:textColor="@color/card_view_title"
+                    android:text="Youth Labor Laws" />
 
                 <TextView
                     android:layout_width="match_parent"
