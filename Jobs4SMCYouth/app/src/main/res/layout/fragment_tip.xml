@@ -39,7 +39,7 @@
                     android:textStyle="bold"
                     android:textSize="@dimen/title_text"
                     android:textColor="@color/card_view_title"
-                    android:text="Take a calendar or notebook with you to work." />
+                    android:text="@string/tip1_title" />
 
                 <TextView
                     android:id="@+id/tip_rule1_detail_tv_id"
@@ -47,7 +47,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/top_margin_details_text_expanding_card_view"
                     android:textSize="@dimen/body_text"
-                    android:text="Record hard-to-remember information, instructions, and meetings you may have to attend." />
+                    android:text="@string/tip1_detail" />
 
             </LinearLayout>
         </android.support.v7.widget.CardView>
@@ -76,7 +76,7 @@
                     android:textStyle="bold"
                     android:textSize="@dimen/title_text"
                     android:textColor="@color/card_view_title"
-                    android:text="Ensure transportation to work." />
+                    android:text="@string/tip2_title" />
 
                 <TextView
                     android:id="@+id/tip_rule2_detail_tv_id"
@@ -84,7 +84,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/top_margin_details_text_expanding_card_view"
                     android:textSize="@dimen/body_text"
-                    android:text="If you have a car, make sure it is dependable to drive.  Allow extra driving time. If you depend on someone else for transportation, be sure he/she is always available. However, try to have a “plan b” (i.e. Public transportation). If you are going to be late, call your employer. If taking public transportation, know the bus routes and times." />
+                    android:text="@string/tip2_detail" />
 
             </LinearLayout>
         </android.support.v7.widget.CardView>
@@ -113,7 +113,7 @@
                     android:textStyle="bold"
                     android:textSize="@dimen/title_text"
                     android:textColor="@color/card_view_title"
-                    android:text="Get plenty of rest for work." />
+                    android:text="@string/tip3_title" />
 
                 <TextView
                     android:id="@+id/tip_rule3_detail_tv_id"
@@ -121,7 +121,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/top_margin_details_text_expanding_card_view"
                     android:textSize="@dimen/body_text"
-                    android:text="Strain and tension the first few days and weeks of a job will take more energy out of your system than you expect. Avoid a heavy social schedule and get plenty of rest." />
+                    android:text="@string/tip3_detail" />
 
             </LinearLayout>
         </android.support.v7.widget.CardView>
@@ -150,7 +150,7 @@
                     android:textStyle="bold"
                     android:textSize="@dimen/title_text"
                     android:textColor="@color/card_view_title"
-                    android:text="Ask the right questions." />
+                    android:text="@string/tip4_title" />
 
                 <TextView
                     android:id="@+id/tip_rule4_detail_tv_id"
@@ -158,7 +158,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/top_margin_details_text_expanding_card_view"
                     android:textSize="@dimen/body_text"
-                    android:text="Try to find your own answer first. Ask questions at appropriate times. Don’t be afraid to ask if you are not sure about something." />
+                    android:text="@string/tip4_detail" />
 
             </LinearLayout>
         </android.support.v7.widget.CardView>
@@ -187,7 +187,7 @@
                     android:textStyle="bold"
                     android:textSize="@dimen/title_text"
                     android:textColor="@color/card_view_title"
-                    android:text="Use good judgement in working extra hours." />
+                    android:text="@string/tip5_title" />
 
                 <TextView
                     android:id="@+id/tip_rule5_detail_tv_id"
@@ -195,7 +195,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/top_margin_details_text_expanding_card_view"
                     android:textSize="@dimen/body_text"
-                    android:text="Abide by management’s instructions. Working extra hours and eliminating breaks and lunch to impress management will not develop good relationships with your fellow employees." />
+                    android:text="@string/tip5_detail" />
 
             </LinearLayout>
         </android.support.v7.widget.CardView>
@@ -225,7 +225,7 @@
                     android:textStyle="bold"
                     android:textSize="@dimen/title_text"
                     android:textColor="@color/card_view_title"
-                    android:text="Do not flaunt your knowledge and education." />
+                    android:text="@string/tip6_title" />
 
                 <TextView
                     android:id="@+id/tip_rule6_detail_tv_id"
@@ -233,7 +233,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/top_margin_details_text_expanding_card_view"
                     android:textSize="@dimen/body_text"
-                    android:text="Do not try to impress people with what you know. Until you are sure, be safe and do it the way you are instructed." />
+                    android:text="@string/tip6_detail" />
             </LinearLayout>
         </android.support.v7.widget.CardView>
 
@@ -261,7 +261,7 @@
                     android:textStyle="bold"
                     android:textSize="@dimen/title_text"
                     android:textColor="@color/card_view_title"
-                    android:text="Build a relationship with all employees." />
+                    android:text="@string/tip7_title" />
 
                 <TextView
                     android:id="@+id/tip_rule7_detail_tv_id"
@@ -269,7 +269,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/top_margin_details_text_expanding_card_view"
                     android:textSize="@dimen/body_text"
-                    android:text="Be cautious in spending too much time with one person, too soon." />
+                    android:text="@string/tip7_detail" />
             </LinearLayout>
 
         </android.support.v7.widget.CardView>
@@ -298,7 +298,7 @@
                     android:textStyle="bold"
                     android:textSize="@dimen/title_text"
                     android:textColor="@color/card_view_title"
-                    android:text="Stay busy (take initiative)." />
+                    android:text="@string/tip8_title" />
 
                 <TextView
                     android:id="@+id/tip_rule8_detail_tv_id"
@@ -306,7 +306,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/top_margin_details_text_expanding_card_view"
                     android:textSize="@dimen/body_text"
-                    android:text="Try to avoid “just sitting there.” Let the supervisor know when you have completed your work so you can work on new projects." />
+                    android:text="@string/tip8_detail" />
 
             </LinearLayout>
         </android.support.v7.widget.CardView>
@@ -336,7 +336,7 @@
                     android:textStyle="bold"
                     android:textSize="@dimen/title_text"
                     android:textColor="@color/card_view_title"
-                    android:text="Dress appropriately." />
+                    android:text="@string/tip9_title" />
 
                 <TextView
                     android:id="@+id/tip_rule9_detail_tv_id"
@@ -344,7 +344,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/top_margin_details_text_expanding_card_view"
                     android:textSize="@dimen/body_text"
-                    android:text="Abide by the dress code." />
+                    android:text="@string/tip9_detail" />
 
             </LinearLayout>
         </android.support.v7.widget.CardView>
@@ -373,7 +373,7 @@
                     android:textStyle="bold"
                     android:textSize="@dimen/title_text"
                     android:textColor="@color/card_view_title"
-                    android:text="Be familiar with company rules." />
+                    android:text="@string/tip10_title" />
 
                 <TextView
                     android:id="@+id/tip_rule10_detail_tv_id"
@@ -381,7 +381,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/top_margin_details_text_expanding_card_view"
                     android:textSize="@dimen/body_text"
-                    android:text="Review your employee handbook." />
+                    android:text="@string/tip10_detail" />
 
             </LinearLayout>
         </android.support.v7.widget.CardView>

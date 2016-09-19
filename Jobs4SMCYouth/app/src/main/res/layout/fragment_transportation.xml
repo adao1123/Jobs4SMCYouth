@@ -34,7 +34,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textSize="@dimen/body_text"
-                    android:text="The program can assist active participants with bus tickets to get to and from job related activities.\n\nFor more information and access to the private transportation document, please contact"
+                    android:text="@string/transportation_info"
                     android:textAlignment="center"/>
 
                 <TextView
@@ -44,7 +44,7 @@
                     android:textAlignment="center"
                     android:textSize="@dimen/body_text"
                     android:textColor="@color/accent"
-                    android:text="Jobs for Youth."/>
+                    android:text="@string/transportation_Jobs_for_youth"/>
 
             </LinearLayout>
 
