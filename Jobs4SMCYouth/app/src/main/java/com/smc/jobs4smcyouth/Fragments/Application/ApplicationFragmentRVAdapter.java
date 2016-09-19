@@ -39,6 +39,8 @@ public class ApplicationFragmentRVAdapter extends RecyclerView.Adapter<RecyclerV
 
     Animation slideUp;
     Animation slideDown;
+    Animation fadeIn;
+    Animation fadeOut;
 
     class ApplicationRulesViewHolder extends RecyclerView.ViewHolder{
 
@@ -62,10 +64,10 @@ public class ApplicationFragmentRVAdapter extends RecyclerView.Adapter<RecyclerV
 
                     if(rulesView.getVisibility() == View.GONE){
                         rulesView.setVisibility(View.VISIBLE);
-                        rulesView.setAnimation(slideDown);
+                        rulesView.setAnimation(fadeIn);
                     }else{
                         rulesView.setVisibility(View.GONE);
-                        rulesView.setAnimation(slideUp);
+                        rulesView.setAnimation(fadeOut);
                     }
                 }
             });
@@ -114,6 +116,8 @@ public class ApplicationFragmentRVAdapter extends RecyclerView.Adapter<RecyclerV
 
         slideUp = AnimationUtils.loadAnimation(parent.getContext(), R.anim.slide_up);
         slideDown = AnimationUtils.loadAnimation(parent.getContext(), R.anim.slide_down);
+        fadeIn = AnimationUtils.loadAnimation(parent.getContext(), R.anim.fade_in);
+        fadeOut = AnimationUtils.loadAnimation(parent.getContext(), R.anim.fade_out);
 
         switch(viewType){
             case 0:
