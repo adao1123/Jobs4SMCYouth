@@ -1,19 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-
-    <string name="nav_job_post">Offres d’Emploi</string>
-    <string name="nav_scholarships">Bourses</string>
-    <string name="nav_volunteer">Bénévolats</string>
-    <string name="nav_transportation">Transports</string>
-    <string name="nav_requirements">Prérequis</string>
-    <string name="nav_success_stories">Histoires de success</string>
     <string name="nav_about">À propos</string>
-    <string name="nav_print">Imprimer</string>
-    <string name="nav_job_prep">Préparation à l'emploi</string>
     <string name="nav_applications">Candidatures</string>
     <string name="nav_interview">Entretien</string>
-    <string name="nav_resume_cover_letters">CV/Lettre de motivation</string>
+    <string name="nav_job_post">Offres d’Emploi</string>
+    <string name="nav_job_prep">Préparation à l’emploi</string>
     <string name="nav_job_search_sites">Webs recherche emploi</string>
+    <string name="nav_print">Imprimer</string>
+    <string name="nav_requirements">Prérequis</string>
+    <string name="nav_resume_cover_letters">CV/Lettre de motivation</string>
+    <string name="nav_scholarships">Bourses</string>
+    <string name="nav_success_stories">Histoires de success</string>
     <string name="nav_tips">Conseils</string>
-
+    <string name="nav_transportation">Transports</string>
+    <string name="nav_volunteer">Bénévolats</string>
 </resources>
