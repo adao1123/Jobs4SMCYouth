@@ -111,7 +111,7 @@ public class JobPostFragment extends Fragment {
 
             @Override
             public void onCancelled(FirebaseError firebaseError) {
-
+                Log.d(TAG, "onCancelled: "+firebaseError.getMessage());
             }
         });
     }
@@ -127,6 +127,8 @@ public class JobPostFragment extends Fragment {
                 viewHolder.jobsAgeTV.setText(jobListing.getJobAge());
                 Picasso.with(getContext()).load(jobListing.getJobImageLink())
                         .resize(200,200).centerCrop().error(R.drawable.ic_support).into(viewHolder.jobsImage);
+                Picasso.with(getContext()).load(jobListing.getJobImageLink())
+                        .error(R.drawable.ic_support).into(viewHolder.jobsImageTop);
                 viewHolder.jobsListingView.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
@@ -140,8 +142,10 @@ public class JobPostFragment extends Fragment {
                             viewHolder.jobsTitleTV.setTypeface(Typeface.DEFAULT_BOLD);
                             viewHolder.jobsTitleTV.setTextColor(getContext().getResources().getColor(R.color.card_view_title));
                             viewHolder.jobsImage.setVisibility(View.VISIBLE);
+                            viewHolder.jobsImageTop.setVisibility(View.GONE);
                         }else{
                             viewHolder.jobsImage.setVisibility(View.GONE);
+                            viewHolder.jobsImageTop.setVisibility(View.VISIBLE);
                             viewHolder.dutyView.setVisibility(View.VISIBLE);
                             viewHolder.ageView.setVisibility(View.VISIBLE);
                             viewHolder.payrateView.setVisibility(View.VISIBLE);
@@ -183,6 +187,7 @@ public class JobPostFragment extends Fragment {
         public TextView jobsAgeTV;
         public TextView jobsTitleWord;
         public RoundedImageView jobsImage;
+        public RoundedImageView jobsImageTop;
         public LinearLayout jobsListingView;
         public LinearLayout titleView;
         public LinearLayout cityView;
@@ -192,6 +197,7 @@ public class JobPostFragment extends Fragment {
         public JobsViewHolder(View itemView) {
             super(itemView);
             jobsImage = (RoundedImageView)itemView.findViewById(R.id.rv_item_jobs_image);
+            jobsImageTop = (RoundedImageView)itemView.findViewById(R.id.rv_item_jobs_image_top);
             jobsTitleTV = (TextView)itemView.findViewById(R.id.rv_item_jobs_title);
             jobsCityTV = (TextView)itemView.findViewById(R.id.rv_item_jobs_city);
             jobsDutiesTV = (TextView)itemView.findViewById(R.id.rv_item_jobs_duties);
