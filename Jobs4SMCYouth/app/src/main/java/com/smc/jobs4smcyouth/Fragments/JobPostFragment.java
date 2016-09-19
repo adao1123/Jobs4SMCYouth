@@ -1,7 +1,9 @@
 package com.smc.jobs4smcyouth.Fragments;
 
 
+import android.content.Intent;
 import android.graphics.Typeface;
+import android.net.Uri;
 import android.os.Bundle;
 import android.provider.ContactsContract;
 import android.support.annotation.Nullable;
@@ -117,7 +119,7 @@ public class JobPostFragment extends Fragment {
     private void displayJobListings(){
         FirebaseRecyclerAdapter adapter = new FirebaseRecyclerAdapter<JobListing,JobsViewHolder>(JobListing.class,R.layout.rv_item_jobs,JobsViewHolder.class,firebaseListings) {
             @Override
-            protected void populateViewHolder(final JobsViewHolder viewHolder, JobListing jobListing, int i) {
+            protected void populateViewHolder(final JobsViewHolder viewHolder, final JobListing jobListing, int i) {
                 viewHolder.jobsTitleTV.setText(jobListing.getJobTitle());
                 viewHolder.jobsCityTV.setText(jobListing.getJobCity());
                 viewHolder.jobsDutiesTV.setText(jobListing.getJobDuty());
@@ -149,6 +151,22 @@ public class JobPostFragment extends Fragment {
                             viewHolder.jobsTitleTV.setTypeface(Typeface.DEFAULT);
                             viewHolder.jobsTitleTV.setTextColor(getContext().getResources().getColor(android.R.color.tab_indicator_text));
                         }
+                    }
+                });
+                viewHolder.jobsListingView.setOnLongClickListener(new View.OnLongClickListener() {
+                    @Override
+                    public boolean onLongClick(View v) {
+                        Intent send = new Intent(Intent.ACTION_SENDTO);
+                        send.setType("text/plain");
+                        String uriText = "mailto:" + Uri.encode("jobs4smcyouth@gmail.com") +
+                                "?subject=" + Uri.encode(jobListing.getJobTitle()) +
+                                "&body=" + Uri.encode("Hi Jobs for Youth,\n\n\t\t\t\tI am interested in the position of "
+                                + jobListing.getJobTitle()+" that I heard from the Jobs for Youth app. I believe that I would be a great fit for the job and look forward to learning more about it. Thanks for the consideration.");
+                        Uri uri = Uri.parse(uriText);
+                        send.setData(uri);
+                        startActivity(Intent.createChooser(send, "Send Email"));
+
+                        return true;
                     }
                 });
             }

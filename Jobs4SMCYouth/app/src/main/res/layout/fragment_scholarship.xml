@@ -12,6 +12,14 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:text="Click scholarship for more detail. Long click to apply."
+            android:gravity="center_horizontal"
+            android:textStyle="italic"/>
+
         <android.support.v7.widget.RecyclerView
             android:id="@+id/scholarship_rv"
             android:layout_width="match_parent"

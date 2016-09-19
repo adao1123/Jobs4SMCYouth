@@ -173,6 +173,21 @@ public class ScholarshipFragment extends Fragment {
                         }
                     }
                 });
+                scholarshipViewHolder.listingView.setOnLongClickListener(new View.OnLongClickListener() {
+                    @Override
+                    public boolean onLongClick(View v) {
+                        Intent sendIntent = new Intent(Intent.ACTION_SENDTO);
+                        sendIntent.setType("text/plain");
+                        String uriText1 = "mailto:" + Uri.encode(scholarship.getEmail()) +
+                                "?subject=" + Uri.encode(scholarship.getTitle()) +
+                                "&body=" + Uri.encode("Hi " + scholarship.getContact()+",\n\n\t\t\t\tI saw the "
+                        + scholarship.getTitle() + " on the Jobs for Youth app. I am interested in applying and would like to learn more about it.");
+                        Uri uri = Uri.parse(uriText1);
+                        sendIntent.setData(uri);
+                        startActivity(Intent.createChooser(sendIntent, "Send Email"));
+                        return true;
+                    }
+                });
             }
         };
         return adapter;
