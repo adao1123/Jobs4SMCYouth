@@ -165,10 +165,10 @@ public class TipFragment extends Fragment {
             public void onClick(View v) {
                 if(tip3Detail.getVisibility() == View.GONE){
                     tip3Detail.setVisibility(View.VISIBLE);
-                    tip2Detail.startAnimation(fadeIn);
+                    tip3Detail.startAnimation(fadeIn);
                 } else{
                     tip3Detail.setVisibility(View.GONE);
-                    tip1Detail.startAnimation(fadeOut);
+                    tip3Detail.startAnimation(fadeOut);
                 }
             }
         });
@@ -178,10 +178,10 @@ public class TipFragment extends Fragment {
             public void onClick(View v) {
                 if(tip4Detail.getVisibility() == View.GONE){
                     tip4Detail.setVisibility(View.VISIBLE);
-                    tip2Detail.startAnimation(fadeIn);
+                    tip4Detail.startAnimation(fadeIn);
                 } else{
                     tip4Detail.setVisibility(View.GONE);
-                    tip1Detail.startAnimation(fadeOut);
+                    tip4Detail.startAnimation(fadeOut);
                 }
             }
         });
@@ -191,10 +191,10 @@ public class TipFragment extends Fragment {
             public void onClick(View v) {
                 if(tip5Detail.getVisibility() == View.GONE){
                     tip5Detail.setVisibility(View.VISIBLE);
-                    tip2Detail.startAnimation(fadeIn);
+                    tip5Detail.startAnimation(fadeIn);
                 } else{
                     tip5Detail.setVisibility(View.GONE);
-                    tip1Detail.startAnimation(fadeOut);
+                    tip5Detail.startAnimation(fadeOut);
                 }
             }
         });
@@ -204,10 +204,10 @@ public class TipFragment extends Fragment {
             public void onClick(View v) {
                 if(tip6Detail.getVisibility() == View.GONE){
                     tip6Detail.setVisibility(View.VISIBLE);
-                    tip2Detail.startAnimation(fadeIn);
+                    tip6Detail.startAnimation(fadeIn);
                 } else{
                     tip6Detail.setVisibility(View.GONE);
-                    tip1Detail.startAnimation(fadeOut);
+                    tip6Detail.startAnimation(fadeOut);
                 }
             }
         });
@@ -217,10 +217,10 @@ public class TipFragment extends Fragment {
             public void onClick(View v) {
                 if(tip7Detail.getVisibility() == View.GONE){
                     tip7Detail.setVisibility(View.VISIBLE);
-                    tip2Detail.startAnimation(fadeIn);
+                    tip7Detail.startAnimation(fadeIn);
                 } else{
                     tip7Detail.setVisibility(View.GONE);
-                    tip1Detail.startAnimation(fadeOut);
+                    tip7Detail.startAnimation(fadeOut);
                 }
             }
         });
@@ -230,10 +230,10 @@ public class TipFragment extends Fragment {
             public void onClick(View v) {
                 if(tip8Detail.getVisibility() == View.GONE){
                     tip8Detail.setVisibility(View.VISIBLE);
-                    tip2Detail.startAnimation(fadeIn);
+                    tip8Detail.startAnimation(fadeIn);
                 } else{
                     tip8Detail.setVisibility(View.GONE);
-                    tip1Detail.startAnimation(fadeOut);
+                    tip8Detail.startAnimation(fadeOut);
                 }
             }
         });
@@ -243,10 +243,10 @@ public class TipFragment extends Fragment {
             public void onClick(View v) {
                 if(tip9Detail.getVisibility() == View.GONE){
                     tip9Detail.setVisibility(View.VISIBLE);
-                    tip2Detail.startAnimation(fadeIn);
+                    tip9Detail.startAnimation(fadeIn);
                 } else{
                     tip9Detail.setVisibility(View.GONE);
-                    tip1Detail.startAnimation(fadeOut);
+                    tip9Detail.startAnimation(fadeOut);
                 }
             }
         });
@@ -256,10 +256,10 @@ public class TipFragment extends Fragment {
             public void onClick(View v) {
                 if(tip10Detail.getVisibility() == View.GONE){
                     tip10Detail.setVisibility(View.VISIBLE);
-                    tip2Detail.startAnimation(fadeIn);
+                    tip10Detail.startAnimation(fadeIn);
                 } else{
                     tip10Detail.setVisibility(View.GONE);
-                    tip1Detail.startAnimation(fadeOut);
+                    tip10Detail.startAnimation(fadeOut);
                 }
             }
         });

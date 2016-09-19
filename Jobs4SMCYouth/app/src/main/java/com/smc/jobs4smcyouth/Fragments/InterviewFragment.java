@@ -116,10 +116,10 @@ public class InterviewFragment extends Fragment {
             public void onClick(View v) {
                 if(duringDetail.getVisibility() == View.GONE){
                     duringDetail.setVisibility(View.VISIBLE);
-                    beforeDetail.startAnimation(fadeIn);
+                    duringDetail.startAnimation(fadeIn);
                 } else{
                     duringDetail.setVisibility(View.GONE);
-                    beforeDetail.startAnimation(fadeOut);
+                    duringDetail.startAnimation(fadeOut);
                 }
             }
         });
@@ -129,10 +129,10 @@ public class InterviewFragment extends Fragment {
             public void onClick(View v) {
                 if(afterDetail.getVisibility() == View.GONE){
                     afterDetail.setVisibility(View.VISIBLE);
-                    beforeDetail.startAnimation(fadeIn);
+                    afterDetail.startAnimation(fadeIn);
                 } else{
                     afterDetail.setVisibility(View.GONE);
-                    beforeDetail.startAnimation(fadeOut);
+                    afterDetail.startAnimation(fadeOut);
                 }
             }
         });
