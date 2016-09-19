@@ -1,18 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="nav_job_post">招聘启事</string>
+    <string name="nav_job_post">职位列表</string>
     <string name="nav_scholarships">奖学金</string>
-    <string name="nav_transportation">交通信息</string>
-    <string name="nav_requirements">工作要求</string>
-    <string name="nav_success_stories">成功的故事</string>
-    <string name="nav_about">关于Jobs4SMCYouth</string>
-    <string name="nav_print">印刷</string>
-    <string name="nav_job_prep">工作准备</string>
-    <string name="nav_applications">职位申请表</string>
+    <string name="nav_volunteer">志愿者机会</string>
+    <string name="nav_transportation">交通</string>
+    <string name="nav_requirements">兼职条款</string>
+    <string name="nav_success_stories">成功案例</string>
+    <string name="nav_about">关于我们</string>
+    <string name="nav_print">打印</string>
+    <string name="nav_job_prep">求职准备</string>
+    <string name="nav_applications">申请</string>
     <string name="nav_interview">面试</string>
-    <string name="nav_resume_cover_letters">简历/求职信</string>
-    <string name="nav_job_search_sites">求职网站</string>
-    <string name="nav_tips">提示</string>
+    <string name="nav_resume_cover_letters">简历范例</string>
+    <string name="nav_job_search_sites">招聘网站</string>
+    <string name="nav_tips">求职技巧</string>
 
 </resources>
