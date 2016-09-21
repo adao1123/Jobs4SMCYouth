@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="app_name">Jobs4SMCYouth</string>
     <string name="nav_about">À propos</string>
     <string name="nav_applications">Candidatures</string>
     <string name="nav_interview">Entretien</string>

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="app_name">Jobs4SMCYouth</string>
     <string name="nav_job_post">채용 공고</string>
     <string name="nav_scholarships">장학금</string>
     <string name="nav_volunteer">자원 봉사 기회</string>

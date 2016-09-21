@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="app_name">Jobs4SMCYouth</string>
     <string name="nav_job_post">नौकरी ढूंढे</string>
     <string name="nav_scholarships">छात्रवृत्ति</string>
     <string name="nav_volunteer">स्वयंसेवक बनने के लिए अवसरों की सूची</string>
