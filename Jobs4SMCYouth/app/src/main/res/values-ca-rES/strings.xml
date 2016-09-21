@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
+    <string name="app_name">Jobs4SMCYouth</string>
     <string name="nav_job_post">Ofertes de treball</string>
     <string name="nav_scholarships">Beques</string>
     <string name="nav_volunteer">Volutariats</string>

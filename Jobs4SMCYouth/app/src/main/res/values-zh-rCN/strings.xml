@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-
+    <string name="app_name">Jobs4SMCYouth</string>
     <string name="nav_job_post">职位列表</string>
     <string name="nav_scholarships">奖学金</string>
     <string name="nav_volunteer">志愿者机会</string>
